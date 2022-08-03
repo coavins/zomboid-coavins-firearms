@@ -28,6 +28,7 @@ local removePartFromPart = function(player, item, partName)
 end
 
 local installFirearmPart = function(player, item, part)
+	ISTimedActionQueue.add(ISInstallFirearmPart:new(player, item, part, 60*2))
 end
 
 local checkInventoryItem = function(player, context, item)
