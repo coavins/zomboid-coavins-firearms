@@ -52,7 +52,7 @@ function ISDisassembleFirearm:perform()
 	local c = getModData(fItem)
 
 	-- get model
-	local model = FIELDSTRIP.getModel(FIELDSTRIP.getFirearmModelForType(fType))
+	local model = FIELDSTRIP.getFirearmModel(FIELDSTRIP.getFirearmModelForType(fType))
 
 	-- give parts
 	for i,k in ipairs(model.BreaksInto) do

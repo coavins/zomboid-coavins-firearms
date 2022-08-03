@@ -5,31 +5,36 @@ this.typeModels = {}
 this.typeModels["Base.Pistol"] = "Pistol"
 this.typeModels["Base.Pistol2"] = "Pistol"
 this.typeModels["Base.Pistol3"] = "Pistol"
---this.typeModels["Revolver"] = "revolver"
---this.typeModels["Revolver_Short"] = "revolver"
---this.typeModels["Revolver_Long"] = "revolver"
-
-this.models = {}
-
-this.getModel = function(modelName)
-	return this.models[modelName]
-end
-
-this.models.Pistol = {}
-this.models.Pistol.BreaksInto = { 'PistolReceiver', 'PistolSlide' }
-this.models.Pistol.SaveTypeIn = 'PistolReceiver'
-this.models.PistolReceiver = {}
-this.models.PistolReceiver.CombinesWith = 'PistolSlide'
-this.models.PistolReceiver.Forms = 'Pistol'
-this.models.PistolSlide = {}
-this.models.PistolSlide.CombinesWith = 'PistolReceiver'
-this.models.PistolSlide.Forms = 'Pistol'
-this.models.PistolSlide.Holds = { 'PistolBarrel' }
-this.models.PistolBarrel = {}
-this.models.PistolBarrel.InsertsInto = 'PistolSlide'
+--this.typeModels["Revolver"] = "Revolver"
+--this.typeModels["Revolver_Short"] = "Revolver"
+--this.typeModels["Revolver_Long"] = "Revolver"
 
 this.getFirearmModelForType = function(type)
 	return this.typeModels[type]
+end
+
+this.firearms = {}
+this.firearms.Pistol = {}
+this.firearms.Pistol.BreaksInto = { 'PistolReceiver', 'PistolSlide' }
+this.firearms.Pistol.SaveTypeIn = 'PistolReceiver'
+this.firearms.Pistol.FallbackType = 'Base.Pistol'
+
+this.getFirearmModel = function(modelName)
+	return this.firearms[modelName]
+end
+
+this.parts = {}
+this.parts.PistolReceiver = {}
+this.parts.PistolReceiver.CombinesWith = 'PistolSlide'
+this.parts.PistolReceiver.FormsFirearm = 'Pistol'
+this.parts.PistolSlide = {}
+this.parts.PistolSlide.CombinesWith = 'PistolReceiver'
+this.parts.PistolSlide.Holds = { 'PistolBarrel' }
+this.parts.PistolBarrel = {}
+this.parts.PistolBarrel.InsertsInto = 'PistolSlide'
+
+this.getPartModel = function(modelName)
+	return this.parts[modelName]
 end
 
 return this

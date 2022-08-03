@@ -44,7 +44,7 @@ local checkInventoryItem = function(player, context, item)
 		--DisableOption(option, "Unable")
 		--end
 	elseif cat == 'FirearmPart' then
-		local model = FIELDSTRIP.getModel(item:getType())
+		local model = FIELDSTRIP.getPartModel(item:getType())
 		if not model then
 			return
 		end

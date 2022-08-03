@@ -58,24 +58,36 @@ function ISAssembleFirearmParts:perform()
 	self.character:getInventory():Remove(itemB)
 
 	-- get model
-	local modelA = FIELDSTRIP.getModel(typeA)
-	local modelB = FIELDSTRIP.getModel(typeB)
+	local modelA = FIELDSTRIP.getPartModel(typeA)
+	local modelB = FIELDSTRIP.getPartModel(typeB)
 
 	local dataA = getModData(itemA)
 	local dataB = getModData(itemB)
 
-	local resultType = modelA.Forms or modelB.Forms
+	local resultType -- the type we are producing
 
-	if resultType == 'Pistol' then
-		resultType = dataA.realFirearm or dataB.realFirearm
-		if not resultType then
-			resultType = 'Base.Pistol'
+	-- if we're building a firearm
+	if modelA.FormsFirearm or modelB.FormsFirearm then
+		-- grab the real firearm type
+		if modelA.FormsFirearm then
+			resultType = dataA.realFirearm
+		else
+			resultType = dataB.realFirearm
 		end
-	else
+		-- something went wrong, use default pistol type
+		if not resultType then
+			-- TODO: use default type for this model
+		end
+	-- if we're building a part
+	elseif modelA.FormsPart or modelB.FormsPart then
+		-- grab from either, should be the same
+		resultType = modelA.FormsPart or modelB.FormsPart
 		resultType = 'coavinsfieldstrip.' .. resultType
 	end
 
+	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
+	-- set condition equal to first part's condition
 	resultItem:setCondition(itemA:getCondition())
 
 	self.character:setPrimaryHandItem(nil);
