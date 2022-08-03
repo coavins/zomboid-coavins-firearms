@@ -11,13 +11,13 @@ this.revolvers["Revolver_Short"] = true
 this.revolvers["Revolver_Long"] = true
 
 this.parts = {}
-this.parts["PistolReceiver"] = true
+this.parts["PistolFrame"] = true
 this.parts["PistolSlide"] = true
 this.parts["PistolBarrel"] = true
 
 this.match = {}
-this.match["PistolReceiver"] = { "PistolSlide" }
-this.match["PistolSlide"] = { "PistolReceiver", "PistolBarrel" }
+this.match["PistolFrame"] = { "PistolSlide" }
+this.match["PistolSlide"] = { "PistolFrame", "PistolBarrel" }
 this.match["PistolBarrel"] = { "PistolSlide" }
 
 local isInTable = function(table, type)

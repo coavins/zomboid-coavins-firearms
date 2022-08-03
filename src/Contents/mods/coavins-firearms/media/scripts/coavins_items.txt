@@ -3,11 +3,11 @@ module coavinsfirearms {
 		Base
 	}
 
-	item PistolReceiver {
-		DisplayName = Pistol Receiver,
+	item PistolFrame {
+		DisplayName = Pistol Frame,
 		DisplayCategory = WeaponPart,
 		Type = Normal,
-		Icon = PistolReceiver,
+		Icon = PistolFrame,
 		Weight = 0.4,
 		ConditionMax = 10
 	}
