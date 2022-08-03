@@ -7,13 +7,6 @@ local function predicateNotBroken(item)
 	return not item:isBroken()
 end
 
-local function getModData(item)
-	if not item:getModData().coavinsfieldstrip then
-		item:getModData().coavinsfieldstrip = {}
-	end
-	return item:getModData().coavinsfieldstrip
-end
-
 function ISDisassembleFirearm:isValid()
 	if not self.character:getInventory():contains(self.firearm)
 	then
@@ -49,26 +42,39 @@ function ISDisassembleFirearm:perform()
 	self.character:getInventory():Remove(fItem)
 
 	-- get firearm mod data
-	local c = getModData(fItem)
+	local fData = FIELDSTRIP.getModData(fItem)
 
 	-- get model
 	local model = FIELDSTRIP.getFirearmModel(FIELDSTRIP.getFirearmModelForType(fType))
 
 	-- give parts
-	for i,k in ipairs(model.BreaksInto) do
+	for _,k in ipairs(model.BreaksInto) do
 		local pType = 'coavinsfieldstrip.' .. k
-		local part = self.character:getInventory():AddItem(pType)
+		local pItem = self.character:getInventory():AddItem(pType)
+		local pData = FIELDSTRIP.getModData(pItem)
 
 		-- Receiver must hold some characteristics of the original item
 		if k == model.SaveTypeIn then
-			part:setName(fItem:getName() .. ' (Frame)')
-			getModData(part).realFirearm = fType
+			pItem:setName(fItem:getName() .. ' (Frame)')
+			pData.realFirearm = fType
 		end
 
-		if c[i] then
-			part:setCondition(c[i].condition)
+		local data = nil
+		if fData.parts then
+			data = fData.parts[k]
+		end
+
+		if data then
+			-- copy data to new part
+			local newData = FIELDSTRIP.tableDeepCopy(data)
+			pData.parts = newData.parts
+
+			-- set condition
+			pItem:setCondition(data.condition)
 		else
-			part:setCondition(fItem:getCondition())
+			-- no data, this firearm hasn't been disassembled before
+			pData.parts = {}
+			pItem:setCondition(fItem:getCondition())
 		end
 	end
 
@@ -88,5 +94,5 @@ function ISDisassembleFirearm:new(character, firearm, time)
 	if character:isTimedActionInstant() then
 			o.maxTime = 1
 	end
-	return o;
+	return o
 end

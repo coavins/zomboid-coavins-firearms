@@ -41,6 +41,13 @@
 
 ## ?
 
+# Operations
+
+* A + B -> C
+* C -> A & B
+* A + B = A(B)
+* A - B = A(_)
+
 # Comments
 
 so modData is saved client side, and recipes that have execute oncreates, will save things on clientside. you need to explicitly send commands to the server from the client, and something on the serverside to receive the commands to tell the server to modify the moddata. Then the oncreate would also need the same commands to the server get the info from the server to be able to get info back tot he client, so it can be used in the oncreate. This is if you want to have it working properly in multiplayer

@@ -23,6 +23,13 @@ local assembleFirearmParts = function(player, partA, partB)
 	ISTimedActionQueue.add(ISAssembleFirearmParts:new(player, partA, partB, 60*3))
 end
 
+local removePartFromPart = function(player, item, partName)
+	ISTimedActionQueue.add(ISRemoveFirearmPart:new(player, item, partName, 60*2))
+end
+
+local installFirearmPart = function(player, item, part)
+end
+
 local checkInventoryItem = function(player, context, item)
 	local type = item:getFullType() -- Base.Pistol
 	if not type then
@@ -49,21 +56,62 @@ local checkInventoryItem = function(player, context, item)
 			return
 		end
 
-		local subMenu = context:getNew(context)
-		local doAssemble = false
+		-- if this item can be combined with another part
+		if model.CombinesWith then
+			local subMenu = context:getNew(context)
+			local doSubMenu = false
 
-		-- for each type that is compatible with this item
-		local parts = player:getInventory():getAllTypeRecurse(model.CombinesWith)
-		-- for each item of this type
-		for k=0, parts:size() - 1 do
-			local part = parts:get(k)
-			subMenu:addOption(part:getName(), player, assembleFirearmParts, item, part)
-			doAssemble = true
+			-- for each type that is compatible with this item
+			local parts = player:getInventory():getAllTypeRecurse(model.CombinesWith)
+			-- for each item of this type
+			for k=0, parts:size() - 1 do
+				local part = parts:get(k)
+				subMenu:addOption(part:getName(), player, assembleFirearmParts, item, part)
+				doSubMenu = true
+			end
+
+			-- we have something to combine with
+			if doSubMenu then
+				local assembleOption = context:addOption(getText("ContextMenu_Firearm_Assemble"), item, nil)
+				context:addSubMenu(assembleOption, subMenu)
+			end
 		end
 
-		if doAssemble then
-			local assembleOption = context:addOption(getText("ContextMenu_Firearm_Assemble"), item, nil)
-			context:addSubMenu(assembleOption, subMenu)
+		-- if something can be removed from this item
+		if model.Holds then
+			local subMenuInstall = context:getNew(context)
+			local doInstall = false
+			local subMenuRemove = context:getNew(context)
+			local doRemove = false
+			local data = FIELDSTRIP.getModData(item)
+
+			-- for each part this item can hold
+			for _,heldPart in ipairs(model.Holds) do
+				if data[heldPart] then
+					-- Add option to remove this part
+					subMenuRemove:addOption(heldPart, player, removePartFromPart, item, heldPart)
+					doRemove = true
+				else
+					-- Add option to install, if we have a matching part
+					local parts = player:getInventory():getAllTypeRecurse(heldPart)
+					-- for each item of this type
+					for k=0, parts:size() - 1 do
+						local part = parts:get(k)
+						subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
+						doInstall = true
+					end
+				end
+			end
+
+			if doInstall then
+				local subOptionInstall = context:addOption(getText("ContextMenu_Firearm_InstallComponent"), item, nil)
+				context:addSubMenu(subOptionInstall, subMenuInstall)
+			end
+
+			if doRemove then
+				local subOptionRemove = context:addOption(getText("ContextMenu_Firearm_RemoveComponent"), item, nil)
+				context:addSubMenu(subOptionRemove, subMenuRemove)
+			end
 		end
 	end
 end

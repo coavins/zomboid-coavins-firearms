@@ -7,13 +7,6 @@ local function predicateNotBroken(item)
 	return not item:isBroken()
 end
 
-local function getModData(item)
-	if not item:getModData().coavinsfieldstrip then
-		item:getModData().coavinsfieldstrip = {}
-	end
-	return item:getModData().coavinsfieldstrip
-end
-
 function ISAssembleFirearmParts:isValid()
 	if not self.character:getInventory():contains(self.partA)
 	or not self.character:getInventory():contains(self.partB)
@@ -61,8 +54,8 @@ function ISAssembleFirearmParts:perform()
 	local modelA = FIELDSTRIP.getPartModel(typeA)
 	local modelB = FIELDSTRIP.getPartModel(typeB)
 
-	local dataA = getModData(itemA)
-	local dataB = getModData(itemB)
+	local dataA = FIELDSTRIP.getModData(itemA)
+	local dataB = FIELDSTRIP.getModData(itemB)
 
 	local resultType -- the type we are producing
 
@@ -88,6 +81,7 @@ function ISAssembleFirearmParts:perform()
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
 	-- set condition equal to first part's condition
+	-- TODO: condition of the firearm should set to the average of condition of all its parts
 	resultItem:setCondition(itemA:getCondition())
 
 	self.character:setPrimaryHandItem(nil);
