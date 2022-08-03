@@ -5,7 +5,7 @@ module coavinsfirearms {
 
 	item PistolReceiver {
 		DisplayName = Pistol Receiver,
-		DisplayCategory = WeaponParts,
+		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolReceiver,
 		Weight = 0.4
@@ -13,7 +13,7 @@ module coavinsfirearms {
 
 	item PistolSlide {
 		DisplayName = Pistol Slide,
-		DisplayCategory = WeaponParts,
+		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolSlide,
 		Weight = 0.3
@@ -21,7 +21,7 @@ module coavinsfirearms {
 
 	item PistolBarrel {
 		DisplayName = Pistol Barrel,
-		DisplayCategory = WeaponParts,
+		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolBarrel,
 		Weight = 0.3

@@ -1,5 +1,5 @@
 require "ISUI/ISToolTip"
-require "TimedActions/ISBaseTimedAction"
+local TEARDOWN = require('coavins-firearms/FirearmTeardown')
 
 local function newToolTip()
 	local toolTip = ISToolTip:new();
@@ -15,47 +15,8 @@ local function DisableOption(option, text)
 	option.toolTip = tooltip;
 end
 
-local pistols = {}
-pistols["Pistol"] = true
-pistols["Pistol2"] = true
-pistols["Pistol3"] = true
-
-local revolvers = {}
-revolvers["Revolver"] = true
-revolvers["Revolver_Short"] = true
-revolvers["Revolver_Long"] = true
-
-local isInTable = function(table, type)
-	if table[type] then
-		return true
-	else
-		return false
-	end
-end
-
-local isPistol = function(type)
-	return isInTable(pistols, type)
-end
-
-local isRevolver = function(type)
-	return isInTable(revolvers, type)
-end
-
-local isValidFirearm = function(type)
-	if isPistol(type)
-	or isRevolver(type)
-	then
-		return true
-	else
-		return false
-	end
-end
-
 local disassembleFirearm = function(player, item)
-	player:getInventory():Remove(item)
-	player:getInventory():AddItem("Coavins.PistolReceiver")
-	player:getInventory():AddItem("Coavins.PistolSlide")
-	player:getInventory():AddItem("Coavins.PistolBarrel")
+	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, 60*4))
 end
 
 local checkInventoryItem = function(player, context, item)
@@ -69,11 +30,11 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if not isValidFirearm(type) then
+	if not TEARDOWN.isValidFirearm(type) then
 		return
 	end
 
-	local option = context:addOption("Field Strip", player, disassembleFirearm, type, item)
+	local option = context:addOption("Field Strip", player, disassembleFirearm, item)
 	--if not isItemValid(player, type, item) then
 	--DisableOption(option, "Unable")
 	--end
