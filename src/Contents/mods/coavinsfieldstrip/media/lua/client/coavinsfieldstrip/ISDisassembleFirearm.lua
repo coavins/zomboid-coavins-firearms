@@ -40,9 +40,9 @@ function ISDisassembleFirearm:perform()
 
 	local condition = self.firearm:getCondition()
 
-	-- give receiver
-	local receiver = self.character:getInventory():AddItem("coavinsfieldstrip.PistolReceiver")
-	receiver:setCondition(condition)
+	-- give frame
+	local frame = self.character:getInventory():AddItem("coavinsfieldstrip.PistolFrame")
+	frame:setCondition(condition)
 
 	-- give slide
 	local slide = self.character:getInventory():AddItem("coavinsfieldstrip.PistolSlide")
