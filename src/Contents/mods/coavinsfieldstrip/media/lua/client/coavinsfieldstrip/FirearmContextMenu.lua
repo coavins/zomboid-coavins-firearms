@@ -16,15 +16,15 @@ local function DisableOption(option, text)
 end
 
 local disassembleFirearm = function(player, item)
-	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, 60*4))
+	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, 60*2))
 end
 
-local assembleFirearmParts = function(partA, partB)
-	-- assemble parts
+local assembleFirearmParts = function(player, partA, partB)
+	ISTimedActionQueue.add(ISAssembleFirearmParts:new(player, partA, partB, 60*3))
 end
 
 local checkInventoryItem = function(player, context, item)
-	local type = item:getType() -- Base.Pistol
+	local type = item:getFullType() -- Base.Pistol
 	if not type then
 		return
 	end
@@ -44,7 +44,7 @@ local checkInventoryItem = function(player, context, item)
 		--DisableOption(option, "Unable")
 		--end
 	elseif cat == 'FirearmPart' then
-		local model = FIELDSTRIP.getModel(type)
+		local model = FIELDSTRIP.getModel(item:getType())
 		if not model then
 			return
 		end
@@ -57,7 +57,7 @@ local checkInventoryItem = function(player, context, item)
 		-- for each item of this type
 		for k=0, parts:size() - 1 do
 			local part = parts:get(k)
-			subMenu:addOption(part:getName(), item, assembleFirearmParts, part)
+			subMenu:addOption(part:getName(), player, assembleFirearmParts, item, part)
 			doAssemble = true
 		end
 
@@ -70,7 +70,7 @@ end
 
 local populateContextMenu = function(playerId, context, items)
 	local player = getSpecificPlayer(playerId)
-	
+
 	items = ISInventoryPane.getActualItems(items)
 
 	for _,k in pairs(items) do

@@ -41,7 +41,7 @@ end
 
 function ISDisassembleFirearm:perform()
 	local fItem = self.firearm
-	local fType = fItem:getType()
+	local fType = fItem:getFullType()
 
 	fItem:setJobDelta(0.0)
 

@@ -2,9 +2,9 @@ local this = {}
 
 -- indicates which model is used for each firearm in the game
 this.typeModels = {}
-this.typeModels["Pistol"] = "Pistol"
-this.typeModels["Pistol2"] = "Pistol"
-this.typeModels["Pistol3"] = "Pistol"
+this.typeModels["Base.Pistol"] = "Pistol"
+this.typeModels["Base.Pistol2"] = "Pistol"
+this.typeModels["Base.Pistol3"] = "Pistol"
 --this.typeModels["Revolver"] = "revolver"
 --this.typeModels["Revolver_Short"] = "revolver"
 --this.typeModels["Revolver_Long"] = "revolver"
