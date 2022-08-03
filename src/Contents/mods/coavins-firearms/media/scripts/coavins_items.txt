@@ -8,7 +8,8 @@ module coavinsfirearms {
 		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolReceiver,
-		Weight = 0.4
+		Weight = 0.4,
+		ConditionMax = 10
 	}
 
 	item PistolSlide {
@@ -16,7 +17,8 @@ module coavinsfirearms {
 		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolSlide,
-		Weight = 0.3
+		Weight = 0.3,
+		ConditionMax = 10
 	}
 
 	item PistolBarrel {
@@ -24,6 +26,7 @@ module coavinsfirearms {
 		DisplayCategory = WeaponPart,
 		Type = Normal,
 		Icon = PistolBarrel,
-		Weight = 0.3
+		Weight = 0.3,
+		ConditionMax = 10
 	}
 }

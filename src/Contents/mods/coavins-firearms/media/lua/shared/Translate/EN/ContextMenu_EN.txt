@@ -1,3 +1,4 @@
 ContextMenu_EN = {
-	ContextMenu_Firearm_Disassemble = "Field Strip"
+	ContextMenu_Firearm_Disassemble = "Field Strip",
+	ContextMenu_Firearm_Reassemble = "Assemble Parts"
 }

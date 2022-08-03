@@ -1,5 +1,5 @@
 require "ISUI/ISToolTip"
-local TEARDOWN = require('coavins-firearms/FirearmTeardown')
+local ASSEMBLY = require('coavins-firearms/FirearmsAssembly')
 
 local function newToolTip()
 	local toolTip = ISToolTip:new();
@@ -30,7 +30,7 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if not TEARDOWN.isValidFirearm(type) then
+	if not ASSEMBLY.isValidFirearm(type) then
 		return
 	end
 
