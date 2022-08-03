@@ -87,7 +87,7 @@ local checkInventoryItem = function(player, context, item)
 
 			-- for each part this item can hold
 			for _,heldPart in ipairs(model.Holds) do
-				if data[heldPart] then
+				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
 					subMenuRemove:addOption(heldPart, player, removePartFromPart, item, heldPart)
 					doRemove = true

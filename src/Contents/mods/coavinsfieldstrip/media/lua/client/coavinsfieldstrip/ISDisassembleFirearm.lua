@@ -51,6 +51,7 @@ function ISDisassembleFirearm:perform()
 	for _,k in ipairs(model.BreaksInto) do
 		local pType = 'coavinsfieldstrip.' .. k
 		local pItem = self.character:getInventory():AddItem(pType)
+		local pModel = FIELDSTRIP.getPartModel(k)
 		local pData = FIELDSTRIP.getModData(pItem)
 
 		-- Receiver must hold some characteristics of the original item
@@ -73,7 +74,16 @@ function ISDisassembleFirearm:perform()
 			pItem:setCondition(data.condition)
 		else
 			-- no data, this firearm hasn't been disassembled before
+			-- just make it be holding the parts necessary for it to function
 			pData.parts = {}
+			if pModel.Holds then
+				for _,j in ipairs(pModel.Holds) do
+					pData.parts[j] = {}
+					pData.parts[j].condition = 10
+				end
+			end
+
+			-- set this part to the firearm's part
 			pItem:setCondition(fItem:getCondition())
 		end
 	end

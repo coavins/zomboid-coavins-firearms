@@ -43,11 +43,11 @@ function ISRemoveFirearmPart:perform()
 	local pData = FIELDSTRIP.getModData(pItem)
 
 	-- get model
-	local pModel = FIELDSTRIP.getPartModel(pType)
+	--local pModel = FIELDSTRIP.getPartModel(pType)
 
-	-- give parts
-	if pData[target] then
-		local t = pData[target]
+	local heldParts = pData.parts
+	if heldParts and heldParts[target] then
+		local t = heldParts[target]
 
 		local tType = 'coavinsfieldstrip.' .. target
 		local tItem = self.character:getInventory():AddItem(tType)
@@ -56,7 +56,7 @@ function ISRemoveFirearmPart:perform()
 			tItem:setCondition(pData.condition)
 		end
 
-		pData[target] = nil
+		heldParts[target] = nil
 	end
 
 	-- needed to remove from queue / start next.
