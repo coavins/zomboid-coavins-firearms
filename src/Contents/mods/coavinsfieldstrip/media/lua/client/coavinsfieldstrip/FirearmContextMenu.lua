@@ -90,7 +90,7 @@ local checkInventoryItem = function(player, context, item)
 			for _,heldPart in ipairs(model.Holds) do
 				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
-					subMenuRemove:addOption(heldPart, player, removePartFromPart, item, heldPart)
+					subMenuRemove:addOption(getText("ItemName_coavinsfieldstrip." .. heldPart), player, removePartFromPart, item, heldPart)
 					doRemove = true
 				else
 					-- Add option to install, if we have a matching part
