@@ -38,42 +38,41 @@ function ISDisassembleFirearm:perform()
 	-- remove firearm
 	self.character:getInventory():Remove(self.firearm)
 
-	local condition = self.firearm:getCondition()
+	-- create components table if not already exist
+	if not self.firearm:getModData().firearmcomponents then
+		self.firearm:getModData().firearmcomponents = {}
+	end
+
+	local c = self.firearm:getModData().firearmcomponents
 
 	-- give frame
 	local frame = self.character:getInventory():AddItem("coavinsfieldstrip.PistolFrame")
-	frame:setCondition(condition)
+
+	-- set name to reflect original firearm
+	frame:setName(self.firearm:getName() .. ' (Frame)')
+	-- remember type for original firearm
+	frame:getModData().realFirearm = self.firearm:getType()
+
+	-- set condition
+	if c.frame then
+		-- use condition that was saved previously
+		frame:setCondition(c.frame.condition)
+	else
+		-- no saved data found, just use the condition of the firearm
+		frame:setCondition(self.firearm:getCondition())
+	end
 
 	-- give slide
 	local slide = self.character:getInventory():AddItem("coavinsfieldstrip.PistolSlide")
-	slide:setCondition(condition)
 
-	--[[
-	-- create components table if not already exist
-	if not self.firearm.components then
-		self.firearm.components = {}
-	end
-
-	-- give receiver
-	if self.firearm.components.receiver then
-		self.character.getInventory():AddItem(self.firearm.components.receiver)
+	-- set condition
+	if c.slide then
+		-- use condition that was saved previously
+		slide:setCondition(c.slide.condition)
 	else
-		-- add receiver to firearm if not already exist
-		local receiver = self.character:getInventory():AddItem("coavinsfirearms.PistolReceiver")
-		receiver.condition = self.firearm.condition
-		self.firearm.components.receiver = receiver
+		-- no saved data found, just use the condition of the firearm
+		slide:setCondition(self.firearm:getCondition())
 	end
-
-	-- give slide
-	if self.firearm.components.slide then
-		self.character.getInventory():AddItem(self.firearm.components.slide)
-	else
-		-- add slide to firearm if not already exist
-		local slide = self.character:getInventory():AddItem("coavinsfirearms.PistolSlide")
-		slide.condition = self.firearm.condition
-		self.firearm.components.slide = slide
-	end
-	]]
 
 	-- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);
