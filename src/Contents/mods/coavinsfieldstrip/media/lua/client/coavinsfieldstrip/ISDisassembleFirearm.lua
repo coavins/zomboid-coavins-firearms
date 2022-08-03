@@ -1,4 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
+local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
 
 ISDisassembleFirearm = ISBaseTimedAction:derive("ISDisassembleFirearm");
 
@@ -40,11 +41,11 @@ function ISDisassembleFirearm:perform()
 	local condition = self.firearm:getCondition()
 
 	-- give receiver
-	local receiver = self.character:getInventory():AddItem("coavinsfirearms.PistolReceiver")
+	local receiver = self.character:getInventory():AddItem("coavinsfieldstrip.PistolReceiver")
 	receiver:setCondition(condition)
 
 	-- give slide
-	local slide = self.character:getInventory():AddItem("coavinsfirearms.PistolSlide")
+	local slide = self.character:getInventory():AddItem("coavinsfieldstrip.PistolSlide")
 	slide:setCondition(condition)
 
 	--[[

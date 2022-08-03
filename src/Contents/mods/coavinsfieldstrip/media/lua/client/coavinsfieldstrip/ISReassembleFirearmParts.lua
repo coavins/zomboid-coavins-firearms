@@ -1,5 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
-local ASSEMBLY = require('coavins-firearms/FirearmsAssembly')
+local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
 
 ISReassembleFirearmParts = ISBaseTimedAction:derive("ISReassembleFirearmParts");
 

@@ -1,5 +1,5 @@
 require "ISUI/ISToolTip"
-local ASSEMBLY = require('coavins-firearms/FirearmsAssembly')
+local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
 
 local function newToolTip()
 	local toolTip = ISToolTip:new();
@@ -34,15 +34,15 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if ASSEMBLY.isValidFirearm(type) then
+	if FIELDSTRIP.isValidFirearm(type) then
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
 		--end
-	elseif ASSEMBLY.isValidFirearmPart(type) then
+	elseif FIELDSTRIP.isValidFirearmPart(type) then
 		local subMenu = context:getNew(context)
 
-		local types = ASSEMBLY.getCompatibleParts(type)
+		local types = FIELDSTRIP.getCompatibleParts(type)
 		-- for each type that is compatible with this item
 		for _,i in ipairs(types) do
 			local parts = player:getInventory():getAllTypeRecurse(i)
