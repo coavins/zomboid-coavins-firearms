@@ -1,0 +1,12 @@
+{
+	"Lua.diagnostics.globals": [
+		"ISTimedActionQueue",
+		"getText",
+		"getSpecificPlayer",
+		"ISInventoryPane",
+		"Events",
+		"ISToolTip",
+		"ISBaseTimedAction",
+		"Metabolics"
+	]
+}
