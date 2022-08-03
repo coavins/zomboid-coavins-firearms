@@ -1,0 +1,29 @@
+module Coavins {
+	imports {
+		Base
+	}
+
+	item PistolReceiver {
+		DisplayName = Pistol Receiver,
+		DisplayCategory = WeaponParts,
+		Type = Normal,
+		Icon = Item_Coavins_PistolReceiver.png,
+		Weight = 0.4
+	}
+
+	item PistolSlide {
+		DisplayName = Pistol Slide,
+		DisplayCategory = WeaponParts,
+		Type = Normal,
+		Icon = Item_Coavins_PistolSlide.png,
+		Weight = 0.3
+	}
+
+	item PistolBarrel {
+		DisplayName = Pistol Barrel,
+		DisplayCategory = WeaponParts,
+		Type = Normal,
+		Icon = Item_Coavins_PistolBarrel.png,
+		Weight = 0.3
+	}
+}

@@ -1,0 +1,3 @@
+IGUI_EN = {
+	IGUI_ItemCat_WeaponParts = "Weapon Parts",
+}
