@@ -25,8 +25,12 @@ end
 
 local checkInventoryItem = function(player, context, item)
 	local type = item:getType() -- Base.Pistol
-
 	if not type then
+		return
+	end
+
+	local cat = item:getDisplayCategory() -- Weapon
+	if not cat then
 		return
 	end
 
@@ -34,27 +38,33 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if FIELDSTRIP.isValidFirearm(type) then
+	if cat == 'Weapon' and FIELDSTRIP.getFirearmModelForType(type) then
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
 		--end
-	elseif FIELDSTRIP.isValidFirearmPart(type) then
-		local subMenu = context:getNew(context)
-
-		local types = FIELDSTRIP.getCompatibleParts(type)
-		-- for each type that is compatible with this item
-		for _,i in ipairs(types) do
-			local parts = player:getInventory():getAllTypeRecurse(i)
-			-- for each item of this type
-			for k=0, parts:size() - 1 do
-				local part = parts:get(k)
-				subMenu:addOption(part:getName(), item, assembleFirearmParts, part)
-			end
+	elseif cat == 'FirearmPart' then
+		local model = FIELDSTRIP.getModel(type)
+		if not model then
+			return
 		end
 
-		local assembleOption = context:addOption(getText("ContextMenu_Firearm_Assemble"), item, nil)
-		context:addSubMenu(assembleOption, subMenu)
+		local subMenu = context:getNew(context)
+		local doAssemble = false
+
+		-- for each type that is compatible with this item
+		local parts = player:getInventory():getAllTypeRecurse(model.CombinesWith)
+		-- for each item of this type
+		for k=0, parts:size() - 1 do
+			local part = parts:get(k)
+			subMenu:addOption(part:getName(), item, assembleFirearmParts, part)
+			doAssemble = true
+		end
+
+		if doAssemble then
+			local assembleOption = context:addOption(getText("ContextMenu_Firearm_Assemble"), item, nil)
+			context:addSubMenu(assembleOption, subMenu)
+		end
 	end
 end
 

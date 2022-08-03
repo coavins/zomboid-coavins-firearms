@@ -1,57 +1,35 @@
 local this = {}
 
-this.pistols = {}
-this.pistols["Pistol"] = true
-this.pistols["Pistol2"] = true
-this.pistols["Pistol3"] = true
+-- indicates which model is used for each firearm in the game
+this.typeModels = {}
+this.typeModels["Pistol"] = "Pistol"
+this.typeModels["Pistol2"] = "Pistol"
+this.typeModels["Pistol3"] = "Pistol"
+--this.typeModels["Revolver"] = "revolver"
+--this.typeModels["Revolver_Short"] = "revolver"
+--this.typeModels["Revolver_Long"] = "revolver"
 
-this.revolvers = {}
-this.revolvers["Revolver"] = true
-this.revolvers["Revolver_Short"] = true
-this.revolvers["Revolver_Long"] = true
+this.models = {}
 
-this.parts = {}
-this.parts["PistolFrame"] = true
-this.parts["PistolSlide"] = true
-this.parts["PistolBarrel"] = true
-
-this.match = {}
-this.match["PistolFrame"] = { "PistolSlide" }
-this.match["PistolSlide"] = { "PistolFrame", "PistolBarrel" }
-this.match["PistolBarrel"] = { "PistolSlide" }
-
-local isInTable = function(table, type)
-	if table[type] then
-		return true
-	else
-		return false
-	end
+this.getModel = function(modelName)
+	return this.models[modelName]
 end
 
-this.isPistol = function(type)
-	return isInTable(this.pistols, type)
-end
+this.models.Pistol = {}
+this.models.Pistol.BreaksInto = { 'PistolReceiver', 'PistolSlide' }
+this.models.Pistol.SaveTypeIn = 'PistolReceiver'
+this.models.PistolReceiver = {}
+this.models.PistolReceiver.CombinesWith = 'PistolSlide'
+this.models.PistolReceiver.Forms = 'Pistol'
+this.models.PistolSlide = {}
+this.models.PistolSlide.CombinesWith = 'PistolReceiver'
+this.models.PistolSlide.Forms = 'Pistol'
+this.models.PistolSlide.Holds = { 'PistolBarrel' }
+this.models.PistolBarrel = {}
+this.models.PistolBarrel.InsertsInto = 'PistolSlide'
 
-this.isRevolver = function(type)
-	return isInTable(this.revolvers, type)
-end
-
-this.isValidFirearm = function(type)
-	if this.isPistol(type)
-	or this.isRevolver(type)
-	then
-		return true
-	else
-		return false
-	end
-end
-
-this.isValidFirearmPart = function(type)
-	return isInTable(this.parts, type)
-end
-
-this.getCompatibleParts = function(type)
-	return this.match[type]
+this.getFirearmModelForType = function(type)
+	return this.typeModels[type]
 end
 
 return this

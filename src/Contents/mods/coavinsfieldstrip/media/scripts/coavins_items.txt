@@ -3,18 +3,18 @@ module coavinsfieldstrip {
 		Base
 	}
 
-	item PistolFrame {
+	item PistolReceiver {
 		DisplayName = Pistol Frame,
-		DisplayCategory = WeaponPart,
+		DisplayCategory = FirearmPart,
 		Type = Normal,
-		Icon = PistolFrame,
+		Icon = PistolReceiver,
 		Weight = 0.4,
 		ConditionMax = 10
 	}
 
 	item PistolSlide {
 		DisplayName = Pistol Slide,
-		DisplayCategory = WeaponPart,
+		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = PistolSlide,
 		Weight = 0.3,
@@ -23,7 +23,7 @@ module coavinsfieldstrip {
 
 	item PistolBarrel {
 		DisplayName = Pistol Barrel,
-		DisplayCategory = WeaponPart,
+		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = PistolBarrel,
 		Weight = 0.3,
