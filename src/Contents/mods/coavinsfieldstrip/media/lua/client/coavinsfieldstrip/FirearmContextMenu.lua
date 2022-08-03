@@ -46,7 +46,7 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if cat == 'Weapon' and FIELDSTRIP.getFirearmModelForType(type) then
+	if cat == 'Weapon' and FIELDSTRIP.getFirearmModelNameForFullType(type) then
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")

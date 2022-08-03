@@ -34,58 +34,27 @@ end
 
 function ISDisassembleFirearm:perform()
 	local fItem = self.firearm
-	local fType = fItem:getFullType()
+	local fFullType = fItem:getFullType()
+	local fModel = FIELDSTRIP.getFirearmModelForFullType(fFullType)
 
 	fItem:setJobDelta(0.0)
 
 	-- remove firearm from inventory
 	self.character:getInventory():Remove(fItem)
 
-	-- get firearm mod data
-	local fData = FIELDSTRIP.getModData(fItem)
-
-	-- get model
-	local model = FIELDSTRIP.getFirearmModel(FIELDSTRIP.getFirearmModelForType(fType))
-
-	-- give parts
-	for _,k in ipairs(model.BreaksInto) do
+	-- add components to inventory
+	for _,k in ipairs(fModel.BreaksInto) do
 		local pType = 'coavinsfieldstrip.' .. k
 		local pItem = self.character:getInventory():AddItem(pType)
-		local pModel = FIELDSTRIP.getPartModel(k)
 		local pData = FIELDSTRIP.getModData(pItem)
 
 		-- Receiver must hold some characteristics of the original item
-		if k == model.SaveTypeIn then
+		if k == fModel.SaveTypeIn then
 			pItem:setName(fItem:getName() .. ' (Frame)')
-			pData.realFirearm = fType
+			pData.realFirearm = fFullType
 		end
 
-		local data = nil
-		if fData.parts then
-			data = fData.parts[k]
-		end
-
-		if data then
-			-- copy data to new part
-			local newData = FIELDSTRIP.tableDeepCopy(data)
-			pData.parts = newData.parts
-
-			-- set condition
-			pItem:setCondition(data.condition)
-		else
-			-- no data, this firearm hasn't been disassembled before
-			-- just make it be holding the parts necessary for it to function
-			pData.parts = {}
-			if pModel.Holds then
-				for _,j in ipairs(pModel.Holds) do
-					pData.parts[j] = {}
-					pData.parts[j].condition = 10
-				end
-			end
-
-			-- set this part to the firearm's part
-			pItem:setCondition(fItem:getCondition())
-		end
+		FIELDSTRIP.copyDataFromParent(fItem, pItem)
 	end
 
 	-- needed to remove from queue / start next.

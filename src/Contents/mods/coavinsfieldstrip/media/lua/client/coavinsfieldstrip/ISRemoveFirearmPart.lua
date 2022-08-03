@@ -34,7 +34,6 @@ end
 
 function ISRemoveFirearmPart:perform()
 	local pItem = self.part
-	local pType = pItem:getType()
 	local target = self.partToRemove
 
 	pItem:setJobDelta(0.0)
@@ -42,20 +41,14 @@ function ISRemoveFirearmPart:perform()
 	-- get mod data
 	local pData = FIELDSTRIP.getModData(pItem)
 
-	-- get model
-	--local pModel = FIELDSTRIP.getPartModel(pType)
-
 	local heldParts = pData.parts
 	if heldParts and heldParts[target] then
-		local t = heldParts[target]
-
 		local tType = 'coavinsfieldstrip.' .. target
 		local tItem = self.character:getInventory():AddItem(tType)
 
-		if t then
-			tItem:setCondition(pData.condition)
-		end
+		FIELDSTRIP.copyDataFromParent(pItem, tItem)
 
+		-- remove this part from parent
 		heldParts[target] = nil
 	end
 
