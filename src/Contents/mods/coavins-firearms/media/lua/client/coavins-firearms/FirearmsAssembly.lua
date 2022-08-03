@@ -10,6 +10,16 @@ this.revolvers["Revolver"] = true
 this.revolvers["Revolver_Short"] = true
 this.revolvers["Revolver_Long"] = true
 
+this.parts = {}
+this.parts["PistolReceiver"] = true
+this.parts["PistolSlide"] = true
+this.parts["PistolBarrel"] = true
+
+this.match = {}
+this.match["PistolReceiver"] = { "PistolSlide" }
+this.match["PistolSlide"] = { "PistolReceiver", "PistolBarrel" }
+this.match["PistolBarrel"] = { "PistolSlide" }
+
 local isInTable = function(table, type)
 	if table[type] then
 		return true
@@ -36,5 +46,12 @@ this.isValidFirearm = function(type)
 	end
 end
 
+this.isValidFirearmPart = function(type)
+	return isInTable(this.parts, type)
+end
+
+this.getCompatibleParts = function(type)
+	return this.match[type]
+end
 
 return this
