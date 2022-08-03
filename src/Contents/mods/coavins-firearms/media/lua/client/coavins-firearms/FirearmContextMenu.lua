@@ -34,7 +34,7 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	local option = context:addOption("Field Strip", player, disassembleFirearm, item)
+	local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 	--if not isItemValid(player, type, item) then
 	--DisableOption(option, "Unable")
 	--end
