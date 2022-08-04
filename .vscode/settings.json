@@ -7,6 +7,9 @@
 		"Events",
 		"ISToolTip",
 		"ISBaseTimedAction",
-		"Metabolics"
+		"Metabolics",
+		"ISFixAction",
+		"instanceof",
+		"getItemNameFromFullType"
 	]
 }
