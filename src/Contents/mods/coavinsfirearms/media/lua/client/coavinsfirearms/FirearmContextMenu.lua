@@ -2,16 +2,17 @@ require "ISUI/ISToolTip"
 local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 local function newToolTip()
-	local toolTip = ISToolTip:new();
-	toolTip:initialise();
-	toolTip:setVisible(false);
-	return toolTip;
+	local toolTip = ISToolTip:new()
+	toolTip:initialise()
+	toolTip:setVisible(false)
+	return toolTip
 end
 
-local function AddTooltip(option, text)
-	local tooltip = newToolTip();
-	tooltip.description = text;
-	option.toolTip = tooltip;
+local function AddTooltip(option, text, name)
+	local tooltip = newToolTip()
+	tooltip.description = text
+	tooltip.name = name
+	option.toolTip = tooltip
 end
 
 local function DisableOption(option, text)
@@ -89,6 +90,10 @@ local checkInventoryItem = function(player, context, item)
 			local subMenuRemove = context:getNew(context)
 			local doRemove = false
 			local data = FIREARMS.getModData(item)
+
+			-- add info
+			local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
+			AddTooltip(infoOption, FIREARMS.getTooltipText(item))
 
 			-- for each part this item can hold
 			for _,heldPart in ipairs(model.Holds) do

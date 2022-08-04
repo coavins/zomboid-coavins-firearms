@@ -168,6 +168,38 @@ this.updateFirearmCondition = function(item, conditionDamage)
 	item:setCondition(lowestCondition)
 end
 
+this.getNameForPart = function(part)
+	return getItemNameFromFullType('coavinsfirearms.' .. part)
+end
+
+this.getTooltipText = function(item)
+	local type = item:getType()
+	local model = this.getPartModel(type)
+	local data = this.getModData(item)
+	local text = ''
+
+	if not data.parts then
+		data.parts = {}
+		data.parts[type] = this.initializeDataForPart(type)
+	end
+
+	if model.Holds and data.parts then
+		for _,part in ipairs(model.Holds) do
+			local installedPart = data.parts[part]
+			if text ~= '' then
+				text = text .. ' <LINE> '
+			end
+			if installedPart then
+				text = text .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_Installed')
+			else
+				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
+			end
+		end
+	end
+
+	return text
+end
+
 this.copyDataFromParent = function(parentItem, childItem)
 	local parentData = this.getModData(parentItem)
 	local childType = childItem:getType()

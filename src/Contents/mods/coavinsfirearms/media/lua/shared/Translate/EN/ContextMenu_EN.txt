@@ -1,6 +1,9 @@
 ContextMenu_EN = {
 	ContextMenu_Firearm_Disassemble = "Disassemble",
-	ContextMenu_Firearm_Assemble = "Assemble",
+	ContextMenu_Firearm_Assemble = "Assemble Firearm",
+	ContextMenu_Firearm_AssemblyInfo = "Part Info",
 	ContextMenu_Firearm_RemoveComponent = "Remove Component",
-	ContextMenu_Firearm_InstallComponent = "Install Component"
+	ContextMenu_Firearm_InstallComponent = "Install Component",
+	ContextMenu_Firearm_Installed = "Installed",
+	ContextMenu_Firearm_NotInstalled = "Not Installed",
 }
