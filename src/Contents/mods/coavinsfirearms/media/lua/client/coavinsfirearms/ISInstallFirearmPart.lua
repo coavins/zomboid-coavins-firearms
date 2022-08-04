@@ -10,6 +10,7 @@ end
 
 function ISInstallFirearmPart:isValid()
 	if not self.character:getInventory():contains(self.part)
+	or not self.character:getInventory():contains(self.partToInstall)
 	then
 		return false
 	else
@@ -19,6 +20,7 @@ end
 
 function ISInstallFirearmPart:update()
 	self.part:setJobDelta(self:getJobDelta())
+	self.partToInstall:setJobDelta(self:getJobDelta())
 
 	self.character:setMetabolicTarget(Metabolics.LightDomestic)
 end
@@ -26,11 +28,14 @@ end
 function ISInstallFirearmPart:start()
 	self.part:setJobType(getText("ContextMenu_Firearm_InstallComponent"))
 	self.part:setJobDelta(0.0)
+	self.partToInstall:setJobType(getText("ContextMenu_Firearm_InstallComponent"))
+	self.partToInstall:setJobDelta(0.0)
 end
 
 function ISInstallFirearmPart:stop()
 	ISBaseTimedAction.stop(self)
 	self.part:setJobDelta(0.0)
+	self.partToInstall:setJobDelta(0.0)
 end
 
 function ISInstallFirearmPart:perform()
@@ -40,6 +45,7 @@ function ISInstallFirearmPart:perform()
 	local tType = tItem:getType()
 
 	pItem:setJobDelta(0.0)
+	tItem:setJobDelta(0.0)
 
 	-- get mod data
 	local pData = FIREARMS.getModData(pItem)

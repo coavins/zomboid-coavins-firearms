@@ -23,7 +23,7 @@ function ISRemoveFirearmPart:update()
 end
 
 function ISRemoveFirearmPart:start()
-	self.part:setJobType(getText("ContextMenu_Firearm_Disassemble"))
+	self.part:setJobType(getText("ContextMenu_Firearm_RemoveComponent"))
 	self.part:setJobDelta(0.0)
 end
 
