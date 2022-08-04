@@ -80,7 +80,6 @@ function ISAssembleFirearmParts:perform()
 
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
-	FIREARMS.updateFirearmCondition(resultItem)
 
 	-- set data
 	local resultData = FIREARMS.getModData(resultItem)
@@ -91,6 +90,9 @@ function ISAssembleFirearmParts:perform()
 	resultData.parts[typeB] = {}
 	resultData.parts[typeB].condition = itemB:getCondition()
 	resultData.parts[typeB].parts = dataB.parts
+
+	-- update condition
+	FIREARMS.updateFirearmCondition(resultItem)
 
 	self.character:setPrimaryHandItem(nil);
 	self.character:setSecondaryHandItem(nil);
