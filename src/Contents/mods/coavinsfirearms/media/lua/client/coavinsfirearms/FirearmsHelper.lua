@@ -115,7 +115,7 @@ this.tableDeepCopy = function(t)
 	return target
 end
 
-this.initializeDataForFirearm = function(item)
+this.initializeFirearmModData = function(item)
 	local type = item:getFullType()
 	local model = this.getFirearmModelForFullType(type)
 	local data = this.getModData(item)
@@ -132,23 +132,37 @@ this.initializeDataForFirearm = function(item)
 	end
 end
 
-this.initializeDataForPart = function(name)
+this.initializeDataForPart = function(name, data)
 	print("Initializing part: " .. name)
 	local model = this.getPartModel(name)
-	local data = {}
 
-	data.conditionLowerChance = nvl(model.ConditionLowerChance, 0)
-	data.conditionMax = nvl(model.ConditionMax, 10)
-	data.condition = data.conditionMax
+	-- this function either creates a new table (and returns it)
+	-- or uses the table that you provided
+	if not data then
+		data = {}
+	end
 
-	data.parts = {}
-	if model.Holds then
-		for _,k in ipairs(model.Holds) do
-			data.parts[k] = this.initializeDataForPart(k)
+	data.conditionLowerChance = nvl(data.conditionLowerChance, nvl(model.ConditionLowerChance, 0))
+	data.conditionMax = nvl(data.conditionMax,nvl(model.ConditionMax, 10))
+	data.condition = nvl(data.condition,data.conditionMax)
+
+	if not data.parts then
+		data.parts = {}
+		if model.Holds then
+			for _,k in ipairs(model.Holds) do
+				data.parts[k] = this.initializeDataForPart(k)
+			end
 		end
 	end
 
 	return data
+end
+
+this.initializeComponentModData = function(item)
+	local type = item:getType()
+	local data = this.getModData(item)
+
+	this.initializeDataForPart(type, data)
 end
 
 this.checkConditionForAllParts = function(model, installedParts, damage)
@@ -203,7 +217,7 @@ this.updateFirearmCondition = function(firearm, conditionDamage)
 	local data = this.getModData(firearm)
 
 	if not data.parts then
-		this.initializeDataForFirearm(firearm)
+		this.initializeFirearmModData(firearm)
 	end
 
 	local lowestCondition = this.checkConditionForAllParts(model, data.parts, conditionDamage)
