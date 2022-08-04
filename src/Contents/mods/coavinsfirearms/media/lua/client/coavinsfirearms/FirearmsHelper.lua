@@ -1,5 +1,11 @@
 local this = {}
 
+local nvl = function(a, b)
+	if a then return a
+	else return b
+	end
+end
+
 this.itemIsFirearm = function(item)
 	if not item then
 		return false
@@ -70,11 +76,17 @@ this.parts = {}
 this.parts.PistolReceiver = {}
 this.parts.PistolReceiver.CombinesWith = 'PistolSlide'
 this.parts.PistolReceiver.FormsFirearm = 'Pistol'
+this.parts.PistolReceiver.ConditionLowerChance = 0 -- always when firearm incurs condition loss
+this.parts.PistolReceiver.ConditionMax = 10
 this.parts.PistolSlide = {}
 this.parts.PistolSlide.CombinesWith = 'PistolReceiver'
 this.parts.PistolSlide.Holds = { 'PistolBarrel' }
+this.parts.PistolSlide.ConditionLowerChance = 1 -- 1/2
+this.parts.PistolSlide.ConditionMax = 10
 this.parts.PistolBarrel = {}
 this.parts.PistolBarrel.InsertsInto = 'PistolSlide'
+this.parts.PistolBarrel.ConditionLowerChance = 2 -- 1/3
+this.parts.PistolBarrel.ConditionMax = 10
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
@@ -125,7 +137,10 @@ this.initializeDataForPart = function(name)
 	local model = this.getPartModel(name)
 	local data = {}
 
-	data.condition = 10
+	data.conditionLowerChance = nvl(model.ConditionLowerChance, 0)
+	data.conditionMax = nvl(model.ConditionMax, 10)
+	data.condition = data.conditionMax
+
 	data.parts = {}
 	if model.Holds then
 		for _,k in ipairs(model.Holds) do
@@ -137,13 +152,7 @@ this.initializeDataForPart = function(name)
 end
 
 this.checkConditionForAllParts = function(model, installedParts, damage)
-	local modelParts = {}
-	if model.BreaksInto then
-		modelParts = model.BreaksInto
-	elseif model.Holds then
-		modelParts = model.Holds
-	end
-
+	local modelParts = nvl(nvl(model.BreaksInto, model.Holds), {})
 	local lowestCondition = 10000.0
 
 	-- for each part we're supposed to have
@@ -151,14 +160,26 @@ this.checkConditionForAllParts = function(model, installedParts, damage)
 		local installedPart = installedParts[part]
 		if installedPart then
 			-- this part is installed
-			if damage then
-				installedPart.condition = installedPart.condition - damage
+			if damage and damage > 0 then
+				-- try to apply damage
+				if ZombRand(installedPart.conditionLowerChance) == 0 then
+					-- apply damage to this part
+					print(string.format('Apply %.0f damage to %s', damage, part))
+					installedPart.condition = installedPart.condition - damage
+					if installedPart.condition < 0 then
+						installedPart.condition = 0
+					end
+				end
 			end
 
+			print(string.format('%s has %.0f condition', part, installedPart.condition))
+
+			-- remember lowest condition
 			if installedPart.condition < lowestCondition then
 				lowestCondition = installedPart.condition
 			end
 
+			-- recursively check this part's parts
 			if installedPart.parts then
 				local lowest = this.checkConditionForAllParts(this.getPartModel(part), installedPart.parts, damage)
 				if lowest < lowestCondition then
@@ -176,17 +197,24 @@ end
 
 -- updates firearm to match condition of most damaged part
 -- optionally deals condition damage to parts
-this.updateFirearmCondition = function(item, conditionDamage)
-	local type = item:getFullType()
+this.updateFirearmCondition = function(firearm, conditionDamage)
+	local type = firearm:getFullType()
 	local model = this.getFirearmModelForFullType(type)
-	local data = this.getModData(item)
+	local data = this.getModData(firearm)
 
 	if not data.parts then
-		this.initializeDataForFirearm(item)
+		this.initializeDataForFirearm(firearm)
 	end
 
 	local lowestCondition = this.checkConditionForAllParts(model, data.parts, conditionDamage)
-	item:setCondition(lowestCondition)
+	local maxCondition = firearm:getConditionMax()
+
+	if lowestCondition > maxCondition then
+		lowestCondition = maxCondition
+	end
+
+	print(string.format('Set firearm to %.0f', lowestCondition))
+	firearm:setCondition(lowestCondition)
 end
 
 this.getNameForPart = function(part)

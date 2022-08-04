@@ -155,22 +155,26 @@ local checkInventoryItem = function(player, context, item)
 		if model.InsertsInto then
 			local subMenuInstall = context:getNew(context)
 			local lackingParts = true
-			
+
 			-- Add option to install
 			local parts = player:getInventory():getAllTypeRecurse(model.InsertsInto)
 			-- for each item of this type
 			for k=0, parts:size() - 1 do
 				local part = parts:get(k)
-				local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
-				local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
-				AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
-				lackingParts = false
+				local partData = FIREARMS.getModData(part)
+				-- if a part of this type is not already installed
+				if not partData.parts[type] then
+					local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
+					local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
+					AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
+					lackingParts = false
+				end
 			end
 
 			if lackingParts then
 				local itemName = FIREARMS.getNameForPart(model.InsertsInto)
 				local option = subMenuInstall:addOption(itemName, player, nil)
-				DisableOption(option, getText('ContextMenu_Firearm_NotFound', itemName))
+				DisableOption(option, getText('ContextMenu_Firearm_NotFoundEmpty', itemName))
 			end
 
 			local option = context:addOption(getText("ContextMenu_Firearm_InstallInto"), item, nil)
