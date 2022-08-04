@@ -16,8 +16,12 @@ local function AddTooltip(option, text, name, texture)
 	option.toolTip = tooltip
 end
 
+local function AddTooltipForPartData(option, type, data)
+	AddTooltip(option, FIREARMS.getTooltipTextForPartData(type, data), FIREARMS.getNameForPart(type), nil)
+end
+
 local function AddTooltipForPartItem(option, item)
-	AddTooltip(option, FIREARMS.getTooltipText(item), item:getName(), item:getTex())
+	AddTooltip(option, FIREARMS.getTooltipTextForPartItem(item), item:getName(), item:getTex())
 end
 
 local function DisableOption(option, text)
@@ -120,7 +124,7 @@ local checkInventoryItem = function(player, context, item)
 				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
 					local option = subMenuRemove:addOption(getItemNameFromFullType('coavinsfirearms.' .. heldPart), player, removePartFromPart, item, heldPart)
-					AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.1f', data.parts[heldPart].condition))
+					AddTooltipForPartData(option, heldPart, data.parts[heldPart])
 					doRemove = true
 				else
 					doInstall = true

@@ -221,10 +221,19 @@ this.getNameForPart = function(part)
 	return getItemNameFromFullType('coavinsfirearms.' .. part)
 end
 
-this.getTooltipText = function(item)
+this.getTooltipTextForPartItem = function(item)
 	local type = item:getType()
-	local model = this.getPartModel(type)
 	local data = this.getModData(item)
+	return this.getTooltipText(type, data, item:getCondition(), item:getConditionMax())
+end
+
+this.getTooltipTextForPartData = function(type, data)
+	local model = this.getPartModel(type)
+	return this.getTooltipText(type, data, data.condition, model.ConditionMax)
+end
+
+this.getTooltipText = function(type, data, condition, conditionMax)
+	local model = this.getPartModel(type)
 	local text = ''
 
 	if not data.parts then
@@ -233,7 +242,7 @@ this.getTooltipText = function(item)
 	end
 
 	-- show condition
-	local conditionPct = (item:getCondition() / item:getConditionMax()) * 100
+	local conditionPct = (condition / conditionMax) * 100
 	text = getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
 
 	if model.Holds and data.parts then
