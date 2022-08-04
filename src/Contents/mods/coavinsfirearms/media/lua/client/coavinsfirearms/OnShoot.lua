@@ -13,7 +13,7 @@ local function OnPlayerAttackFinished(_, handWeapon)
 
 		-- update the condition of the firearm to match its internal parts
 		-- if any loss was incurred, each part will handle its own calculation
-		FIREARMS.updateFirearmCondition(handWeapon, conditionLoss)
+		FIREARMS.updateFirearm(handWeapon, conditionLoss)
 	end
 	print(string.format('Condition is %.2f', handWeapon:getCondition()))
 end

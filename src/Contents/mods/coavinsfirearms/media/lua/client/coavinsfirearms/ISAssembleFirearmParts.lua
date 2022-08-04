@@ -92,7 +92,7 @@ function ISAssembleFirearmParts:perform()
 	resultData.parts[typeB].parts = dataB.parts
 
 	-- update condition
-	FIREARMS.updateFirearmCondition(resultItem)
+	FIREARMS.updateFirearm(resultItem)
 
 	self.character:setPrimaryHandItem(nil);
 	self.character:setSecondaryHandItem(nil);

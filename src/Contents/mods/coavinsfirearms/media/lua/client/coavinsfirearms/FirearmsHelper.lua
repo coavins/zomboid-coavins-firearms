@@ -120,15 +120,15 @@ this.initializeFirearmModData = function(item)
 	local model = this.getFirearmModelForFullType(type)
 	local data = this.getModData(item)
 
-	if data.parts then
-		return
-	end
+	if not data.parts then
+		print("Initializing firearm: " .. type)
+		data.parts = {}
 
-	print("Initializing firearm: " .. type)
-	data.parts = {}
+		for _,k in ipairs(model.BreaksInto) do
+			data.parts[k] = this.initializeDataForPart(k)
+		end
 
-	for _,k in ipairs(model.BreaksInto) do
-		data.parts[k] = this.initializeDataForPart(k)
+		this.updateFirearm(item)
 	end
 end
 
@@ -148,9 +148,20 @@ this.initializeDataForPart = function(name, data)
 
 	if not data.parts then
 		data.parts = {}
+		if model.BreaksInto then
+			for _,k in ipairs(model.BreaksInto) do
+				-- 10% chance for this part to be missing
+				if ZombRand(10) > 0 then
+					data.parts[k] = this.initializeDataForPart(k)
+				end
+			end
+		end
 		if model.Holds then
 			for _,k in ipairs(model.Holds) do
-				data.parts[k] = this.initializeDataForPart(k)
+				-- 10% chance for this part to be missing
+				if ZombRand(10) > 0 then
+					data.parts[k] = this.initializeDataForPart(k)
+				end
 			end
 		end
 	end
@@ -211,7 +222,7 @@ end
 
 -- updates firearm to match condition of most damaged part
 -- optionally deals condition damage to parts
-this.updateFirearmCondition = function(firearm, conditionDamage)
+this.updateFirearm = function(firearm, conditionDamage)
 	local type = firearm:getFullType()
 	local model = this.getFirearmModelForFullType(type)
 	local data = this.getModData(firearm)
