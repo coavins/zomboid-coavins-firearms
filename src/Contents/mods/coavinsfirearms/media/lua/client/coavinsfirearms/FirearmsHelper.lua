@@ -1,6 +1,10 @@
 local this = {}
 
 this.itemIsFirearm = function(item)
+	if not item then
+		return false
+	end
+
 	local type = item:getFullType() -- Base.Pistol
 	if not type then
 		return false
@@ -11,6 +15,23 @@ this.itemIsFirearm = function(item)
 	end
 
 	if cat == 'Weapon' and this.getFirearmModelNameForFullType(type) then
+		return true
+	end
+
+	return false
+end
+
+this.itemIsPart = function(item)
+	if not item then
+		return false
+	end
+
+	local cat = item:getDisplayCategory() -- Weapon
+	if not cat then
+		return false
+	end
+
+	if cat == 'FirearmPart' then
 		return true
 	end
 
