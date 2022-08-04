@@ -115,24 +115,38 @@ this.initializeDataForPart = function(name)
 	return data
 end
 
-this.checkConditionForAllParts = function(parts, damage)
+this.checkConditionForAllParts = function(model, installedParts, damage)
+	local modelParts = {}
+	if model.BreaksInto then
+		modelParts = model.BreaksInto
+	elseif model.Holds then
+		modelParts = model.Holds
+	end
+
 	local lowestCondition = 10000.0
 
-	-- randomly decrement condition for all parts
-	for _,part in pairs(parts) do
-		if damage then
-			part.condition = part.condition - damage
-		end
-
-		if part.condition < lowestCondition then
-			lowestCondition = part.condition
-		end
-
-		if part.parts then
-			local lowest = this.checkConditionForAllParts(part.parts, damage)
-			if lowest < lowestCondition then
-				lowestCondition = lowest
+	-- for each part we're supposed to have
+	for _,part in ipairs(modelParts) do
+		local installedPart = installedParts[part]
+		if installedPart then
+			-- this part is installed
+			if damage then
+				installedPart.condition = installedPart.condition - damage
 			end
+
+			if installedPart.condition < lowestCondition then
+				lowestCondition = installedPart.condition
+			end
+
+			if installedPart.parts then
+				local lowest = this.checkConditionForAllParts(this.getPartModel(part), installedPart.parts, damage)
+				if lowest < lowestCondition then
+					lowestCondition = lowest
+				end
+			end
+		else
+			-- this part is not installed
+			lowestCondition = 0
 		end
 	end
 
@@ -142,13 +156,15 @@ end
 -- updates firearm to match condition of most damaged part
 -- optionally deals condition damage to parts
 this.updateFirearmCondition = function(item, conditionDamage)
+	local type = item:getFullType()
+	local model = this.getFirearmModelForFullType(type)
 	local data = this.getModData(item)
 
 	if not data.parts then
 		this.initializeDataForFirearm(item)
 	end
 
-	local lowestCondition = this.checkConditionForAllParts(data.parts, conditionDamage)
+	local lowestCondition = this.checkConditionForAllParts(model, data.parts, conditionDamage)
 	item:setCondition(lowestCondition)
 end
 
