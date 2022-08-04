@@ -10,6 +10,10 @@
 		"Metabolics",
 		"ISFixAction",
 		"instanceof",
-		"getItemNameFromFullType"
+		"getItemNameFromFullType",
+		"ISReloadWeaponAction",
+		"getDebug",
+		"getDebugOptions",
+		"ZombRand"
 	]
 }
