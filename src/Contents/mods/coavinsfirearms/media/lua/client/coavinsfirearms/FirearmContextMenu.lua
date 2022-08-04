@@ -16,6 +16,10 @@ local function AddTooltip(option, text, name, texture)
 	option.toolTip = tooltip
 end
 
+local function AddTooltipForPartItem(option, item)
+	AddTooltip(option, FIREARMS.getTooltipText(item), item:getName(), item:getTex())
+end
+
 local function DisableOption(option, text)
 	option.notAvailable = true
 	AddTooltip(option, text)
@@ -76,7 +80,7 @@ local checkInventoryItem = function(player, context, item)
 
 		-- add info
 		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
-		AddTooltip(infoOption, FIREARMS.getTooltipText(item), item:getName(), item:getTex())
+		AddTooltipForPartItem(infoOption, item)
 
 		-- if this item can be combined with another part
 		if model.CombinesWith then
@@ -89,8 +93,7 @@ local checkInventoryItem = function(player, context, item)
 			for k=0, parts:size() - 1 do
 				local part = parts:get(k)
 				local option = subMenu:addOption(part:getName(), player, assembleFirearmParts, item, part)
-				local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
-				AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
+				AddTooltipForPartItem(option, part)
 				lackingParts = false
 			end
 
@@ -128,8 +131,7 @@ local checkInventoryItem = function(player, context, item)
 					for k=0, parts:size() - 1 do
 						local part = parts:get(k)
 						local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
-						local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
-						AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
+						AddTooltipForPartItem(option, part)
 						lackingParts = false
 					end
 
@@ -165,8 +167,7 @@ local checkInventoryItem = function(player, context, item)
 				-- if a part of this type is not already installed
 				if not partData.parts[type] then
 					local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
-					local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
-					AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
+					AddTooltipForPartItem(option, part)
 					lackingParts = false
 				end
 			end
