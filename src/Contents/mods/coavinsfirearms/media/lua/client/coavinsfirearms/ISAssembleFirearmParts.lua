@@ -84,6 +84,16 @@ function ISAssembleFirearmParts:perform()
 	-- TODO: condition of the firearm should set to the average of condition of all its parts
 	resultItem:setCondition(itemA:getCondition())
 
+	-- set data
+	local resultData = FIREARMS.getModData(resultItem)
+	resultData.parts = {}
+	resultData.parts[typeA] = {}
+	resultData.parts[typeA].condition = itemA:getCondition()
+	resultData.parts[typeA].parts = dataA.parts
+	resultData.parts[typeB] = {}
+	resultData.parts[typeB].condition = itemB:getCondition()
+	resultData.parts[typeB].parts = dataB.parts
+
 	self.character:setPrimaryHandItem(nil);
 	self.character:setSecondaryHandItem(nil);
 
