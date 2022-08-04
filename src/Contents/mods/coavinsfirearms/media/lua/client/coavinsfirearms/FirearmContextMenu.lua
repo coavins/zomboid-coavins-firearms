@@ -74,6 +74,10 @@ local checkInventoryItem = function(player, context, item)
 			data.parts[type] = FIREARMS.initializeDataForPart(type)
 		end
 
+		-- add info
+		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
+		AddTooltip(infoOption, FIREARMS.getTooltipText(item), item:getName(), item:getTex())
+
 		-- if this item can be combined with another part
 		if model.CombinesWith then
 			local subMenu = context:getNew(context)
@@ -107,10 +111,6 @@ local checkInventoryItem = function(player, context, item)
 			local doInstall = false
 			local subMenuRemove = context:getNew(context)
 			local doRemove = false
-
-			-- add info
-			local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
-			AddTooltip(infoOption, FIREARMS.getTooltipText(item), item:getName(), item:getTex())
 
 			-- for each part this item can hold
 			for _,heldPart in ipairs(model.Holds) do

@@ -232,6 +232,10 @@ this.getTooltipText = function(item)
 		data.parts[type] = this.initializeDataForPart(type)
 	end
 
+	-- show condition
+	local conditionPct = (item:getCondition() / item:getConditionMax()) * 100
+	text = getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
+
 	if model.Holds and data.parts then
 		for _,part in ipairs(model.Holds) do
 			local installedPart = data.parts[part]
