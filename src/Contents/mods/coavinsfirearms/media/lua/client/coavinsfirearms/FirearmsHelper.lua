@@ -76,16 +76,16 @@ this.parts = {}
 this.parts.PistolReceiver = {}
 this.parts.PistolReceiver.CombinesWith = 'PistolSlide'
 this.parts.PistolReceiver.FormsFirearm = 'Pistol'
-this.parts.PistolReceiver.ConditionLowerChance = 0 -- always when firearm incurs condition loss
+this.parts.PistolReceiver.ConditionLowerChance = 1 -- 100%
 this.parts.PistolReceiver.ConditionMax = 10
 this.parts.PistolSlide = {}
 this.parts.PistolSlide.CombinesWith = 'PistolReceiver'
 this.parts.PistolSlide.Holds = { 'PistolBarrel' }
-this.parts.PistolSlide.ConditionLowerChance = 1 -- 1/2
+this.parts.PistolSlide.ConditionLowerChance = 2 -- 1/2
 this.parts.PistolSlide.ConditionMax = 10
 this.parts.PistolBarrel = {}
 this.parts.PistolBarrel.InsertsInto = 'PistolSlide'
-this.parts.PistolBarrel.ConditionLowerChance = 2 -- 1/3
+this.parts.PistolBarrel.ConditionLowerChance = 3 -- 1/3
 this.parts.PistolBarrel.ConditionMax = 10
 
 this.getPartModel = function(modelName)
@@ -125,14 +125,14 @@ this.initializeFirearmModData = function(item)
 		data.parts = {}
 
 		for _,k in ipairs(model.BreaksInto) do
-			data.parts[k] = this.initializeDataForPart(k)
+			data.parts[k] = this.initializeDataForPart(k, nil, true) -- looted guns always have all their parts
 		end
 
 		this.updateFirearm(item)
 	end
 end
 
-this.initializeDataForPart = function(name, data)
+this.initializeDataForPart = function(name, data, guaranteedParts)
 	print("Initializing part: " .. name)
 	local model = this.getPartModel(name)
 
@@ -150,17 +150,14 @@ this.initializeDataForPart = function(name, data)
 		data.parts = {}
 		if model.BreaksInto then
 			for _,k in ipairs(model.BreaksInto) do
-				-- 10% chance for this part to be missing
-				if ZombRand(10) > 0 then
-					data.parts[k] = this.initializeDataForPart(k)
-				end
+				data.parts[k] = this.initializeDataForPart(k, guaranteedParts)
 			end
 		end
 		if model.Holds then
 			for _,k in ipairs(model.Holds) do
-				-- 10% chance for this part to be missing
-				if ZombRand(10) > 0 then
-					data.parts[k] = this.initializeDataForPart(k)
+				-- 50% chance for this part to be missing
+				if guaranteedParts or ZombRand(2) == 0 then
+					data.parts[k] = this.initializeDataForPart(k, guaranteedParts)
 				end
 			end
 		end
