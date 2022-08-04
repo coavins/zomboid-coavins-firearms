@@ -149,7 +149,11 @@ local populateContextMenu = function(playerId, context, items)
 
 	items = ISInventoryPane.getActualItems(items)
 
-	for _,k in pairs(items) do
+	if #items > 1 then
+		return
+	end
+
+	for _,k in ipairs(items) do
 		--if instanceof(k, "InventoryItem") then
 			checkInventoryItem(player, context, k)
 		--end
