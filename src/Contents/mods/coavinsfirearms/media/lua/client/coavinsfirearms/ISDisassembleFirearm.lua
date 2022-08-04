@@ -1,5 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISDisassembleFirearm = ISBaseTimedAction:derive("ISDisassembleFirearm");
 
@@ -35,7 +35,7 @@ end
 function ISDisassembleFirearm:perform()
 	local fItem = self.firearm
 	local fFullType = fItem:getFullType()
-	local fModel = FIELDSTRIP.getFirearmModelForFullType(fFullType)
+	local fModel = FIREARMS.getFirearmModelForFullType(fFullType)
 
 	fItem:setJobDelta(0.0)
 
@@ -44,9 +44,9 @@ function ISDisassembleFirearm:perform()
 
 	-- add components to inventory
 	for _,k in ipairs(fModel.BreaksInto) do
-		local pType = 'coavinsfieldstrip.' .. k
+		local pType = 'coavinsfirearms.' .. k
 		local pItem = self.character:getInventory():AddItem(pType)
-		local pData = FIELDSTRIP.getModData(pItem)
+		local pData = FIREARMS.getModData(pItem)
 
 		-- Receiver must hold some characteristics of the original item
 		if k == fModel.SaveTypeIn then
@@ -54,7 +54,7 @@ function ISDisassembleFirearm:perform()
 			pData.realFirearm = fFullType
 		end
 
-		FIELDSTRIP.copyDataFromParent(fItem, pItem)
+		FIREARMS.copyDataFromParent(fItem, pItem)
 	end
 
 	-- needed to remove from queue / start next.

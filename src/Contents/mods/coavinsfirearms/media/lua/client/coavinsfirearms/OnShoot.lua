@@ -1,7 +1,7 @@
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 local function OnPlayerAttackFinished(character, handWeapon)
-	FIELDSTRIP.updateFirearmCondition(handWeapon)
+	FIREARMS.updateFirearmCondition(handWeapon)
 end
 
 Events.OnPlayerAttackFinished.Add(OnPlayerAttackFinished)

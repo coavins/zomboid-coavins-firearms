@@ -1,5 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 -- Installs a firearm component into another component
 ISInstallFirearmPart = ISBaseTimedAction:derive("ISInstallFirearmPart");
@@ -42,10 +42,10 @@ function ISInstallFirearmPart:perform()
 	pItem:setJobDelta(0.0)
 
 	-- get mod data
-	local pData = FIELDSTRIP.getModData(pItem)
+	local pData = FIREARMS.getModData(pItem)
 
 	-- get model
-	--local pModel = FIELDSTRIP.getPartModel(pType)
+	--local pModel = FIREARMS.getPartModel(pType)
 
 	if not pData.parts then
 		pData.parts = {}

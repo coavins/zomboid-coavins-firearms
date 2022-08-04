@@ -1,5 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISRemoveFirearmPart = ISBaseTimedAction:derive("ISRemoveFirearmPart");
 
@@ -39,14 +39,14 @@ function ISRemoveFirearmPart:perform()
 	pItem:setJobDelta(0.0)
 
 	-- get mod data
-	local pData = FIELDSTRIP.getModData(pItem)
+	local pData = FIREARMS.getModData(pItem)
 
 	local heldParts = pData.parts
 	if heldParts and heldParts[target] then
-		local tType = 'coavinsfieldstrip.' .. target
+		local tType = 'coavinsfirearms.' .. target
 		local tItem = self.character:getInventory():AddItem(tType)
 
-		FIELDSTRIP.copyDataFromParent(pItem, tItem)
+		FIREARMS.copyDataFromParent(pItem, tItem)
 
 		-- remove this part from parent
 		heldParts[target] = nil

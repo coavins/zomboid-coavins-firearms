@@ -43,10 +43,10 @@ this.getPartModel = function(modelName)
 end
 
 this.getModData = function(item)
-	if not item:getModData().coavinsfieldstrip then
-		item:getModData().coavinsfieldstrip = {}
+	if not item:getModData().coavinsfirearms then
+		item:getModData().coavinsfirearms = {}
 	end
-	return item:getModData().coavinsfieldstrip
+	return item:getModData().coavinsfirearms
 end
 
 -- https://gist.github.com/MihailJP/3931841

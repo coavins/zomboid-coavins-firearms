@@ -1,4 +1,4 @@
-module coavinsfieldstrip {
+module coavinsfirearms {
 	imports {
 		Base
 	}

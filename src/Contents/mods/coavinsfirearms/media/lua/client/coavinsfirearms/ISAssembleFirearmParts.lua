@@ -1,5 +1,5 @@
 require "TimedActions/ISBaseTimedAction"
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISAssembleFirearmParts = ISBaseTimedAction:derive("ISAssembleFirearmParts");
 
@@ -51,11 +51,11 @@ function ISAssembleFirearmParts:perform()
 	self.character:getInventory():Remove(itemB)
 
 	-- get model
-	local modelA = FIELDSTRIP.getPartModel(typeA)
-	local modelB = FIELDSTRIP.getPartModel(typeB)
+	local modelA = FIREARMS.getPartModel(typeA)
+	local modelB = FIREARMS.getPartModel(typeB)
 
-	local dataA = FIELDSTRIP.getModData(itemA)
-	local dataB = FIELDSTRIP.getModData(itemB)
+	local dataA = FIREARMS.getModData(itemA)
+	local dataB = FIREARMS.getModData(itemB)
 
 	local resultType -- the type we are producing
 
@@ -75,7 +75,7 @@ function ISAssembleFirearmParts:perform()
 	elseif modelA.FormsPart or modelB.FormsPart then
 		-- grab from either, should be the same
 		resultType = modelA.FormsPart or modelB.FormsPart
-		resultType = 'coavinsfieldstrip.' .. resultType
+		resultType = 'coavinsfirearms.' .. resultType
 	end
 
 	-- create item

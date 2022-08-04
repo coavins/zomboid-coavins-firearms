@@ -1,5 +1,5 @@
 require "ISUI/ISToolTip"
-local FIELDSTRIP = require('coavinsfieldstrip/FieldStrip')
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 local function newToolTip()
 	local toolTip = ISToolTip:new();
@@ -46,13 +46,13 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if cat == 'Weapon' and FIELDSTRIP.getFirearmModelNameForFullType(type) then
+	if cat == 'Weapon' and FIREARMS.getFirearmModelNameForFullType(type) then
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
 		--end
 	elseif cat == 'FirearmPart' then
-		local model = FIELDSTRIP.getPartModel(item:getType())
+		local model = FIREARMS.getPartModel(item:getType())
 		if not model then
 			return
 		end
@@ -84,13 +84,13 @@ local checkInventoryItem = function(player, context, item)
 			local doInstall = false
 			local subMenuRemove = context:getNew(context)
 			local doRemove = false
-			local data = FIELDSTRIP.getModData(item)
+			local data = FIREARMS.getModData(item)
 
 			-- for each part this item can hold
 			for _,heldPart in ipairs(model.Holds) do
 				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
-					subMenuRemove:addOption(getText("ItemName_coavinsfieldstrip." .. heldPart), player, removePartFromPart, item, heldPart)
+					subMenuRemove:addOption(getText("ItemName_coavinsfirearms." .. heldPart), player, removePartFromPart, item, heldPart)
 					doRemove = true
 				else
 					-- Add option to install, if we have a matching part

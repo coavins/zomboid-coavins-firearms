@@ -1,5 +1,0 @@
-ItemName_EN = {
-	ItemName_coavinsfieldstrip.PistolReceiver = "Pistol Frame",
-	ItemName_coavinsfieldstrip.PistolSlide = "Pistol Slide",
-	ItemName_coavinsfieldstrip.PistolBarrel = "Pistol Barrel"
-}
