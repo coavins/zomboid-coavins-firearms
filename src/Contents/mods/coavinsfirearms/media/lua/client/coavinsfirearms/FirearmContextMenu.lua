@@ -93,13 +93,21 @@ local checkInventoryItem = function(player, context, item)
 					subMenuRemove:addOption(getItemNameFromFullType('coavinsfirearms.' .. heldPart), player, removePartFromPart, item, heldPart)
 					doRemove = true
 				else
+					doInstall = true
+					local lackingParts = true
 					-- Add option to install, if we have a matching part
 					local parts = player:getInventory():getAllTypeRecurse(heldPart)
 					-- for each item of this type
 					for k=0, parts:size() - 1 do
 						local part = parts:get(k)
 						subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
-						doInstall = true
+						lackingParts = false
+					end
+
+					if lackingParts then
+						local itemName = getItemNameFromFullType('coavinsfirearms.' .. heldPart)
+						local option = subMenuInstall:addOption(itemName, player, installFirearmPart, item)
+						DisableOption(option, 'No ' .. itemName .. ' found.')
 					end
 				end
 			end
