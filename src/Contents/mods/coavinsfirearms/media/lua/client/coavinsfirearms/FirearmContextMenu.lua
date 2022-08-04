@@ -38,7 +38,12 @@ local installFirearmPart = function(player, item, part)
 end
 
 local checkInventoryItem = function(player, context, item)
-	local type = item:getFullType() -- Base.Pistol
+	local fullType = item:getFullType() -- Base.Pistol
+	if not fullType then
+		return
+	end
+
+	local type = item:getType() -- Pistol
 	if not type then
 		return
 	end
@@ -52,15 +57,21 @@ local checkInventoryItem = function(player, context, item)
 		return
 	end
 
-	if cat == 'Weapon' and FIREARMS.getFirearmModelNameForFullType(type) then
+	if cat == 'Weapon' and FIREARMS.getFirearmModelNameForFullType(fullType) then
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
 		--end
 	elseif cat == 'FirearmPart' then
-		local model = FIREARMS.getPartModel(item:getType())
+		local model = FIREARMS.getPartModel(type)
 		if not model then
 			return
+		end
+
+		local data = FIREARMS.getModData(item)
+		if not data.parts then
+			data.parts = {}
+			data.parts[type] = FIREARMS.initializeDataForPart(type)
 		end
 
 		-- if this item can be combined with another part
@@ -82,7 +93,7 @@ local checkInventoryItem = function(player, context, item)
 			-- put a placeholder if we don't have any options
 			if lackingParts then
 				local itemName = FIREARMS.getNameForPart(model.CombinesWith)
-				local option = subMenu:addOption(itemName, player, installFirearmPart, item)
+				local option = subMenu:addOption(itemName, player, nil)
 				DisableOption(option, getText('ContextMenu_Firearm_NotFound', itemName))
 			end
 
@@ -96,7 +107,6 @@ local checkInventoryItem = function(player, context, item)
 			local doInstall = false
 			local subMenuRemove = context:getNew(context)
 			local doRemove = false
-			local data = FIREARMS.getModData(item)
 
 			-- add info
 			local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
@@ -124,8 +134,8 @@ local checkInventoryItem = function(player, context, item)
 					end
 
 					if lackingParts then
-						local itemName = getItemNameFromFullType('coavinsfirearms.' .. heldPart)
-						local option = subMenuInstall:addOption(itemName, player, installFirearmPart, item)
+						local itemName = FIREARMS.getNameForPart(heldPart)
+						local option = subMenuInstall:addOption(itemName, player, nil)
 						DisableOption(option, getText('ContextMenu_Firearm_NotFound', itemName))
 					end
 				end
@@ -140,6 +150,31 @@ local checkInventoryItem = function(player, context, item)
 				local subOptionRemove = context:addOption(getText("ContextMenu_Firearm_RemoveComponent"), item, nil)
 				context:addSubMenu(subOptionRemove, subMenuRemove)
 			end
+		end
+
+		if model.InsertsInto then
+			local subMenuInstall = context:getNew(context)
+			local lackingParts = true
+			
+			-- Add option to install
+			local parts = player:getInventory():getAllTypeRecurse(model.InsertsInto)
+			-- for each item of this type
+			for k=0, parts:size() - 1 do
+				local part = parts:get(k)
+				local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
+				local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
+				AddTooltip(option, getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct))
+				lackingParts = false
+			end
+
+			if lackingParts then
+				local itemName = FIREARMS.getNameForPart(model.InsertsInto)
+				local option = subMenuInstall:addOption(itemName, player, nil)
+				DisableOption(option, getText('ContextMenu_Firearm_NotFound', itemName))
+			end
+
+			local option = context:addOption(getText("ContextMenu_Firearm_InstallInto"), item, nil)
+			context:addSubMenu(option, subMenuInstall)
 		end
 	end
 end
