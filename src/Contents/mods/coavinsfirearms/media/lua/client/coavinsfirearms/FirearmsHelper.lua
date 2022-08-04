@@ -1,5 +1,22 @@
 local this = {}
 
+this.itemIsFirearm = function(item)
+	local type = item:getFullType() -- Base.Pistol
+	if not type then
+		return false
+	end
+	local cat = item:getDisplayCategory() -- Weapon
+	if not cat then
+		return false
+	end
+
+	if cat == 'Weapon' and this.getFirearmModelNameForFullType(type) then
+		return true
+	end
+
+	return false
+end
+
 -- indicates which model is used for each firearm in the game
 this.typeModels = {}
 this.typeModels["Base.Pistol"] = "Pistol"
@@ -98,26 +115,41 @@ this.initializeDataForPart = function(name)
 	return data
 end
 
-this.decrementConditionForAllParts = function(parts, chance)
+this.checkConditionForAllParts = function(parts, damage)
+	local lowestCondition = 10000.0
+
 	-- randomly decrement condition for all parts
 	for _,part in pairs(parts) do
-		-- decrement condition
-		part.condition = part.condition - 1
+		if damage then
+			part.condition = part.condition - damage
+		end
+
+		if part.condition < lowestCondition then
+			lowestCondition = part.condition
+		end
+
 		if part.parts then
-			this.decrementConditionForAllParts(part.parts, chance)
+			local lowest = this.checkConditionForAllParts(part.parts, damage)
+			if lowest < lowestCondition then
+				lowestCondition = lowest
+			end
 		end
 	end
+
+	return lowestCondition
 end
 
-this.updateFirearmCondition = function(item)
+-- updates firearm to match condition of most damaged part
+-- optionally deals condition damage to parts
+this.updateFirearmCondition = function(item, conditionDamage)
 	local data = this.getModData(item)
-	local conditionChance = item:getConditionLowerChance()
 
 	if not data.parts then
 		this.initializeDataForFirearm(item)
 	end
 
-	this.decrementConditionForAllParts(data.parts)
+	local lowestCondition = this.checkConditionForAllParts(data.parts, conditionDamage)
+	item:setCondition(lowestCondition)
 end
 
 this.copyDataFromParent = function(parentItem, childItem)

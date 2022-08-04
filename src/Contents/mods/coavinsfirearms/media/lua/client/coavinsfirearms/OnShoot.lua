@@ -1,7 +1,9 @@
 local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
-local function OnPlayerAttackFinished(character, handWeapon)
-	FIREARMS.updateFirearmCondition(handWeapon)
+local function OnPlayerAttackFinished(player, item)
+	if FIREARMS.itemIsFirearm(item) then
+		FIREARMS.updateFirearmCondition(item, 1)
+	end
 end
 
 Events.OnPlayerAttackFinished.Add(OnPlayerAttackFinished)

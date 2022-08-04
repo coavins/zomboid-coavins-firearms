@@ -80,9 +80,7 @@ function ISAssembleFirearmParts:perform()
 
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
-	-- set condition equal to first part's condition
-	-- TODO: condition of the firearm should set to the average of condition of all its parts
-	resultItem:setCondition(itemA:getCondition())
+	FIREARMS.updateFirearmCondition(resultItem)
 
 	-- set data
 	local resultData = FIREARMS.getModData(resultItem)
