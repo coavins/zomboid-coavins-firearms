@@ -190,7 +190,7 @@ this.getTooltipText = function(item)
 				text = text .. ' <LINE> '
 			end
 			if installedPart then
-				text = text .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_Installed')
+				text = text .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_Installed') .. ' (' .. string.format('%.1f', installedPart.condition) .. ')'
 			else
 				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
 			end
