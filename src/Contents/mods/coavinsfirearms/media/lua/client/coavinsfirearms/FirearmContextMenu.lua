@@ -8,11 +8,15 @@ local function newToolTip()
 	return toolTip;
 end
 
-local function DisableOption(option, text)
-	option.notAvailable = true
+local function AddTooltip(option, text)
 	local tooltip = newToolTip();
 	tooltip.description = text;
 	option.toolTip = tooltip;
+end
+
+local function DisableOption(option, text)
+	option.notAvailable = true
+	AddTooltip(option, text)
 end
 
 local disassembleFirearm = function(player, item)
@@ -100,7 +104,9 @@ local checkInventoryItem = function(player, context, item)
 					-- for each item of this type
 					for k=0, parts:size() - 1 do
 						local part = parts:get(k)
-						subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
+						local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
+						local conditionPct = (part:getCondition() / part:getConditionMax()) * 100
+						AddTooltip(option, 'Condition: ' .. string.format('%.0f%%', conditionPct))
 						lackingParts = false
 					end
 
