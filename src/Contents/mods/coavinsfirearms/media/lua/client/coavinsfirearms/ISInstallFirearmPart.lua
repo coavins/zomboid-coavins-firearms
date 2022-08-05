@@ -63,10 +63,12 @@ function ISInstallFirearmPart:perform()
 		-- remove installed part from inventory
 		self.character:getInventory():Remove(tItem)
 
-		-- add installed part to mod data
-		local t = {}
-		t.condition = tItem:getCondition()
-		heldParts[tType] = t
+		-- initialize data
+		heldParts[tType] = FIREARMS.initializeDataForPart(tType)
+		-- set data
+		local tData = FIREARMS.getModData(tItem)
+		heldParts[tType].condition = tItem:getCondition()
+		heldParts[tType].parts = tData.parts
 	end
 
 	-- needed to remove from queue / start next.

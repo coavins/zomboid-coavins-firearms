@@ -16,7 +16,7 @@ this.getFirearmModelNameForItem = function(item)
 		return
 	end
 
-	return CoavinsFirearmModels:GetModel(fullType)
+	return CoavinsFirearms:GetModel(fullType)
 end
 
 this.itemIsFirearm = function(item)
@@ -53,6 +53,10 @@ this.firearms.Revolver = {}
 this.firearms.Revolver.BreaksInto = { 'RevolverReceiver', 'RevolverCylinder' }
 this.firearms.Revolver.SaveTypeIn = 'RevolverReceiver'
 this.firearms.Revolver.FallbackType = 'Base.Revolver'
+this.firearms.Shotgun = {}
+this.firearms.Shotgun.BreaksInto = { 'ShotgunReceiver', 'ShotgunBarrel' }
+this.firearms.Shotgun.SaveTypeIn = 'ShotgunReceiver'
+this.firearms.Shotgun.FallbackType = 'Base.Shotgun'
 
 this.getFirearmModelForItem = function(item)
 	local modelName = this.getFirearmModelNameForItem(item)
@@ -88,6 +92,30 @@ this.parts.RevolverCylinder.CombinesWith = 'RevolverReceiver'
 this.parts.RevolverCylinder.FormsFirearm = 'Revolver'
 this.parts.RevolverCylinder.ConditionLowerChance = 3
 this.parts.RevolverCylinder.ConditionMax = 10
+this.parts.ShotgunReceiver = {}
+this.parts.ShotgunReceiver.CombinesWith = 'ShotgunBarrel'
+this.parts.ShotgunReceiver.FormsFirearm = 'Shotgun'
+this.parts.ShotgunReceiver.Holds = { 'ShotgunForend' }
+this.parts.ShotgunReceiver.ConditionLowerChance = 1
+this.parts.ShotgunReceiver.ConditionMax = 10
+this.parts.ShotgunForend = {}
+this.parts.ShotgunForend.InsertsInto = 'ShotgunReceiver'
+this.parts.ShotgunForend.Holds = { 'ShotgunBoltCarrier' }
+this.parts.ShotgunForend.ConditionLowerChance = 2
+this.parts.ShotgunForend.ConditionMax = 10
+this.parts.ShotgunBoltCarrier = {}
+this.parts.ShotgunBoltCarrier.InsertsInto = 'ShotgunForend'
+this.parts.ShotgunBoltCarrier.Holds = { 'ShotgunBolt' }
+this.parts.ShotgunBoltCarrier.ConditionLowerChance = 4
+this.parts.ShotgunBoltCarrier.ConditionMax = 10
+this.parts.ShotgunBolt = {}
+this.parts.ShotgunBolt.InsertsInto = 'ShotgunBoltCarrier'
+this.parts.ShotgunBolt.ConditionLowerChance = 3
+this.parts.ShotgunBolt.ConditionMax = 10
+this.parts.ShotgunBarrel = {}
+this.parts.ShotgunBarrel.CombinesWith = 'ShotgunReceiver'
+this.parts.ShotgunBarrel.ConditionLowerChance = 3
+this.parts.ShotgunBarrel.ConditionMax = 10
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
@@ -305,10 +333,10 @@ this.generateTooltipForModel = function(text, model, data)
 			if component then
 				local pct = (component.condition / component.conditionMax) * 100
 				text = text .. this.getNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
+				text = this.generateTooltipForModel(text, componentModel, component)
 			else
 				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
 			end
-			text = this.generateTooltipForModel(text, componentModel, component)
 		end
 	end
 

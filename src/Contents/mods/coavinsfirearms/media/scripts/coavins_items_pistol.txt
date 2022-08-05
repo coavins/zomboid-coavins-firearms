@@ -29,22 +29,4 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 10
 	}
-
-	item RevolverReceiver {
-		DisplayName = Revolver Frame,
-		DisplayCategory = FirearmPart,
-		Type = Normal,
-		Icon = RevolverReceiver,
-		Weight = 0.5,
-		ConditionMax = 10
-	}
-
-	item RevolverCylinder {
-		DisplayName = Revolver Cylinder,
-		DisplayCategory = FirearmPart,
-		Type = Normal,
-		Icon = RevolverCylinder,
-		Weight = 0.3,
-		ConditionMax = 10
-	}
 }

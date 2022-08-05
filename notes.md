@@ -39,7 +39,11 @@
 
 ## Shotguns
 
-## ?
+* Shotgun Receiver
+  * Shotgun Forend
+	  * Shotgun Bolt Carrier
+	    * Shotgun Bolt
+* Shotgun Barrel
 
 # Operations
 

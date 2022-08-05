@@ -1,0 +1,50 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item ShotgunReceiver {
+		DisplayName = Shotgun Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunReceiver,
+		Weight = 2,
+		ConditionMax = 10
+	}
+
+	item ShotgunForend {
+		DisplayName = Shotgun Forend,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunForend,
+		Weight = 0.5,
+		ConditionMax = 10
+	}
+
+	item ShotgunBoltCarrier {
+		DisplayName = Shotgun Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBoltCarrier,
+		Weight = 0.3,
+		ConditionMax = 10
+	}
+
+	item ShotgunBolt {
+		DisplayName = Shotgun Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBolt,
+		Weight = 0.2,
+		ConditionMax = 10
+	}
+
+	item ShotgunBarrel {
+		DisplayName = Shotgun Barrel,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBarrel,
+		Weight = 1,
+		ConditionMax = 10
+	}
+}

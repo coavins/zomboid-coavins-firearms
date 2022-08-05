@@ -1,12 +1,12 @@
 -- global singleton, do not override
-CoavinsFirearmModels = {}
+CoavinsFirearms = {}
 
-CoavinsFirearmModels.match = {}
+CoavinsFirearms.match = {}
 
-function CoavinsFirearmModels:Include(fullType, model)
+function CoavinsFirearms:Include(fullType, model)
 	self.match[fullType] = model
 end
 
-function CoavinsFirearmModels:GetModel(fullType)
+function CoavinsFirearms:GetModel(fullType)
 	return self.match[fullType]
 end

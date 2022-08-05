@@ -4,4 +4,9 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.PistolBarrel = "Pistol Barrel",
 	ItemName_coavinsfirearms.RevolverReceiver = "Revolver Frame",
 	ItemName_coavinsfirearms.RevolverCylinder = "Revolver Cylinder",
+	ItemName_coavinsfirearms.ShotgunReceiver = "Shotgun Receiver",
+	ItemName_coavinsfirearms.ShotgunForend = "Shotgun Forend",
+	ItemName_coavinsfirearms.ShotgunBoltCarrier = "Shotgun Bolt Carrier",
+	ItemName_coavinsfirearms.ShotgunBolt = "Shotgun Bolt",
+	ItemName_coavinsfirearms.ShotgunBarrel = "Shotgun Barrel",
 }
