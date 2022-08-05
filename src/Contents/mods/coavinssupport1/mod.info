@@ -1,6 +1,6 @@
-name=Coavins Firearms: "Firearms B41"
+name=Coavins Firearms Disassembly: Support for "Firearms B41"
 poster=preview.png
 id=coavinssupport1
 require=coavinsfirearms,firearmmod
 description=This is an expansion pack for Coavins Firearms Disassembly.
-description=Adds support for "Firearms B41"
+description= Adds support for mod: "Firearms B41"
