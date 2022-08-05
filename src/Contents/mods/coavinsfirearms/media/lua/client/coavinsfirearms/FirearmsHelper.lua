@@ -16,42 +16,13 @@ this.getFirearmModelNameForItem = function(item)
 		return
 	end
 
-	-- Check if we hard-coded it first
+	-- Check if we hard-coded it
 	if this.typeModels[fullType] then
 		return this.typeModels[fullType]
 	end
-
-	local cat = item:getDisplayCategory()
-	if not cat then
-		return
-	end
-
-	if cat ~= 'Weapon' then
-		return
-	end
-
-	if not instanceof(item, "HandWeapon") then
-		return
-	end
-
-	local subcat = item:getSubCategory()
-	if not subcat then
-		return
-	end
-
-	if subcat ~= 'Firearm' then
-		return
-	end
-
-	-- Reasonably sure that we have a firearm, but what kind is it?
-	return 'Revolver'
 end
 
 this.itemIsFirearm = function(item)
-	if not item then
-		return false
-	end
-
 	if this.getFirearmModelNameForItem(item) then
 		return true
 	end
@@ -81,9 +52,9 @@ this.typeModels = {}
 this.typeModels["Base.Pistol"] = "Pistol"
 this.typeModels["Base.Pistol2"] = "Pistol"
 this.typeModels["Base.Pistol3"] = "Pistol"
---this.typeModels["Base.Revolver"] = "Revolver"
---this.typeModels["Base.Revolver_Short"] = "Revolver"
---this.typeModels["Base.Revolver_Long"] = "Revolver"
+this.typeModels["Base.Revolver"] = "Revolver"
+this.typeModels["Base.Revolver_Short"] = "Revolver"
+this.typeModels["Base.Revolver_Long"] = "Revolver"
 
 this.firearms = {}
 this.firearms.Pistol = {}
