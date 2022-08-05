@@ -2,4 +2,6 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.PistolReceiver = "Pistol Frame",
 	ItemName_coavinsfirearms.PistolSlide = "Pistol Slide",
 	ItemName_coavinsfirearms.PistolBarrel = "Pistol Barrel",
+	ItemName_coavinsfirearms.RevolverReceiver = "Revolver Frame",
+	ItemName_coavinsfirearms.RevolverCylinder = "Revolver Cylinder",
 }

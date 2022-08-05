@@ -49,9 +49,9 @@ this.typeModels = {}
 this.typeModels["Base.Pistol"] = "Pistol"
 this.typeModels["Base.Pistol2"] = "Pistol"
 this.typeModels["Base.Pistol3"] = "Pistol"
---this.typeModels["Revolver"] = "Revolver"
---this.typeModels["Revolver_Short"] = "Revolver"
---this.typeModels["Revolver_Long"] = "Revolver"
+this.typeModels["Base.Revolver"] = "Revolver"
+this.typeModels["Base.Revolver_Short"] = "Revolver"
+this.typeModels["Base.Revolver_Long"] = "Revolver"
 
 this.getFirearmModelNameForFullType = function(type)
 	return this.typeModels[type]
@@ -62,6 +62,10 @@ this.firearms.Pistol = {}
 this.firearms.Pistol.BreaksInto = { 'PistolReceiver', 'PistolSlide' }
 this.firearms.Pistol.SaveTypeIn = 'PistolReceiver'
 this.firearms.Pistol.FallbackType = 'Base.Pistol'
+this.firearms.Revolver = {}
+this.firearms.Revolver.BreaksInto = { 'RevolverReceiver', 'RevolverCylinder' }
+this.firearms.Revolver.SaveTypeIn = 'RevolverReceiver'
+this.firearms.Revolver.FallbackType = 'Base.Revolver'
 
 this.getFirearmModel = function(modelName)
 	return this.firearms[modelName]
@@ -87,6 +91,16 @@ this.parts.PistolBarrel = {}
 this.parts.PistolBarrel.InsertsInto = 'PistolSlide'
 this.parts.PistolBarrel.ConditionLowerChance = 3 -- 1/3
 this.parts.PistolBarrel.ConditionMax = 10
+this.parts.RevolverReceiver = {}
+this.parts.RevolverReceiver.CombinesWith = 'RevolverCylinder'
+this.parts.RevolverReceiver.FormsFirearm = 'Revolver'
+this.parts.RevolverReceiver.ConditionLowerChance = 1
+this.parts.RevolverReceiver.ConditionMax = 10
+this.parts.RevolverCylinder = {}
+this.parts.RevolverCylinder.CombinesWith = 'RevolverReceiver'
+this.parts.RevolverCylinder.FormsFirearm = 'Revolver'
+this.parts.RevolverCylinder.ConditionLowerChance = 3
+this.parts.RevolverCylinder.ConditionMax = 10
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
