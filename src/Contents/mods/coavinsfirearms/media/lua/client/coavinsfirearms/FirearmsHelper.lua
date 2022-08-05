@@ -16,10 +16,7 @@ this.getFirearmModelNameForItem = function(item)
 		return
 	end
 
-	-- Check if we hard-coded it
-	if this.typeModels[fullType] then
-		return this.typeModels[fullType]
-	end
+	return CoavinsFirearmModels:GetModel(fullType)
 end
 
 this.itemIsFirearm = function(item)
@@ -46,15 +43,6 @@ this.itemIsPart = function(item)
 
 	return false
 end
-
--- indicates which model is used for each firearm in the game
-this.typeModels = {}
-this.typeModels["Base.Pistol"] = "Pistol"
-this.typeModels["Base.Pistol2"] = "Pistol"
-this.typeModels["Base.Pistol3"] = "Pistol"
-this.typeModels["Base.Revolver"] = "Revolver"
-this.typeModels["Base.Revolver_Short"] = "Revolver"
-this.typeModels["Base.Revolver_Long"] = "Revolver"
 
 this.firearms = {}
 this.firearms.Pistol = {}

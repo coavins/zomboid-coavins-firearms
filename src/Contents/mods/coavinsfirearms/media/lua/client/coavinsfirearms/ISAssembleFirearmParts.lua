@@ -3,6 +3,12 @@ local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISAssembleFirearmParts = ISBaseTimedAction:derive("ISAssembleFirearmParts");
 
+local nvl = function(a, b)
+	if a then return a
+	else return b
+	end
+end
+
 local function predicateNotBroken(item)
 	return not item:isBroken()
 end
@@ -46,10 +52,6 @@ function ISAssembleFirearmParts:perform()
 	itemA:setJobDelta(0.0);
 	itemB:setJobDelta(0.0);
 
-	-- remove parts from inventory
-	self.character:getInventory():Remove(itemA)
-	self.character:getInventory():Remove(itemB)
-
 	-- get model
 	local modelA = FIREARMS.getPartModel(typeA)
 	local modelB = FIREARMS.getPartModel(typeB)
@@ -60,23 +62,22 @@ function ISAssembleFirearmParts:perform()
 	local resultType -- the type we are producing
 
 	-- if we're building a firearm
-	if modelA.FormsFirearm or modelB.FormsFirearm then
+	if dataA.realFirearm or dataB.realFirearm then
 		-- grab the real firearm type
-		if modelA.FormsFirearm then
-			resultType = dataA.realFirearm
-		else
-			resultType = dataB.realFirearm
-		end
-		-- something went wrong, use default pistol type
-		if not resultType then
-			-- TODO: use default type for this model
-		end
+		resultType = nvl(dataA.realFirearm, dataB.realFirearm)
 	-- if we're building a part
 	elseif modelA.FormsPart or modelB.FormsPart then
 		-- grab from either, should be the same
-		resultType = modelA.FormsPart or modelB.FormsPart
-		resultType = 'coavinsfirearms.' .. resultType
+		resultType = 'coavinsfirearms.' .. nvl(modelA.FormsPart, modelB.FormsPart)
 	end
+
+	if not resultType then
+		return
+	end
+
+	-- remove parts from inventory
+	self.character:getInventory():Remove(itemA)
+	self.character:getInventory():Remove(itemB)
 
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
