@@ -115,10 +115,10 @@ this.tableDeepCopy = function(t)
 	return target
 end
 
-this.initializeFirearmModData = function(item)
-	local type = item:getFullType()
+this.initializeFirearmModData = function(firearm)
+	local type = firearm:getFullType()
 	local model = this.getFirearmModelForFullType(type)
-	local data = this.getModData(item)
+	local data = this.getModData(firearm)
 
 	if not data.parts then
 		print("Initializing firearm: " .. type)
@@ -128,7 +128,7 @@ this.initializeFirearmModData = function(item)
 			data.parts[k] = this.initializeDataForPart(k, nil, true) -- looted guns always have all their parts
 		end
 
-		this.updateFirearm(item)
+		this.updateFirearm(firearm)
 	end
 end
 
@@ -142,9 +142,17 @@ this.initializeDataForPart = function(name, data, guaranteedParts)
 		data = {}
 	end
 
-	data.conditionLowerChance = nvl(data.conditionLowerChance, nvl(model.ConditionLowerChance, 0))
-	data.conditionMax = nvl(data.conditionMax,nvl(model.ConditionMax, 10))
-	data.condition = nvl(data.condition,data.conditionMax)
+	if not data.conditionLowerChance then
+		data.conditionLowerChance = nvl(model.ConditionLowerChance, 0)
+	end
+
+	if not data.conditionMax then
+		data.conditionMax = nvl(model.ConditionMax, 10)
+	end
+
+	if not data.condition then
+		data.condition = ZombRand(data.conditionMax * 0.7, data.conditionMax)
+	end
 
 	if not data.parts then
 		data.parts = {}
