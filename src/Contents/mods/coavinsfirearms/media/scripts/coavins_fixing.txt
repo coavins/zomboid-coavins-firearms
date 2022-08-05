@@ -63,9 +63,9 @@ module coavinsfirearms {
 	fixing Fix RevolverCylinder Welding
 	{
 		Require : RevolverCylinder,
-		GlobalItem : BlowTorch=5,
+		GlobalItem : BlowTorch=3,
 	  ConditionModifier : 1.2,
 
-		Fixer : SmallSheetMetal=2; MetalWelding=8,
+		Fixer : SmallSheetMetal=2; MetalWelding=6,
 	}
 }
