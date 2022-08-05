@@ -46,26 +46,11 @@ local installFirearmPart = function(player, item, part)
 end
 
 local checkInventoryItem = function(player, context, item)
-	local fullType = item:getFullType() -- Base.Pistol
-	if not fullType then
-		return
-	end
-
-	local type = item:getType() -- Pistol
-	if not type then
-		return
-	end
-
-	local cat = item:getDisplayCategory() -- Weapon
-	if not cat then
-		return
-	end
-
 	if item:getContainer() ~= player:getInventory() then
 		return
 	end
 
-	if cat == 'Weapon' and FIREARMS.getFirearmModelNameForFullType(fullType) then
+	if FIREARMS.itemIsFirearm(item) then
 		-- add info
 		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
 		AddTooltipForItem(infoOption, item)
@@ -74,7 +59,8 @@ local checkInventoryItem = function(player, context, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
 		--end
-	elseif cat == 'FirearmPart' then
+	elseif FIREARMS.itemIsPart(item) then
+		local type = item:getType() -- Pistol
 		local model = FIREARMS.getPartModel(type)
 		if not model then
 			return

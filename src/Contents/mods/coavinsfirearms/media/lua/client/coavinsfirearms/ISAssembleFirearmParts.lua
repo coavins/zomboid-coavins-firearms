@@ -81,13 +81,13 @@ function ISAssembleFirearmParts:perform()
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
 
+	-- initialize data
+	FIREARMS.initializeFirearmModData(resultItem)
+
 	-- set data
 	local resultData = FIREARMS.getModData(resultItem)
-	resultData.parts = {}
-	resultData.parts[typeA] = {}
 	resultData.parts[typeA].condition = itemA:getCondition()
 	resultData.parts[typeA].parts = dataA.parts
-	resultData.parts[typeB] = {}
 	resultData.parts[typeB].condition = itemB:getCondition()
 	resultData.parts[typeB].parts = dataB.parts
 

@@ -6,21 +6,53 @@ local nvl = function(a, b)
 	end
 end
 
+this.getFirearmModelNameForItem = function(item)
+	if not item then
+		return
+	end
+
+	local fullType = item:getFullType() -- Base.Pistol
+	if not fullType then
+		return
+	end
+
+	-- Check if we hard-coded it first
+	if this.typeModels[fullType] then
+		return this.typeModels[fullType]
+	end
+
+	local cat = item:getDisplayCategory()
+	if not cat then
+		return
+	end
+
+	if cat ~= 'Weapon' then
+		return
+	end
+
+	if not instanceof(item, "HandWeapon") then
+		return
+	end
+
+	local subcat = item:getSubCategory()
+	if not subcat then
+		return
+	end
+
+	if subcat ~= 'Firearm' then
+		return
+	end
+
+	-- Reasonably sure that we have a firearm, but what kind is it?
+	return 'Revolver'
+end
+
 this.itemIsFirearm = function(item)
 	if not item then
 		return false
 	end
 
-	local type = item:getFullType() -- Base.Pistol
-	if not type then
-		return false
-	end
-	local cat = item:getDisplayCategory() -- Weapon
-	if not cat then
-		return false
-	end
-
-	if cat == 'Weapon' and this.getFirearmModelNameForFullType(type) then
+	if this.getFirearmModelNameForItem(item) then
 		return true
 	end
 
@@ -49,13 +81,9 @@ this.typeModels = {}
 this.typeModels["Base.Pistol"] = "Pistol"
 this.typeModels["Base.Pistol2"] = "Pistol"
 this.typeModels["Base.Pistol3"] = "Pistol"
-this.typeModels["Base.Revolver"] = "Revolver"
-this.typeModels["Base.Revolver_Short"] = "Revolver"
-this.typeModels["Base.Revolver_Long"] = "Revolver"
-
-this.getFirearmModelNameForFullType = function(type)
-	return this.typeModels[type]
-end
+--this.typeModels["Base.Revolver"] = "Revolver"
+--this.typeModels["Base.Revolver_Short"] = "Revolver"
+--this.typeModels["Base.Revolver_Long"] = "Revolver"
 
 this.firearms = {}
 this.firearms.Pistol = {}
@@ -67,13 +95,13 @@ this.firearms.Revolver.BreaksInto = { 'RevolverReceiver', 'RevolverCylinder' }
 this.firearms.Revolver.SaveTypeIn = 'RevolverReceiver'
 this.firearms.Revolver.FallbackType = 'Base.Revolver'
 
-this.getFirearmModel = function(modelName)
-	return this.firearms[modelName]
-end
-
-this.getFirearmModelForFullType = function(type)
-	local modelName = this.getFirearmModelNameForFullType(type)
-	return this.firearms[modelName]
+this.getFirearmModelForItem = function(item)
+	local modelName = this.getFirearmModelNameForItem(item)
+	if modelName then
+		return this.firearms[modelName]
+	else
+		return nil
+	end
 end
 
 this.parts = {}
@@ -130,8 +158,11 @@ this.tableDeepCopy = function(t)
 end
 
 this.initializeFirearmModData = function(firearm)
+	local model = this.getFirearmModelForItem(firearm)
+	if not model then
+		return
+	end
 	local type = firearm:getFullType()
-	local model = this.getFirearmModelForFullType(type)
 	local data = this.getModData(firearm)
 
 	if not data.parts then
@@ -242,8 +273,10 @@ end
 -- updates firearm to match condition of most damaged part
 -- optionally deals condition damage to parts
 this.updateFirearm = function(firearm, conditionDamage)
-	local type = firearm:getFullType()
-	local model = this.getFirearmModelForFullType(type)
+	local model = this.getFirearmModelForItem(firearm)
+	if not model then
+		return
+	end
 	local data = this.getModData(firearm)
 
 	if not data.parts then
@@ -267,9 +300,8 @@ end
 
 this.getTooltipTextForItem = function(item)
 	local type = item:getType()
-	local fullType = item:getFullType()
 	local data = this.getModData(item)
-	local model = this.getFirearmModelForFullType(fullType)
+	local model = this.getFirearmModelForItem(item)
 	if model then
 		-- it's a firearm
 		this.initializeFirearmModData(item)

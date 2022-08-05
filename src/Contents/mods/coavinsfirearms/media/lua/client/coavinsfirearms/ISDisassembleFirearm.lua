@@ -34,8 +34,11 @@ end
 
 function ISDisassembleFirearm:perform()
 	local fItem = self.firearm
+	local fModel = FIREARMS.getFirearmModelForItem(fItem)
+	if not fModel then
+		return
+	end
 	local fFullType = fItem:getFullType()
-	local fModel = FIREARMS.getFirearmModelForFullType(fFullType)
 
 	fItem:setJobDelta(0.0)
 
