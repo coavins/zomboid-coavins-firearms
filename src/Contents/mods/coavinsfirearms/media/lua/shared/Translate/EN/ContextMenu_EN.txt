@@ -9,4 +9,5 @@ ContextMenu_EN = {
 	ContextMenu_Firearm_NotInstalled = "Not Installed",
 	ContextMenu_Firearm_NotFound = "No %1 found.",
 	ContextMenu_Firearm_NotFoundEmpty = "No %1 with empty slot found.",
+	ContextMenu_Firearm_Frame = "Frame",
 }
