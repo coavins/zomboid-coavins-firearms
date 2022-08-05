@@ -10,4 +10,6 @@ ContextMenu_EN = {
 	ContextMenu_Firearm_NotFound = "No %1 found.",
 	ContextMenu_Firearm_NotFoundEmpty = "No %1 with empty slot found.",
 	ContextMenu_Firearm_Frame = "Frame",
+	ContextMenu_Firearm_HasAttachmentsError = "Upgrades must be removed.",
+	ContextMenu_Firearm_HasMagazineError = "Magazine must be removed.",
 }

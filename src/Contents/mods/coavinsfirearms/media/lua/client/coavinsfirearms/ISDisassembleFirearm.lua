@@ -9,6 +9,8 @@ end
 
 function ISDisassembleFirearm:isValid()
 	if not self.character:getInventory():contains(self.firearm)
+	or self.firearm:getAllWeaponParts():size() > 0
+	or (self.firearm:getMagazineType() and self.firearm:isContainsClip())
 	then
 		return false
 	else

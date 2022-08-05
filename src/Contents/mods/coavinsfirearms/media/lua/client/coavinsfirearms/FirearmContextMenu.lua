@@ -56,9 +56,18 @@ local checkInventoryItem = function(player, context, item)
 		AddTooltipForItem(infoOption, item)
 
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
-		--if not isItemValid(player, type, item) then
-		--DisableOption(option, "Unable")
-		--end
+
+		-- Don't allow if item has upgrades attached or magazine inserted
+		local disableText = ''
+		if item:getAllWeaponParts():size() > 0 then
+			disableText = getText('ContextMenu_Firearm_HasAttachmentsError') .. ' '
+		end
+		if item:getMagazineType() and item:isContainsClip() then
+			disableText = disableText .. getText('ContextMenu_Firearm_HasMagazineError')
+		end
+		if disableText ~= '' then
+			DisableOption(option, disableText)
+		end
 	elseif FIREARMS.itemIsPart(item) then
 		local type = item:getType() -- Pistol
 		local model = FIREARMS.getPartModel(type)
