@@ -57,17 +57,34 @@ local checkInventoryItem = function(player, context, item)
 
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 
-		-- Don't allow if item has upgrades attached or magazine inserted
+		-- Check if disassembly is not allowed
 		local disableText = ''
+
+		-- Upgrades must be removed
 		if item:getAllWeaponParts():size() > 0 then
-			disableText = getText('ContextMenu_Firearm_HasAttachmentsError') .. ' '
+			disableText = disableText .. getText('ContextMenu_Firearm_ErrorHasAttachments') .. ' '
 		end
-		if item:getMagazineType() and item:isContainsClip() then
-			disableText = disableText .. getText('ContextMenu_Firearm_HasMagazineError')
+
+		if item:getMagazineType() then
+			-- Magazine must be ejected
+			if item:isContainsClip() then
+				disableText = disableText .. getText('ContextMenu_Firearm_ErrorHasMagazine') .. ' '
+			end
+		else
+			-- Rounds must be ejected from internal magazine
+			if item:getCurrentAmmoCount() > 0 then
+				disableText = disableText .. getText('ContextMenu_Firearm_ErrorHasRounds') .. ' '
+			end
+			-- Chamber must be cleared
+			if item:isRoundChambered() then
+				disableText = disableText .. getText('ContextMenu_Firearm_ErrorNotCleared') .. ' '
+			end
 		end
+
 		if disableText ~= '' then
 			DisableOption(option, disableText)
 		end
+
 	elseif FIREARMS.itemIsPart(item) then
 		local type = item:getType() -- Pistol
 		local model = FIREARMS.getPartModel(type)
