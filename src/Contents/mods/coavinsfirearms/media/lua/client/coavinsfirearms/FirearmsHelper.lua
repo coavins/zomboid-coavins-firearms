@@ -158,14 +158,14 @@ this.initializeDataForPart = function(name, data, guaranteedParts)
 		data.parts = {}
 		if model.BreaksInto then
 			for _,k in ipairs(model.BreaksInto) do
-				data.parts[k] = this.initializeDataForPart(k, guaranteedParts)
+				data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts)
 			end
 		end
 		if model.Holds then
 			for _,k in ipairs(model.Holds) do
 				-- 50% chance for this part to be missing
 				if guaranteedParts or ZombRand(2) == 0 then
-					data.parts[k] = this.initializeDataForPart(k, guaranteedParts)
+					data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts)
 				end
 			end
 		end
