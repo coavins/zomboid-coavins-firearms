@@ -46,6 +46,12 @@ function ISRemoveFirearmPart:perform()
 		local tType = 'coavinsfirearms.' .. target
 		local tItem = self.character:getInventory():AddItem(tType)
 
+		if not tItem then
+			return
+		end
+
+		tItem:setFavorite(pItem:isFavorite())
+
 		FIREARMS.copyDataFromParent(pItem, tItem)
 
 		-- remove this part from parent

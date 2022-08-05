@@ -51,7 +51,14 @@ function ISDisassembleFirearm:perform()
 	for _,k in ipairs(fModel.BreaksInto) do
 		local pType = 'coavinsfirearms.' .. k
 		local pItem = self.character:getInventory():AddItem(pType)
+
+		if not pItem then
+			return
+		end
+
 		local pData = FIREARMS.getModData(pItem)
+
+		pItem:setFavorite(fItem:isFavorite())
 
 		-- Receiver must hold some characteristics of the original item
 		if k == fModel.SaveTypeIn then
