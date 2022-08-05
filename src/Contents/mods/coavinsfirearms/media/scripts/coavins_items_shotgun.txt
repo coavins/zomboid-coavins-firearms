@@ -9,7 +9,8 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = ShotgunReceiver,
 		Weight = 2,
-		ConditionMax = 10
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
 	}
 
 	item ShotgunForend {
@@ -18,7 +19,8 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = ShotgunForend,
 		Weight = 0.5,
-		ConditionMax = 10
+		ConditionMax = 10,
+		WorldStaticModel = CarvingFork_Ground,
 	}
 
 	item ShotgunBoltCarrier {
@@ -27,7 +29,8 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = ShotgunBoltCarrier,
 		Weight = 0.3,
-		ConditionMax = 10
+		ConditionMax = 10,
+		WorldStaticModel = Staples_Ground,
 	}
 
 	item ShotgunBolt {
@@ -36,7 +39,8 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = ShotgunBolt,
 		Weight = 0.2,
-		ConditionMax = 10
+		ConditionMax = 10,
+		WorldStaticModel = Staples_Ground,
 	}
 
 	item ShotgunBarrel {
@@ -45,6 +49,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = ShotgunBarrel,
 		Weight = 1,
-		ConditionMax = 10
+		ConditionMax = 10,
+		WorldStaticModel = PlasticPipe,
 	}
 }
