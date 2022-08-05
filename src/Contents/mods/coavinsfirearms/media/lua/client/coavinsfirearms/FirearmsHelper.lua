@@ -281,6 +281,10 @@ this.updateFirearm = function(firearm, conditionDamage)
 	firearm:setCondition(lowestCondition)
 end
 
+this.getShortNameForPart = function(part)
+	return getItemNameFromFullType('coavinsfirearms.' .. part .. '_Short')
+end
+
 this.getNameForPart = function(part)
 	return getItemNameFromFullType('coavinsfirearms.' .. part)
 end
@@ -318,7 +322,7 @@ this.generateTooltipForModel = function(text, model, data)
 				text = text .. ' <LINE> '
 			end
 			local pct = (component.condition / component.conditionMax) * 100
-			text = text .. this.getNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
+			text = text .. ' <RGB:0.8,0.8,0.8> ' .. this.getShortNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
 			text = this.generateTooltipForModel(text, componentModel, component)
 		end
 	end
@@ -332,10 +336,10 @@ this.generateTooltipForModel = function(text, model, data)
 			end
 			if component then
 				local pct = (component.condition / component.conditionMax) * 100
-				text = text .. this.getNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
+				text = text .. ' <RGB:0.8,0.8,0.8> ' .. this.getShortNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
 				text = this.generateTooltipForModel(text, componentModel, component)
 			else
-				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
+				text = text .. ' <RGB:1,0,0> ' .. this.getShortNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
 			end
 		end
 	end
@@ -348,7 +352,12 @@ this.getTooltipText = function(type, model, data, condition, conditionMax)
 
 	-- show condition
 	local conditionPct = (condition / conditionMax) * 100
-	text = getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
+	if conditionPct == 0 then
+		text = ' <RGB:1,0,0> ' .. getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
+	else
+		text = ' <RGB:1,1,1> ' .. getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
+	end
+
 
 	text = this.generateTooltipForModel(text, model, data)
 
