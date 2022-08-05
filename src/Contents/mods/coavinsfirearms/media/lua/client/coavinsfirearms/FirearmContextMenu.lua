@@ -16,12 +16,12 @@ local function AddTooltip(option, text, name, texture)
 	option.toolTip = tooltip
 end
 
-local function AddTooltipForPartData(option, type, data)
+local function AddTooltipForData(option, type, data)
 	AddTooltip(option, FIREARMS.getTooltipTextForPartData(type, data), FIREARMS.getNameForPart(type), nil)
 end
 
-local function AddTooltipForPartItem(option, item)
-	AddTooltip(option, FIREARMS.getTooltipTextForPartItem(item), item:getName(), item:getTex())
+local function AddTooltipForItem(option, item)
+	AddTooltip(option, FIREARMS.getTooltipTextForItem(item), item:getName(), item:getTex())
 end
 
 local function DisableOption(option, text)
@@ -66,6 +66,10 @@ local checkInventoryItem = function(player, context, item)
 	end
 
 	if cat == 'Weapon' and FIREARMS.getFirearmModelNameForFullType(fullType) then
+		-- add info
+		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
+		AddTooltipForItem(infoOption, item)
+
 		local option = context:addOption(getText("ContextMenu_Firearm_Disassemble"), player, disassembleFirearm, item)
 		--if not isItemValid(player, type, item) then
 		--DisableOption(option, "Unable")
@@ -81,7 +85,7 @@ local checkInventoryItem = function(player, context, item)
 
 		-- add info
 		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
-		AddTooltipForPartItem(infoOption, item)
+		AddTooltipForItem(infoOption, item)
 
 		-- if this item can be combined with another part
 		if model.CombinesWith then
@@ -94,7 +98,7 @@ local checkInventoryItem = function(player, context, item)
 			for k=0, parts:size() - 1 do
 				local part = parts:get(k)
 				local option = subMenu:addOption(part:getName(), player, assembleFirearmParts, item, part)
-				AddTooltipForPartItem(option, part)
+				AddTooltipForItem(option, part)
 				lackingParts = false
 			end
 
@@ -121,7 +125,7 @@ local checkInventoryItem = function(player, context, item)
 				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
 					local option = subMenuRemove:addOption(getItemNameFromFullType('coavinsfirearms.' .. heldPart), player, removePartFromPart, item, heldPart)
-					AddTooltipForPartData(option, heldPart, data.parts[heldPart])
+					AddTooltipForData(option, heldPart, data.parts[heldPart])
 					doRemove = true
 				else
 					doInstall = true
@@ -132,7 +136,7 @@ local checkInventoryItem = function(player, context, item)
 					for k=0, parts:size() - 1 do
 						local part = parts:get(k)
 						local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, item, part)
-						AddTooltipForPartItem(option, part)
+						AddTooltipForItem(option, part)
 						lackingParts = false
 					end
 
@@ -169,7 +173,7 @@ local checkInventoryItem = function(player, context, item)
 				-- if a part of this type is not already installed
 				if not partData.parts[type] then
 					local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
-					AddTooltipForPartItem(option, part)
+					AddTooltipForItem(option, part)
 					lackingParts = false
 				end
 			end

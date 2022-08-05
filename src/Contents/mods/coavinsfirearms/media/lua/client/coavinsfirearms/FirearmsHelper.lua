@@ -132,9 +132,9 @@ this.initializeFirearmModData = function(firearm)
 	end
 end
 
-this.initializeDataForPart = function(name, data, guaranteedParts)
-	print("Initializing part: " .. name)
-	local model = this.getPartModel(name)
+this.initializeDataForPart = function(type, data, guaranteedParts)
+	print("Initializing part: " .. type)
+	local model = this.getPartModel(type)
 
 	-- this function either creates a new table (and returns it)
 	-- or uses the table that you provided
@@ -251,43 +251,73 @@ this.getNameForPart = function(part)
 	return getItemNameFromFullType('coavinsfirearms.' .. part)
 end
 
-this.getTooltipTextForPartItem = function(item)
+this.getTooltipTextForItem = function(item)
 	local type = item:getType()
+	local fullType = item:getFullType()
 	local data = this.getModData(item)
-	return this.getTooltipText(type, data, item:getCondition(), item:getConditionMax())
+	local model = this.getFirearmModelForFullType(fullType)
+	if model then
+		-- it's a firearm
+		this.initializeFirearmModData(item)
+	else
+		-- it's a component
+		model = this.getPartModel(type)
+		this.initializeDataForPart(type, data)
+	end
+
+	return this.getTooltipText(type, model, data, item:getCondition(), item:getConditionMax())
 end
 
 this.getTooltipTextForPartData = function(type, data)
 	local model = this.getPartModel(type)
-	return this.getTooltipText(type, data, data.condition, model.ConditionMax)
+
+	this.initializeDataForPart(type, data)
+
+	return this.getTooltipText(type, model, data, data.condition, model.ConditionMax)
 end
 
-this.getTooltipText = function(type, data, condition, conditionMax)
-	local model = this.getPartModel(type)
-	local text = ''
-
-	if not data.parts then
-		data.parts = {}
-		data.parts[type] = this.initializeDataForPart(type)
+this.generateTooltipForModel = function(text, model, data)
+	if model.BreaksInto then
+		for _,part in ipairs(model.BreaksInto) do
+			local component = data.parts[part]
+			local componentModel = this.getPartModel(part)
+			if text ~= '' then
+				text = text .. ' <LINE> '
+			end
+			local pct = (component.condition / component.conditionMax) * 100
+			text = text .. this.getNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
+			text = this.generateTooltipForModel(text, componentModel, component)
+		end
 	end
+
+	if model.Holds then
+		for _,part in ipairs(model.Holds) do
+			local component = data.parts[part]
+			local componentModel = this.getPartModel(part)
+			if text ~= '' then
+				text = text .. ' <LINE> '
+			end
+			if component then
+				local pct = (component.condition / component.conditionMax) * 100
+				text = text .. this.getNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
+			else
+				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
+			end
+			text = this.generateTooltipForModel(text, componentModel, component)
+		end
+	end
+
+	return text
+end
+
+this.getTooltipText = function(type, model, data, condition, conditionMax)
+	local text = ''
 
 	-- show condition
 	local conditionPct = (condition / conditionMax) * 100
 	text = getText('Tooltip_weapon_Condition') .. ': ' .. string.format('%.0f%%', conditionPct)
 
-	if model.Holds and data.parts then
-		for _,part in ipairs(model.Holds) do
-			local installedPart = data.parts[part]
-			if text ~= '' then
-				text = text .. ' <LINE> '
-			end
-			if installedPart then
-				text = text .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_Installed') .. ' (' .. string.format('%.1f', installedPart.condition) .. ')'
-			else
-				text = text .. ' <RGB:1,0,0> ' .. this.getNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
-			end
-		end
-	end
+	text = this.generateTooltipForModel(text, model, data)
 
 	return text
 end
