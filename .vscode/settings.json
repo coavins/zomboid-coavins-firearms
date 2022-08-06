@@ -15,6 +15,7 @@
 		"getDebug",
 		"getDebugOptions",
 		"ZombRand",
-		"getTexture"
+		"getTexture",
+		"CharacterActionAnims"
 	]
 }

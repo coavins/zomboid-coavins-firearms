@@ -30,6 +30,7 @@ function ISInstallFirearmPart:start()
 	self.part:setJobDelta(0.0)
 	self.partToInstall:setJobType(getText("ContextMenu_Firearm_InstallComponent"))
 	self.partToInstall:setJobDelta(0.0)
+	self:setActionAnim(CharacterActionAnims.Craft)
 end
 
 function ISInstallFirearmPart:stop()

@@ -25,6 +25,7 @@ end
 function ISRemoveFirearmPart:start()
 	self.part:setJobType(getText("ContextMenu_Firearm_RemoveComponent"))
 	self.part:setJobDelta(0.0)
+	self:setActionAnim(CharacterActionAnims.Craft)
 end
 
 function ISRemoveFirearmPart:stop()

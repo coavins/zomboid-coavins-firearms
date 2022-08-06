@@ -27,6 +27,7 @@ end
 function ISDisassembleFirearm:start()
 	self.firearm:setJobType(getText("ContextMenu_Firearm_Disassemble"))
 	self.firearm:setJobDelta(0.0)
+	self:setActionAnim(CharacterActionAnims.Craft)
 end
 
 function ISDisassembleFirearm:stop()

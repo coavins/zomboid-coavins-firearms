@@ -35,6 +35,7 @@ function ISAssembleFirearmParts:start()
 	self.partA:setJobDelta(0.0);
 	self.partB:setJobType(getText("ContextMenu_Firearm_Assemble"));
 	self.partB:setJobDelta(0.0);
+	self:setActionAnim(CharacterActionAnims.Craft)
 end
 
 function ISAssembleFirearmParts:stop()
