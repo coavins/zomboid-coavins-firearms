@@ -17,7 +17,8 @@ local function AddTooltip(option, text, name, texture)
 end
 
 local function AddTooltipForData(option, type, data)
-	AddTooltip(option, FIREARMS.getTooltipTextForPartData(type, data), FIREARMS.getNameForPart(type), nil)
+	local tex = getTexture('media/textures/Item_' .. type .. '.png')
+	AddTooltip(option, FIREARMS.getTooltipTextForPartData(type, data), FIREARMS.getNameForPart(type), tex)
 end
 
 local function AddTooltipForItem(option, item)
@@ -212,9 +213,7 @@ local populateContextMenu = function(playerId, context, items)
 	end
 
 	for _,k in ipairs(items) do
-		--if instanceof(k, "InventoryItem") then
-			checkInventoryItem(player, context, k)
-		--end
+		checkInventoryItem(player, context, k)
 	end
 end
 
