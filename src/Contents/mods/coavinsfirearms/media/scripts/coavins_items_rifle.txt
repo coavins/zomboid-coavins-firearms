@@ -1,0 +1,55 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item M16LowerReceiver {
+		DisplayName = Rifle Lower Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = M16LowerReceiver,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item M16UpperReceiver {
+		DisplayName = Rifle Upper Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = M16UpperReceiver,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item M16BoltCarrier {
+		DisplayName = Rifle Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = M16BoltCarrier,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item M16FiringPin {
+		DisplayName = Rifle Firing Pin,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = M16BoltCarrierGroup,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item M16Bolt {
+		DisplayName = Rifle Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = M16Bolt,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+}
