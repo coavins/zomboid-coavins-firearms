@@ -62,7 +62,8 @@ function ISDisassembleFirearm:perform()
 
 		-- Receiver must hold some characteristics of the original item
 		if k == fModel.SaveTypeIn then
-			pItem:setName(getItemNameFromFullType(fItem:getFullType()) .. ' (' .. getText('ContextMenu_Firearm_Frame') .. ')')
+			local firearmName = getItemNameFromFullType(fItem:getFullType())
+			pItem:setName(pItem:getName() .. ' (' .. firearmName .. ')')
 			pData.realFirearm = fFullType
 		end
 
