@@ -37,7 +37,7 @@ module coavinsfirearms {
 		DisplayName = Rifle Firing Pin,
 		DisplayCategory = FirearmPart,
 		Type = Normal,
-		Icon = M16BoltCarrierGroup,
+		Icon = M16FiringPin,
 		Weight = 2,
 		ConditionMax = 10,
 		WorldStaticModel = Paperbag_Ground,
