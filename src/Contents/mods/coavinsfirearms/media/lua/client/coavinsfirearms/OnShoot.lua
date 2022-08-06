@@ -1,10 +1,15 @@
 local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
-local function OnPlayerAttackFinished(_, handWeapon)
+local function OnPlayerAttackFinished(player, handWeapon)
 	if FIREARMS.itemIsFirearm(handWeapon) then
 		-- first, get the amount of condition lost from this attack
-		local chance = handWeapon:getConditionLowerChance();
+		local lowerChance = handWeapon:getConditionLowerChance()
+		local maintenanceMod = player:getMaintenanceMod()
 		local conditionLoss = 0
+
+		print(string.format('1: %.2f, 2: %.2f', lowerChance, maintenanceMod))
+
+		local chance = lowerChance + (maintenanceMod * 2)
 
 		if ZombRand(chance) == 0 then
 			-- weapon sustained damage
