@@ -28,6 +28,7 @@ function ISDisassembleFirearm:start()
 	self.firearm:setJobType(getText("ContextMenu_Firearm_Disassemble"))
 	self.firearm:setJobDelta(0.0)
 	self:setActionAnim(CharacterActionAnims.Craft)
+	self:setOverrideHandModels(nil, nil);
 end
 
 function ISDisassembleFirearm:stop()
@@ -69,6 +70,13 @@ function ISDisassembleFirearm:perform()
 		end
 
 		FIREARMS.copyDataFromParent(fItem, pItem)
+	end
+
+	if self.character:getPrimaryHandItem() == fItem then
+		self.character:setPrimaryHandItem(nil)
+	end
+	if self.character:getSecondaryHandItem() == fItem then
+		self.character:setSecondaryHandItem(nil)
 	end
 
 	-- needed to remove from queue / start next.
