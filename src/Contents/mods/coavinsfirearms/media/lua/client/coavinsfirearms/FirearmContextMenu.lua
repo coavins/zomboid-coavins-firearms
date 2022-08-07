@@ -43,6 +43,7 @@ local removePartFromPart = function(player, item, partName)
 end
 
 local installFirearmPart = function(player, item, part)
+	ISInventoryPaneContextMenu.equipWeapon(part, false, false, player:getPlayerNum());
 	ISTimedActionQueue.add(ISInstallFirearmPart:new(player, item, part, 60*2))
 end
 

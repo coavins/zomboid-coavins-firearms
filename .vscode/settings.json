@@ -16,6 +16,7 @@
 		"getDebugOptions",
 		"ZombRand",
 		"getTexture",
-		"CharacterActionAnims"
+		"CharacterActionAnims",
+		"ISInventoryPaneContextMenu"
 	]
 }
