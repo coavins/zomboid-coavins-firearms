@@ -1,0 +1,63 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix M16LowerReceiver Welding
+	{
+		Require : M16LowerReceiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix M16LowerReceiver
+	{
+		Require : M16LowerReceiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2,
+		Fixer : Scotchtape=3,
+	}
+
+	fixing Fix M16UpperReceiver
+	{
+		Require : M16UpperReceiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2,
+		Fixer : Scotchtape=3,
+	}
+
+	fixing Fix M16BoltCarrier Welding
+	{
+		Require : M16BoltCarrier,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix M16FiringPin Welding
+	{
+		Require : M16FiringPin,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : ScrapMetal=2; MetalWelding=6,
+		Fixer : SmallSheetMetal; MetalWelding=4,
+	}
+
+	fixing Fix M16Bolt Welding
+	{
+		Require : M16Bolt,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+}
