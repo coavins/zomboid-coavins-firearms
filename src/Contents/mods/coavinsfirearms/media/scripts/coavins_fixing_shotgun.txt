@@ -18,8 +18,8 @@ module coavinsfirearms {
 		Require : ShotgunReceiver,
 		ConditionModifier : 1,
 
-		Fixer : DuctTape=2,
-		Fixer : Scotchtape=3,
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
 	}
 
 	fixing Fix ShotgunForend
@@ -27,8 +27,8 @@ module coavinsfirearms {
 		Require : ShotgunForend,
 		ConditionModifier : 1,
 
-		Fixer : DuctTape=1,
-		Fixer : Scotchtape=2,
+		Fixer : DuctTape=1; Aiming=2,
+		Fixer : Scotchtape=2; Aiming=1,
 	}
 
 	fixing Fix ShotgunBoltCarrier Welding

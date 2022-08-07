@@ -48,8 +48,8 @@ module coavinsfirearms {
 		Require : M16LowerReceiver,
 		ConditionModifier : 1,
 
-		Fixer : DuctTape=2,
-		Fixer : Scotchtape=3,
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
 	}
 
 	fixing Fix M16UpperReceiver
@@ -57,8 +57,8 @@ module coavinsfirearms {
 		Require : M16UpperReceiver,
 		ConditionModifier : 1,
 
-		Fixer : DuctTape=2,
-		Fixer : Scotchtape=3,
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
 	}
 
 	fixing Fix M16BoltCarrier Welding
