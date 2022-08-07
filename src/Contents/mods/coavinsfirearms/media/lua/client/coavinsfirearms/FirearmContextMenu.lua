@@ -31,6 +31,7 @@ local function DisableOption(option, text)
 end
 
 local disassembleFirearm = function(player, item)
+	ISInventoryPaneContextMenu.unequipItem(item, player:getPlayerNum())
 	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, 60*2))
 end
 
