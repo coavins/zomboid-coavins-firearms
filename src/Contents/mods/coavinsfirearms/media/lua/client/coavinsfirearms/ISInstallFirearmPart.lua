@@ -31,6 +31,7 @@ function ISInstallFirearmPart:start()
 	self.partToInstall:setJobType(getText("ContextMenu_Firearm_InstallComponent"))
 	self.partToInstall:setJobDelta(0.0)
 	self:setActionAnim(CharacterActionAnims.Craft)
+	self:setOverrideHandModels(nil, nil)
 end
 
 function ISInstallFirearmPart:stop()

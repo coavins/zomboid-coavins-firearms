@@ -36,6 +36,7 @@ function ISAssembleFirearmParts:start()
 	self.partB:setJobType(getText("ContextMenu_Firearm_Assemble"));
 	self.partB:setJobDelta(0.0);
 	self:setActionAnim(CharacterActionAnims.Craft)
+	self:setOverrideHandModels(nil, nil)
 end
 
 function ISAssembleFirearmParts:stop()
@@ -102,8 +103,14 @@ function ISAssembleFirearmParts:perform()
 	-- update condition
 	FIREARMS.updateFirearm(resultItem)
 
-	self.character:setPrimaryHandItem(nil);
-	self.character:setSecondaryHandItem(nil);
+	if self.character:getPrimaryHandItem() == itemA
+	or self.character:getPrimaryHandItem() == itemB then
+		self.character:setPrimaryHandItem(nil)
+	end
+	if self.character:getSecondaryHandItem() == itemA
+	or self.character:getSecondaryHandItem() == itemB then
+		self.character:setSecondaryHandItem(nil);
+	end
 
 	-- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);

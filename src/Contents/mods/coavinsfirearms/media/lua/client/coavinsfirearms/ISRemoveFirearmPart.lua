@@ -26,6 +26,7 @@ function ISRemoveFirearmPart:start()
 	self.part:setJobType(getText("ContextMenu_Firearm_RemoveComponent"))
 	self.part:setJobDelta(0.0)
 	self:setActionAnim(CharacterActionAnims.Craft)
+	self:setOverrideHandModels(nil, nil)
 end
 
 function ISRemoveFirearmPart:stop()
