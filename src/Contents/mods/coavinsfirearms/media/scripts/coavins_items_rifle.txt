@@ -3,6 +3,26 @@ module coavinsfirearms {
 		Base
 	}
 
+	item BoltActionReceiver {
+		DisplayName = Rifle Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = BoltActionReceiver,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item BoltActionBolt {
+		DisplayName = Rifle Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = BoltActionBolt,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
 	item M16LowerReceiver {
 		DisplayName = Rifle Lower Receiver,
 		DisplayCategory = FirearmPart,

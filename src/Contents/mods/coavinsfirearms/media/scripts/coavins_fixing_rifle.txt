@@ -3,6 +3,36 @@ module coavinsfirearms {
 		Base
 	}
 
+	fixing Fix BoltActionReceiver Welding
+	{
+		Require : BoltActionReceiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix BoltActionReceiver
+	{
+		Require : BoltActionReceiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix BoltActionBolt Welding
+	{
+		Require : BoltActionBolt,
+		GlobalItem : BlowTorch=3,
+		ConditionModifier : 1.2,
+
+		Fixer : SheetMetal; MetalWelding=7,
+		Fixer : SmallSheetMetal; MetalWelding=5,
+		Fixer : ScrapMetal; MetalWelding=3,
+	}
+
 	fixing Fix M16LowerReceiver Welding
 	{
 		Require : M16LowerReceiver,
