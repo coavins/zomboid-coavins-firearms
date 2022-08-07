@@ -83,6 +83,12 @@ function ISAssembleFirearmParts:perform()
 	-- create item
 	local resultItem = self.character:getInventory():AddItem(resultType)
 
+	if resultItem:getRackSound() then
+		self.character:playSound(resultItem:getRackSound())
+	elseif resultItem:getInsertAmmoStopSound() then
+		self.character:playSound(resultItem:getInsertAmmoStopSound());
+	end
+
 	-- initialize data
 	FIREARMS.initializeFirearmModData(resultItem)
 
