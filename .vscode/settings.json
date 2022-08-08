@@ -17,6 +17,7 @@
 		"ZombRand",
 		"getTexture",
 		"CharacterActionAnims",
-		"ISInventoryPaneContextMenu"
+		"ISInventoryPaneContextMenu",
+		"ProceduralDistributions"
 	]
 }
