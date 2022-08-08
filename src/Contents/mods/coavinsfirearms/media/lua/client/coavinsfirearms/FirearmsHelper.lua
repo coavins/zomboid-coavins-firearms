@@ -16,7 +16,7 @@ this.getFirearmModelNameForItem = function(item)
 		return
 	end
 
-	return CoavinsFirearms:GetModel(fullType)
+	return CoavinsFirearms:GetModelName(fullType)
 end
 
 this.itemIsFirearm = function(item)
@@ -44,32 +44,10 @@ this.itemIsPart = function(item)
 	return false
 end
 
-this.firearms = {}
-this.firearms.GenericPistol = {}
-this.firearms.GenericPistol.BreaksInto = { 'PistolReceiver', 'PistolSlide' }
-this.firearms.GenericPistol.SaveTypeIn = 'PistolReceiver'
-this.firearms.GenericPistol.FallbackType = 'Base.Pistol'
-this.firearms.GenericRevolver = {}
-this.firearms.GenericRevolver.BreaksInto = { 'RevolverReceiver', 'RevolverCylinder' }
-this.firearms.GenericRevolver.SaveTypeIn = 'RevolverReceiver'
-this.firearms.GenericRevolver.FallbackType = 'Base.Revolver'
-this.firearms.GenericShotgun = {} -- should also work for break action
-this.firearms.GenericShotgun.BreaksInto = { 'ShotgunReceiver', 'ShotgunBarrel' }
-this.firearms.GenericShotgun.SaveTypeIn = 'ShotgunReceiver'
-this.firearms.GenericShotgun.FallbackType = 'Base.Shotgun'
-this.firearms.M16Rifle = {}
-this.firearms.M16Rifle.BreaksInto = { 'M16UpperReceiver', 'M16LowerReceiver' }
-this.firearms.M16Rifle.SaveTypeIn = 'M16LowerReceiver'
-this.firearms.M16Rifle.FallbackType = 'Base.AssaultRifle'
-this.firearms.BoltActionRifle = {}
-this.firearms.BoltActionRifle.BreaksInto = { 'BoltActionReceiver', 'BoltActionBolt'}
-this.firearms.BoltActionRifle.SaveTypeIn = 'BoltActionReceiver'
-this.firearms.BoltActionRifle.FallbackType = 'Base.VarmintRifle'
-
 this.getFirearmModelForItem = function(item)
 	local modelName = this.getFirearmModelNameForItem(item)
 	if modelName then
-		return this.firearms[modelName]
+		return CoavinsFirearms:GetModel(modelName)
 	else
 		return nil
 	end
