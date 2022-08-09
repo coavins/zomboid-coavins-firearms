@@ -1,19 +1,22 @@
 <div align="center">
-	<h1>Coavins Firearms Disassembly</h1>
+	<h1>Firearm Repair Overhaul</h1>
 	<img height=150 src="src/preview.png">
 	<p align="center">
-		A Project Zomboid mod that allows firearms to be disassembled into parts.
-		<br />✔ Works in Multiplayer ✔ Works in 41.73
+		Firearm repair overhaul for Project Zomboid
+		<br />✔ Works in Multiplayer ✔ Tested on 41.73
+		<br />✔ Compatible with most other firearm mods
 	</p>
 	<a href="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml"><img src="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml/badge.svg"></a>
 	<img src="https://wakatime.com/badge/user/20060ef6-e09e-4c5c-b389-e5f3cff5bc41/project/135beebf-ced7-461a-a60d-9e58499e9103.svg" />
 </div>
 
-# How it works
+<br />
 
-This mod removes the "Repair" context menu for supported firearms, instead allowing them to be disassembled into components that can be individually repaired (or replaced) and reassembled.
+This mod replaces the vanilla "Repair" action for firearms, allowing them to be disassembled into parts that can be individually repaired (or replaced) and reassembled.
 
 These components can be looted from places where you normally find guns, or they can be removed from other guns and re-used.
+
+# How it works
 
 ## Repairing a firearm
 
@@ -21,13 +24,13 @@ You won't be able to directly repair firearms anymore. You will instead have to 
 
 Individual components can be repaired using things like duct tape or metalworking. You should expect firearms to degrade at around the same rate as before, and it should take around the same level of effort to repair a gun the first few times that it breaks.
 
-⚠ It will take increasingly more effort to repair a firearm as more of its parts are broken.
-
 Alternatively, just replace the broken part with one taken from a different gun.
+
+⚠ It will become increasingly more difficult to repair a firearm as more of its parts are broken.
 
 ## Components
 
-This mod adds many new items that are used in repair and reassembly.
+This mod adds many new items that are used in repair and reassembly. Spare components can be looted from most places where guns are normally found.
 
 **Pistols**: Frame, Slide, Barrel
 
@@ -39,9 +42,9 @@ This mod adds many new items that are used in repair and reassembly.
 
 **Shotguns**: Receiver, Forend, Bolt carrier, Bolt, Barrel
 
-Spare components can be looted from most places where guns are normally found.
-
 ℹ Some parts can contain other parts, forming a tree structure - all components must be in full working condition before the firearm will operate. If any part is missing or broken, the firearm (if you reassemble it) will be "broken" and will not fire.
+
+ℹ Parts can be swapped between firearms of the same style.
 
 ## Condition
 
@@ -61,7 +64,7 @@ This mod should be compatible with most other mods that introduce new firearms o
 
 ⚠ By default, only vanilla firearms can be disassembled - if you have other mods that add new guns, they will not be affected.
 
-However, this mod is designed to be extensible by other authors so that it can be used with their custom firearms.
+This mod is designed to be extensible so that it can be used with custom firearms without much effort.
 
 - If you are a player and you want to disassemble custom firearms, then either:
   - use one of the included compatibility patches,
@@ -71,13 +74,15 @@ However, this mod is designed to be extensible by other authors so that it can b
 
 # Included Mods
 
+These are the mods provided by this Steam workshop item.
+
 ## coavinsfirearms
 
-This is the base mod, and must be enabled.
+This is the main mod, and must be enabled. Supports all of the firearms present in the base game.
 
 ## coavinssupport1
 
-Compatibility patch for "Firearms B41". Most of the custom guns in this mod can now be disassembled. The "Gun Toolkit" item is changed to repair parts instead of guns.
+Compatibility patch for "Firearms B41". Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
 # Roadmap
 
