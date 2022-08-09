@@ -6,6 +6,7 @@
 		<br />✔ Works in Multiplayer ✔ Works in 41.73
 	</p>
 	<a href="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml"><img src="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml/badge.svg"></a>
+	<img src="https://wakatime.com/badge/user/20060ef6-e09e-4c5c-b389-e5f3cff5bc41/project/135beebf-ced7-461a-a60d-9e58499e9103.svg" />
 </div>
 
 # How it works
