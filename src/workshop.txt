@@ -1,0 +1,7 @@
+version=1
+title=Coavins Firearms Disassembly
+description=This mod allows you to disassemble firearms into parts,
+description=which can be repaired or replaced before the gun is put
+description=back together again.
+tags=Build 41;
+visibility=public
