@@ -4,10 +4,6 @@ local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 -- Installs a firearm component into another component
 ISInstallFirearmPart = ISBaseTimedAction:derive("ISInstallFirearmPart");
 
-local function predicateNotBroken(item)
-	return not item:isBroken()
-end
-
 function ISInstallFirearmPart:isValid()
 	if not self.character:getInventory():contains(self.part)
 	or not self.character:getInventory():contains(self.partToInstall)
@@ -42,7 +38,6 @@ end
 
 function ISInstallFirearmPart:perform()
 	local pItem = self.part
-	local pType = pItem:getType()
 	local tItem = self.partToInstall
 	local tType = tItem:getType()
 
@@ -51,9 +46,6 @@ function ISInstallFirearmPart:perform()
 
 	-- get mod data
 	local pData = FIREARMS.getModData(pItem)
-
-	-- get model
-	--local pModel = FIREARMS.getPartModel(pType)
 
 	if not pData.parts then
 		pData.parts = {}

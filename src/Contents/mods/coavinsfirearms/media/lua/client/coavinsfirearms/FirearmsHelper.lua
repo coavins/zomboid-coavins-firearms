@@ -16,7 +16,7 @@ this.getFirearmModelNameForItem = function(item)
 		return
 	end
 
-	return CoavinsFirearms:GetModelName(fullType)
+	return CoavinsFirearms.GetModelName(fullType)
 end
 
 this.itemIsFirearm = function(item)
@@ -47,7 +47,7 @@ end
 this.getFirearmModelForItem = function(item)
 	local modelName = this.getFirearmModelNameForItem(item)
 	if modelName then
-		return CoavinsFirearms:GetModel(modelName)
+		return CoavinsFirearms.GetModel(modelName)
 	else
 		return nil
 	end
@@ -314,7 +314,7 @@ this.getTooltipTextForItem = function(item)
 		this.initializeDataForPart(type, data)
 	end
 
-	return this.getTooltipText(type, model, data, item:getCondition(), item:getConditionMax())
+	return this.getTooltipText(model, data, item:getCondition(), item:getConditionMax())
 end
 
 this.getTooltipTextForPartData = function(type, data)
@@ -322,7 +322,7 @@ this.getTooltipTextForPartData = function(type, data)
 
 	this.initializeDataForPart(type, data)
 
-	return this.getTooltipText(type, model, data, data.condition, model.ConditionMax)
+	return this.getTooltipText(model, data, data.condition, model.ConditionMax)
 end
 
 this.generateTooltipForModel = function(text, model, data)
@@ -351,7 +351,8 @@ this.generateTooltipForModel = function(text, model, data)
 				text = text .. ' <RGB:0.8,0.8,0.8> ' .. this.getShortNameForPart(part) .. ': ' .. string.format('%.0f%%', pct)
 				text = this.generateTooltipForModel(text, componentModel, component)
 			else
-				text = text .. ' <RGB:1,0,0> ' .. this.getShortNameForPart(part) .. ': ' .. getText('ContextMenu_Firearm_NotInstalled')
+				text = text .. ' <RGB:1,0,0> ' .. this.getShortNameForPart(part) .. ': '
+				text = text .. getText('ContextMenu_Firearm_NotInstalled')
 			end
 		end
 	end
@@ -359,8 +360,8 @@ this.generateTooltipForModel = function(text, model, data)
 	return text
 end
 
-this.getTooltipText = function(type, model, data, condition, conditionMax)
-	local text = ''
+this.getTooltipText = function(model, data, condition, conditionMax)
+	local text
 
 	-- show condition
 	local conditionPct = (condition / conditionMax) * 100
@@ -387,7 +388,7 @@ this.copyDataFromParent = function(parentItem, childItem)
 		data = parentData.parts[childType]
 	end
 
-	local newData = {}
+	local newData
 	if data then
 		-- copy data to child
 		newData = this.tableDeepCopy(data)

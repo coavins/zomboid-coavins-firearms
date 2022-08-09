@@ -3,10 +3,6 @@ local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISDisassembleFirearm = ISBaseTimedAction:derive("ISDisassembleFirearm");
 
-local function predicateNotBroken(item)
-	return not item:isBroken()
-end
-
 function ISDisassembleFirearm:isValid()
 	if not self.character:getInventory():contains(self.firearm)
 	or self.firearm:getAllWeaponParts():size() > 0

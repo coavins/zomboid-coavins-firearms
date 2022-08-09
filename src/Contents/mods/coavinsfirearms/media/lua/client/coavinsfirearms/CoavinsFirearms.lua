@@ -4,17 +4,17 @@ CoavinsFirearms = {}
 -- "private" matching table
 local match = {}
 
-function CoavinsFirearms:Include(fullType, model)
+function CoavinsFirearms.Include(fullType, model)
 	match[fullType] = model
 end
 
-function CoavinsFirearms:GetModelName(fullType)
+function CoavinsFirearms.GetModelName(fullType)
 	return match[fullType]
 end
 
 local models = {}
 
-function CoavinsFirearms:AddOrReplaceModel(name, breaksInto, saveTypeIn, fallbackType)
+function CoavinsFirearms.AddOrReplaceModel(name, breaksInto, saveTypeIn, fallbackType)
 	local newModel = {}
 	newModel.BreaksInto = breaksInto
 	newModel.SaveTypeIn = saveTypeIn
@@ -23,6 +23,6 @@ function CoavinsFirearms:AddOrReplaceModel(name, breaksInto, saveTypeIn, fallbac
 	models[name] = newModel
 end
 
-function CoavinsFirearms:GetModel(name)
+function CoavinsFirearms.GetModel(name)
 	return models[name]
 end

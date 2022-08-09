@@ -9,10 +9,6 @@ local nvl = function(a, b)
 	end
 end
 
-local function predicateNotBroken(item)
-	return not item:isBroken()
-end
-
 function ISAssembleFirearmParts:isValid()
 	if not self.character:getInventory():contains(self.partA)
 	or not self.character:getInventory():contains(self.partB)

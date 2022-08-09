@@ -168,7 +168,8 @@ local checkInventoryItem = function(player, context, item)
 			for _,heldPart in ipairs(model.Holds) do
 				if data.parts and data.parts[heldPart] then
 					-- Add option to remove this part
-					local option = subMenuRemove:addOption(getItemNameFromFullType('coavinsfirearms.' .. heldPart), player, removePartFromPart, item, heldPart)
+					local optionText = getItemNameFromFullType('coavinsfirearms.' .. heldPart)
+					local option = subMenuRemove:addOption(optionText, player, removePartFromPart, item, heldPart)
 					AddTooltipForData(option, heldPart, data.parts[heldPart])
 					doRemove = true
 				else

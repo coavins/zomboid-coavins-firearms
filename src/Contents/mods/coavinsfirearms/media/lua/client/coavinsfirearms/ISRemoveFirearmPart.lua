@@ -3,10 +3,6 @@ local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
 ISRemoveFirearmPart = ISBaseTimedAction:derive("ISRemoveFirearmPart");
 
-local function predicateNotBroken(item)
-	return not item:isBroken()
-end
-
 function ISRemoveFirearmPart:isValid()
 	if not self.character:getInventory():contains(self.part)
 	then

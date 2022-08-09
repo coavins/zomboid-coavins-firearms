@@ -1,8 +1,8 @@
 local FIREARMS = require('coavinsfirearms/FirearmsHelper')
 
-local removeRepairForFirearms = function(playerId, context, items)
+local removeRepairForFirearms = function(_, context, items)
 	local brokenObject = nil
-	for i,v in ipairs(items) do
+	for _,v in ipairs(items) do
 		local testItem = v
 		if not instanceof(v, "InventoryItem") then
 			testItem = v.items[1];
