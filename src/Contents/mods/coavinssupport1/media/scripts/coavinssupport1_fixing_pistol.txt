@@ -1,0 +1,29 @@
+module coavinssupport1 {
+	imports {
+		Base
+	}
+
+	fixing Fix PistolReceiver GunToolKit
+	{
+		Require : PistolReceiver,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix PistolSlide GunToolKit
+	{
+		Require : PistolSlide,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix PistolBarrel GunToolKit
+	{
+		Require : PistolBarrel,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+}

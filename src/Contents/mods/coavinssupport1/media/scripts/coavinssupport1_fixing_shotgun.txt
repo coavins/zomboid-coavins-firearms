@@ -3,41 +3,41 @@ module coavinssupport1 {
 		Base
 	}
 
-	fixing Fix PistolReceiver GunToolKit
+	fixing Fix ShotgunReceiver GunToolKit
 	{
-		Require : PistolReceiver,
+		Require : ShotgunReceiver,
 
 		Fixer : GunToolKit=1; Aiming=2,
 		Fixer : ImprovisedGunToolKit=2; Aiming=1,
 	}
 
-	fixing Fix PistolSlide GunToolKit
+	fixing Fix ShotgunForend GunToolKit
 	{
-		Require : PistolSlide,
+		Require : ShotgunForend,
 
 		Fixer : GunToolKit=1; Aiming=2,
 		Fixer : ImprovisedGunToolKit=2; Aiming=1,
 	}
 
-	fixing Fix PistolBarrel GunToolKit
+	fixing Fix ShotgunBoltCarrier GunToolKit
 	{
-		Require : PistolBarrel,
+		Require : ShotgunBoltCarrier,
 
 		Fixer : GunToolKit=1; Aiming=2,
 		Fixer : ImprovisedGunToolKit=2; Aiming=1,
 	}
 
-	fixing Fix RevolverReceiver GunToolKit
+	fixing Fix ShotgunBolt GunToolKit
 	{
-		Require : RevolverReceiver,
+		Require : ShotgunBolt,
 
 		Fixer : GunToolKit=1; Aiming=2,
 		Fixer : ImprovisedGunToolKit=2; Aiming=1,
 	}
 
-	fixing Fix RevolverCylinder GunToolKit
+	fixing Fix ShotgunBarrel GunToolKit
 	{
-		Require : RevolverCylinder,
+		Require : ShotgunBarrel,
 
 		Fixer : GunToolKit=1; Aiming=2,
 		Fixer : ImprovisedGunToolKit=2; Aiming=1,

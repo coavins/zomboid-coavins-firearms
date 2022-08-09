@@ -1,0 +1,61 @@
+module coavinssupport1 {
+	imports {
+		Base
+	}
+
+	fixing Fix BoltActionReceiver GunToolKit
+	{
+		Require : BoltActionReceiver,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix BoltActionBolt GunToolKit
+	{
+		Require : BoltActionBolt,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix M16LowerReceiver GunToolKit
+	{
+		Require : M16LowerReceiver,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix M16UpperReceiver GunToolKit
+	{
+		Require : M16UpperReceiver,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix M16BoltCarrier GunToolKit
+	{
+		Require : M16BoltCarrier,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix M16FiringPin GunToolKit
+	{
+		Require : M16FiringPin,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix M16Bolt GunToolKit
+	{
+		Require : M16Bolt,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+}

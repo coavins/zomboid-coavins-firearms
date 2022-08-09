@@ -1,0 +1,21 @@
+module coavinssupport1 {
+	imports {
+		Base
+	}
+
+	fixing Fix RevolverReceiver GunToolKit
+	{
+		Require : RevolverReceiver,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+
+	fixing Fix RevolverCylinder GunToolKit
+	{
+		Require : RevolverCylinder,
+
+		Fixer : GunToolKit=1; Aiming=2,
+		Fixer : ImprovisedGunToolKit=2; Aiming=1,
+	}
+}
