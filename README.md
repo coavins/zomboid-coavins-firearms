@@ -62,7 +62,8 @@ Firearms retain their original chance to lose condition every time you shoot, bu
 
 This mod should be compatible with most other mods that introduce new firearms or change how they work.
 
-✅ Firearms B41
+- ✅ Firearms B41
+- ✅ Arsenal(26) GunFighter
 
 This mod is designed to be extensible so that it can be used with custom firearms without much effort.
 
@@ -103,6 +104,7 @@ Ideas for future development:
 ✔ Pull requests are encouraged! Please submit your translations, bug fixes, and new features.
 
 🌎 Code is available on Github: https://github.com/coavins/zomboid-coavins-firearms
+
 
 ℹ You are free to make changes to my code for your own use.
 
