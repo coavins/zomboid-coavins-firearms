@@ -1,6 +1,6 @@
 <div align="center">
-	<h1>Firearm Repair Overhaul</h1>
-	<img height=150 src="src/preview.png">
+	<h1>Coavins Firearm Repair</h1>
+	<img height=200 src="src/preview.png">
 	<p align="center">
 		Firearm repair overhaul for Project Zomboid
 		<br />✔ Works in Multiplayer ✔ Tested on 41.73
@@ -86,6 +86,10 @@ This is the main mod, and must be enabled. Supports all of the firearms present 
 
 Compatibility patch for "Firearms B41". Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
+## coavinssupport2
+
+Compatibility patch for "Arsenal(26) GunFighter". Adds support for some of the custom guns in this mod.
+
 # Roadmap
 
 Ideas for future development:
@@ -102,4 +106,4 @@ Ideas for future development:
 
 ℹ You are free to make changes to my code for your own use.
 
-⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a mod pack.
+⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
