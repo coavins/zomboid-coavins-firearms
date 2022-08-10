@@ -62,7 +62,7 @@ Firearms retain their original chance to lose condition every time you shoot, bu
 
 This mod should be compatible with most other mods that introduce new firearms or change how they work.
 
-⚠ By default, only vanilla firearms can be disassembled - if you have other mods that add new guns, they will not be affected.
+✅ Firearms B41
 
 This mod is designed to be extensible so that it can be used with custom firearms without much effort.
 
@@ -71,6 +71,8 @@ This mod is designed to be extensible so that it can be used with custom firearm
   - ask the other author to include support for this mod,
   - or submit a pull request to add a compatibility patch
 - If you are a developer and you want to add support for this feature in your mod, refer to my example mod `coavinssupport1` which shows how to add compatibility with custom firearms.
+
+⚠ By default, only vanilla firearms can be disassembled - if a mod is not explicitly supported, its custom firearms will use the normal repair feature and can not be disassembled.
 
 # Included Mods
 
