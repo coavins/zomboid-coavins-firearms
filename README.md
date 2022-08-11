@@ -12,9 +12,7 @@
 
 <br />
 
-This mod replaces the vanilla "Repair" action for firearms, allowing them to be disassembled into parts that can be individually repaired (or replaced) and reassembled.
-
-These components can be looted from places where you normally find guns, or they can be removed from other guns and re-used.
+Disassemble firearms into parts that can be individually repaired (or replaced) and reassembled. Parts can also be looted from places where you normally find guns, and they can be removed from other guns and re-used. Replaces the default "Repair" action on supported guns.
 
 # How it works
 
@@ -108,4 +106,4 @@ Ideas for future development:
 
 ℹ You are free to make changes to my code for your own use.
 
-⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
+⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
