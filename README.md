@@ -60,8 +60,15 @@ Firearms retain their original chance to lose condition every time you shoot, bu
 
 This mod should be compatible with most other mods that introduce new firearms or change how they work.
 
+Support has to be added manually for every mod. This is a work in progress.
+
+Most guns supported:
 - ✅ Firearms B41
+- ✅ VANILLA FIREARMS EXPANSION (B41.65)
+
+Some guns supported:
 - ✅ Arsenal(26) GunFighter
+- ✅ Brita's Weapon Pack
 
 This mod is designed to be extensible so that it can be used with custom firearms without much effort.
 
@@ -83,13 +90,21 @@ This is the main mod, and must be enabled. Supports all of the firearms present 
 
 ### coavinssupport1
 
-Compatibility patch for "Firearms B41". Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
+Compatibility patch for "Firearms B41" (mod id: firearmmod)
+
+Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
 ### coavinssupport2
 
-Compatibility patch for "Arsenal(26) GunFighter". Adds support for some of the custom guns in this mod.
+Compatibility patch for "Arsenal(26) GunFighter" (mod id: Arsenal(26)GunFighter)
 
-Should also work for "Brita's Weapons".
+Adds support for some of the custom guns in this mod. Should also work for "Brita's Weapons".
+
+### coavinssupport3
+
+Compatibility patch for "VANILLA FIREARMS EXPANSION" (mod id: VFExpansion1)
+
+Adds support for most of the custom guns in this mod, only missing a few (SKS, Tec9, W1866).
 
 # Roadmap
 
