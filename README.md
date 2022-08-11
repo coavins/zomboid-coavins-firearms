@@ -30,15 +30,7 @@ Alternatively, just replace the broken part with one taken from a different gun.
 
 This mod adds many new items that are used in repair and reassembly. Spare components can be looted from most places where guns are normally found.
 
-**Pistols**: Frame, Slide, Barrel
-
-**Revolvers**: Frame, Cylinder
-
-**Rifles (AR-15 style)**: Lower receiver, Upper receiver, Bolt carrier, Firing pin, Bolt
-
-**Rifles (bolt action)**: Receiver, Bolt
-
-**Shotguns**: Receiver, Forend, Bolt carrier, Bolt, Barrel
+[Check the wiki](https://github.com/coavins/zomboid-coavins-firearms/wiki/Models) for a full list of the different models used to simulate firearm disassembly.
 
 ℹ Some parts can contain other parts, forming a tree structure - all components must be in full working condition before the firearm will operate. If any part is missing or broken, the firearm (if you reassemble it) will be "broken" and will not fire.
 
@@ -92,7 +84,9 @@ This is the main mod, and must be enabled. Supports all of the firearms present 
 
 Compatibility patch for "Firearms B41" (mod id: firearmmod)
 
-Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
+Supports most of the custom guns in this mod, except for a small handful (the M60, etc.)
+
+The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
 ### coavinssupport2
 
@@ -104,7 +98,11 @@ Adds support for some of the custom guns in this mod. Should also work for "Brit
 
 Compatibility patch for "VANILLA FIREARMS EXPANSION" (mod id: VFExpansion1)
 
-Adds support for most of the custom guns in this mod, only missing a few (SKS, Tec9, W1866).
+Adds support for most of the custom guns in this mod, only missing a few (SKS, Tec9, W1866, etc.)
+
+The "Gun Cleaning Kit" and "FireKlean" items are used to repair components instead of the guns themselves.
+
+The "FireKlean" item is overriden to increase the number of uses to 4.
 
 # Roadmap
 
