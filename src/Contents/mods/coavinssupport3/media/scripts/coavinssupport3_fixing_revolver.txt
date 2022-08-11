@@ -1,0 +1,21 @@
+module coavinssupport3 {
+	imports {
+		Base
+	}
+
+	fixing Fix RevolverReceiver CleaningKit
+	{
+		Require : RevolverReceiver,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix RevolverCylinder CleaningKit
+	{
+		Require : RevolverCylinder,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+}

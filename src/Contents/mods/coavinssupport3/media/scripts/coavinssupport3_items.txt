@@ -1,0 +1,16 @@
+module Base {
+	imports {
+		Base
+	}
+
+	item FireKlean
+	{
+		Type             = Drainable,
+		UseDelta         = 0.25,
+		UseWhileEquipped = FALSE,
+		DisplayName      = FireKlean gun lube,
+		Icon             = fireklean,
+		Weight           = 0.2,
+		WorldStaticModel = FireKlean,
+	}
+}

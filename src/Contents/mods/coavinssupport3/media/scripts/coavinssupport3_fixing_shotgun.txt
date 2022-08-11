@@ -1,0 +1,45 @@
+module coavinssupport3 {
+	imports {
+		Base
+	}
+
+	fixing Fix ShotgunReceiver CleaningKit
+	{
+		Require : ShotgunReceiver,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix ShotgunForend CleaningKit
+	{
+		Require : ShotgunForend,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix ShotgunBoltCarrier CleaningKit
+	{
+		Require : ShotgunBoltCarrier,
+
+		Fixer : CleaningKit=1; Aiming=3,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix ShotgunBolt CleaningKit
+	{
+		Require : ShotgunBolt,
+
+		Fixer : CleaningKit=1; Aiming=4,
+		Fixer : FireKlean; Aiming=2,
+	}
+
+	fixing Fix ShotgunBarrel CleaningKit
+	{
+		Require : ShotgunBarrel,
+
+		Fixer : CleaningKit=1; Aiming=5,
+		Fixer : FireKlean; Aiming=2,
+	}
+}

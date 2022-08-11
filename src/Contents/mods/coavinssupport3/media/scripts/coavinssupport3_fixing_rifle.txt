@@ -1,0 +1,61 @@
+module coavinssupport3 {
+	imports {
+		Base
+	}
+
+	fixing Fix BoltActionReceiver CleaningKit
+	{
+		Require : BoltActionReceiver,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix BoltActionBolt CleaningKit
+	{
+		Require : BoltActionBolt,
+
+		Fixer : CleaningKit=1; Aiming=3,
+		Fixer : FireKlean; Aiming=2,
+	}
+
+	fixing Fix M16LowerReceiver CleaningKit
+	{
+		Require : M16LowerReceiver,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix M16UpperReceiver CleaningKit
+	{
+		Require : M16UpperReceiver,
+
+		Fixer : CleaningKit=1; Aiming=4,
+		Fixer : FireKlean; Aiming=2,
+	}
+
+	fixing Fix M16BoltCarrier CleaningKit
+	{
+		Require : M16BoltCarrier,
+
+		Fixer : CleaningKit=1; Aiming=3,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix M16FiringPin CleaningKit
+	{
+		Require : M16FiringPin,
+
+		Fixer : CleaningKit=1; Aiming=4,
+		Fixer : FireKlean; Aiming=2,
+	}
+
+	fixing Fix M16Bolt CleaningKit
+	{
+		Require : M16Bolt,
+
+		Fixer : CleaningKit=1; Aiming=5,
+		Fixer : FireKlean; Aiming=2,
+	}
+}

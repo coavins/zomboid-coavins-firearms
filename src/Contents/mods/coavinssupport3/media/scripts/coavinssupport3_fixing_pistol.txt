@@ -1,0 +1,29 @@
+module coavinssupport3 {
+	imports {
+		Base
+	}
+
+	fixing Fix PistolReceiver CleaningKit
+	{
+		Require : PistolReceiver,
+
+		Fixer : CleaningKit=1; Aiming=2,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix PistolSlide CleaningKit
+	{
+		Require : PistolSlide,
+
+		Fixer : CleaningKit=1; Aiming=3,
+		Fixer : FireKlean; Aiming=1,
+	}
+
+	fixing Fix PistolBarrel CleaningKit
+	{
+		Require : PistolBarrel,
+
+		Fixer : CleaningKit=1; Aiming=3,
+		Fixer : FireKlean; Aiming=2,
+	}
+}
