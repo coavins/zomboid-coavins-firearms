@@ -102,7 +102,7 @@ Adds support for most of the custom guns in this mod, only missing a few (SKS, T
 
 The "Gun Cleaning Kit" and "FireKlean" items are used to repair components instead of the guns themselves.
 
-The "FireKlean" item is overriden to increase the number of uses to 4.
+The "FireKlean" item is overridden to increase the number of uses to 4.
 
 # Roadmap
 
