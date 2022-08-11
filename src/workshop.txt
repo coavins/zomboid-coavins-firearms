@@ -1,7 +1,8 @@
+id=2847408431
 version=1
 title=Coavins Firearm Repair
 description=Firearm repair overhaul for Project Zomboid.
 description=Allows guns to be disassembled into parts that can be
 description=repaired or replaced before the gun is reassembled.
-tags=Build 41;
+tags=Build 41;Framework;Interface;Items;Military;Multiplayer;Realistic;Weapons
 visibility=public
