@@ -77,22 +77,26 @@ This mod is designed to be extensible so that it can be used with custom firearm
 
 These are the mods provided by this Steam workshop item.
 
-## coavinsfirearms
+### coavinsfirearms
 
 This is the main mod, and must be enabled. Supports all of the firearms present in the base game.
 
-## coavinssupport1
+### coavinssupport1
 
 Compatibility patch for "Firearms B41". Supports most of the custom guns in this mod, except for a small handful (the M60, etc.) The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
-## coavinssupport2
+### coavinssupport2
 
 Compatibility patch for "Arsenal(26) GunFighter". Adds support for some of the custom guns in this mod.
+
+Should also work for "Brita's Weapons".
 
 # Roadmap
 
 Ideas for future development:
 
+* Add support for more guns
+* Improve realism by adding more parts and models
 * Parts get dirty, affect chance to jam, have to be cleaned
 * Add cleaning products like solvents and brushes
 * Add alternative parts that can be swapped in to affect firearm stats
@@ -103,7 +107,6 @@ Ideas for future development:
 
 🌎 Code is available on Github: https://github.com/coavins/zomboid-coavins-firearms
 
-
 ℹ You are free to make changes to my code for your own use.
 
-⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
+⛔ Please don't reupload this mod to the Steam workshop or any other site, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
