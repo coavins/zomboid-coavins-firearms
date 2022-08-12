@@ -84,11 +84,11 @@ CoavinsFirearms.Include('Base.Revolver_Long',      'GenericRevolver')
 CoavinsFirearms.Include('Base.Revolver_Long_357',  'GenericRevolver')
 
 -- VANILLA_RIFLE.txt
-CoavinsFirearms.Include('Base.VarmintRifle',       'BoltActionRifle')
-CoavinsFirearms.Include('Base.HuntingRifle',       'BoltActionRifle')
-CoavinsFirearms.Include('Base.AssaultRifle2',      'M16Rifle')
-CoavinsFirearms.Include('Base.AssaultRifle2_Melee',      'M16Rifle')
-CoavinsFirearms.Include('Base.AssaultRifle',       'M16Rifle')
-CoavinsFirearms.Include('Base.AssaultRifle_Melee',       'M16Rifle')
--- AssaultRifle_HE
--- AssaultRifle_INC
+CoavinsFirearms.Include('Base.VarmintRifle',        'BoltActionRifle')
+CoavinsFirearms.Include('Base.HuntingRifle',        'BoltActionRifle')
+CoavinsFirearms.Include('Base.AssaultRifle2',       'M16Rifle')
+CoavinsFirearms.Include('Base.AssaultRifle2_Melee', 'M16Rifle')
+CoavinsFirearms.Include('Base.AssaultRifle',        'M16Rifle')
+CoavinsFirearms.Include('Base.AssaultRifle_Melee',  'M16Rifle')
+CoavinsFirearms.Include('Base.AssaultRifle_HE',     'M16Rifle')
+CoavinsFirearms.Include('Base.AssaultRifle_INC',    'M16Rifle')
