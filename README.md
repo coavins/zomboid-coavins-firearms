@@ -54,21 +54,18 @@ This mod should be compatible with most other mods that introduce new firearms o
 
 Support has to be added manually for every mod. This is a work in progress.
 
-Most guns supported:
+### Most guns supported
 - ✅ Firearms B41
 - ✅ VANILLA FIREARMS EXPANSION (B41.65)
 
-Some guns supported:
+### Some guns supported
 - ✅ Arsenal(26) GunFighter
 - ✅ Brita's Weapon Pack
 
-This mod is designed to be extensible so that it can be used with custom firearms without much effort.
+### Extending this mod
+This mod is designed to be extensible so that other mod authors can use it without much effort.
 
-- If you are a player and you want to disassemble custom firearms, then either:
-  - use one of the included compatibility patches,
-  - ask the other author to include support for this mod,
-  - or submit a pull request to add a compatibility patch
-- If you are a developer and you want to add support for this feature in your mod, refer to my example mod `coavinssupport1` which shows how to add compatibility with custom firearms.
+If you are a developer and you want to add support for this feature in your mod, refer to my example mod `coavinssupport1` which shows how to add compatibility with custom firearms. It can take just one line of code to allow your gun to be disassembled.
 
 ⚠ By default, only vanilla firearms can be disassembled - if a mod is not explicitly supported, its custom firearms will use the normal repair feature and can not be disassembled.
 
