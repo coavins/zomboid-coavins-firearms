@@ -1,0 +1,53 @@
+-- To add support for your custom firearms, copy this file
+-- and match the types your mod is using to the appropriate model
+
+-- AK_CUSTOM.txt
+-- AKM_Custom
+-- AKM_Custom_Melee
+-- AK74_Custom
+-- AK74_Custom_Melee
+
+-- AR_VARIANT.txt
+-- LVOA_C
+-- LVOA_C_Melee
+-- LVOA_C_HE
+-- LVOA_C_INC
+-- ADAR
+-- ADAR_Melee
+-- MK47
+-- AAC_Honey
+-- AAC_Honey_Fold
+-- AAC_HoneySD
+-- AAC_HoneySD_Fold
+-- Bush_AR15_MOE
+-- Bush_AR15_MOE_Melee
+-- Bush_AR15_MOE_HE
+-- Bush_AR15_MOE_INC
+-- Bush_XM15
+-- Bush_XM15_Melee
+-- Bush_XM15_HE
+-- Bush_XM15_INC
+-- Bush_XM15_Custom
+-- Bush_XM15_Custom_Melee
+-- Bush_XM15_Custom_HE
+-- Bush_XM15_Custom_INC
+-- TR1_UltraLight
+
+-- SIG_MCX.txt
+-- MCX_Spear
+-- MCX_Spear_Melee
+-- MCX_Spear_HE
+-- MCX_Spear_INC
+-- MCX_Virtus
+-- MCX_Virtus_Melee
+-- MCX_Virtus_HE
+-- MCX_Virtus_INC
+-- MCX_VirtusPatrol
+-- MCX_VirtusPatrol_Melee
+-- MCX_VirtusPatrol_HE
+-- MCX_VirtusPatrol_INC
+-- MCX_Socom
+-- MCX_Socom_Melee
+-- MCX_Socom_HE
+-- MCX_Socom_INC
+-- JW3_TTI_MPX
