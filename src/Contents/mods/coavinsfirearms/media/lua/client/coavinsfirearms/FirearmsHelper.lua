@@ -257,7 +257,7 @@ end
 
 this.checkConditionForAllParts = function(model, installedParts, damage)
 	local modelParts = nvl(nvl(model.BreaksInto, model.Holds), {})
-	local lowestCondition = 10000.0
+	local lowestCondition = 1.0
 
 	-- for each part we're supposed to have
 	for _,part in ipairs(modelParts) do
@@ -279,8 +279,9 @@ this.checkConditionForAllParts = function(model, installedParts, damage)
 			print(string.format('%s has %.0f condition', part, installedPart.condition))
 
 			-- remember lowest condition
-			if installedPart.condition < lowestCondition then
-				lowestCondition = installedPart.condition
+			local thisCondition = installedPart.condition / installedPart.conditionMax
+			if thisCondition < lowestCondition then
+				lowestCondition = thisCondition
 			end
 
 			-- recursively check this part's parts
@@ -313,14 +314,13 @@ this.updateFirearm = function(firearm, conditionDamage)
 	end
 
 	local lowestCondition = this.checkConditionForAllParts(model, data.parts, conditionDamage)
-	local maxCondition = firearm:getConditionMax()
 
-	if lowestCondition > maxCondition then
-		lowestCondition = maxCondition
-	end
+	local max = firearm:getConditionMax()
+	local actual = lowestCondition * max
 
-	print(string.format('Set firearm to %.0f', lowestCondition))
-	firearm:setCondition(lowestCondition)
+	print(string.format('Set firearm to %.0f', actual))
+
+	firearm:setCondition(actual)
 end
 
 this.getShortNameForPart = function(part)
