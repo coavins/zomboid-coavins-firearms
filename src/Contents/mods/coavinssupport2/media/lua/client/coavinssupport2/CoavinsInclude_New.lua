@@ -2,10 +2,10 @@
 -- and match the types your mod is using to the appropriate model
 
 -- AK_CUSTOM.txt
--- AKM_Custom
--- AKM_Custom_Melee
--- AK74_Custom
--- AK74_Custom_Melee
+CoavinsFirearms.Include('Base.AKM_Custom',        'AK47')
+CoavinsFirearms.Include('Base.AKM_Custom_Melee',  'AK47')
+CoavinsFirearms.Include('Base.AK74_Custom',       'AK47')
+CoavinsFirearms.Include('Base.AK74_Custom_Melee', 'AK47')
 
 -- AR_VARIANT.txt
 CoavinsFirearms.Include('Base.LVOA_C',                 'M16Rifle')

@@ -1,0 +1,53 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix AK47_Receiver Welding
+	{
+		Require : AK47_Receiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix AK47_Receiver
+	{
+		Require : AK47_Receiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix AK47_GasTube
+	{
+		Require : AK47_GasTube,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix AK47_BoltCarrier Welding
+	{
+		Require : AK47_BoltCarrier,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix AK47_Bolt Welding
+	{
+		Require : SKS_Bolt,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+}

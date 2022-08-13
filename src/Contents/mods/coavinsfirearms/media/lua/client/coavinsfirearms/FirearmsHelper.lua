@@ -158,6 +158,24 @@ this.parts.SKS_FiringPin = {}
 this.parts.SKS_FiringPin.InsertsInto = 'SKS_BoltCarrier'
 this.parts.SKS_FiringPin.ConditionLowerChance = 4
 this.parts.SKS_FiringPin.ConditionMax = 10
+this.parts.AK47_Receiver = {}
+this.parts.AK47_Receiver.CombinesWith = 'AK47_BoltCarrier'
+this.parts.AK47_Receiver.Holds = { 'AK47_GasTube' }
+this.parts.AK47_Receiver.ConditionLowerChance = 1
+this.parts.AK47_Receiver.ConditionMax = 10
+this.parts.AK47_GasTube = {}
+this.parts.AK47_GasTube.InsertsInto = 'AK47_Receiver'
+this.parts.AK47_GasTube.ConditionLowerChance = 2
+this.parts.AK47_GasTube.ConditionMax = 10
+this.parts.AK47_BoltCarrier = {}
+this.parts.AK47_BoltCarrier.CombinesWith = 'AK47_Receiver'
+this.parts.AK47_BoltCarrier.Holds = { 'AK47_Bolt' }
+this.parts.AK47_BoltCarrier.ConditionLowerChance = 2
+this.parts.AK47_BoltCarrier.ConditionMax = 10
+this.parts.AK47_Bolt = {}
+this.parts.AK47_Bolt.InsertsInto = 'AK47_BoltCarrier'
+this.parts.AK47_Bolt.ConditionLowerChance = 3
+this.parts.AK47_Bolt.ConditionMax = 10
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]

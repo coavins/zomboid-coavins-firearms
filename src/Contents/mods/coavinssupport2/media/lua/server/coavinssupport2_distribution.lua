@@ -41,6 +41,10 @@ MakeSet(
 		MakeItem('coavinsfirearms.SKS_BoltCarrier'     , 0.7),
 		MakeItem('coavinsfirearms.SKS_Bolt'            , 0.5),
 		MakeItem('coavinsfirearms.SKS_FiringPin'       , 0.3),
+		MakeItem('coavinsfirearms.AK47_Receiver'    , 1.0),
+		MakeItem('coavinsfirearms.AK47_GasTube'     , 0.5),
+		MakeItem('coavinsfirearms.AK47_BoltCarrier' , 0.7),
+		MakeItem('coavinsfirearms.AK47_Bolt'        , 0.7),
 	}
 )
 

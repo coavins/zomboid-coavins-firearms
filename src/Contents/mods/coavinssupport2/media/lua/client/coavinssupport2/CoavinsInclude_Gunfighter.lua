@@ -22,15 +22,15 @@ CoavinsFirearms.Include('Base.VIPER_G2',           'GenericShotgun')
 -- Benjamin_M397
 
 -- AK_NEW.txt
--- AK12_New
--- AK12_New_Melee
--- RPK16
--- AK308
--- AK308_Melee
--- AK5C
--- AK5C_Melee
--- AK5C_Fold
--- AK5C_Fold_Melee
+CoavinsFirearms.Include('Base.AK12_New',        'AK47')
+CoavinsFirearms.Include('Base.AK12_New_Melee',  'AK47')
+CoavinsFirearms.Include('Base.RPK16',           'AK47')
+CoavinsFirearms.Include('Base.AK308',           'AK47')
+CoavinsFirearms.Include('Base.AK308_Melee',     'AK47')
+CoavinsFirearms.Include('Base.AK5C',            'AK47')
+CoavinsFirearms.Include('Base.AK5C_Melee',      'AK47')
+CoavinsFirearms.Include('Base.AK5C_Fold',       'AK47')
+CoavinsFirearms.Include('Base.AK5C_Fold_Melee', 'AK47')
 
 -- Custom_Guns.txt
 CoavinsFirearms.Include('Base.SKS_A26',         'SKS')

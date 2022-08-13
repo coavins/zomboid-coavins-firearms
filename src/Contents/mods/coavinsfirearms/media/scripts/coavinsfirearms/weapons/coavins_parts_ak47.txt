@@ -1,0 +1,45 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item AK47_Receiver {
+		DisplayName = AK47 Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = AK47_Receiver,
+		Weight = 1.5,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item AK47_GasTube {
+		DisplayName = AK47 Gas Tube,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = AK47_GasTube,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item AK47_BoltCarrier {
+		DisplayName = AK47 Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = AK47_BoltCarrier,
+		Weight = 0.3,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item AK47_Bolt {
+		DisplayName = AK47 Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = AK47_Bolt,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+}
