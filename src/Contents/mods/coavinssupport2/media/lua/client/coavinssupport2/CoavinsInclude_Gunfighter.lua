@@ -33,10 +33,10 @@ CoavinsFirearms.Include('Base.VIPER_G2',           'GenericShotgun')
 -- AK5C_Fold_Melee
 
 -- Custom_Guns.txt
--- SKS_A26
--- SKS_A26_Melee
--- SKS30_A26
--- SKS30_A26_Melee
+CoavinsFirearms.Include('Base.SKS_A26',         'SKS')
+CoavinsFirearms.Include('Base.SKS_A26_Melee',   'SKS')
+CoavinsFirearms.Include('Base.SKS30_A26',       'SKS')
+CoavinsFirearms.Include('Base.SKS30_A26_Melee', 'SKS')
 
 -- DEagle_Long.txt
 CoavinsFirearms.Include('Base.DEagle_Long',        'GenericPistol')
