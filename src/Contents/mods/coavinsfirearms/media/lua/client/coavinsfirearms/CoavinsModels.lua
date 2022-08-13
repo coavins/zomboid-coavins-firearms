@@ -25,3 +25,8 @@ CoavinsFirearms.AddOrReplaceModel(
 , { 'BoltActionReceiver', 'BoltActionBolt' }
 , 'BoltActionReceiver'
 , 'Base.VarmintRifle')
+
+CoavinsFirearms.AddOrReplaceModel(
+	'SKS'
+, { 'SKS_Receiver', 'SKS_BoltCarrier' }
+, 'SKS_Receiver')

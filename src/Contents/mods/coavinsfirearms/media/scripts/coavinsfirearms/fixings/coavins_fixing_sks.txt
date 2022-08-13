@@ -1,0 +1,110 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix SKS_Receiver Welding
+	{
+		Require : SKS_Receiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix SKS_Receiver
+	{
+		Require : SKS_Receiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix SKS_GasPiston
+	{
+		Require : SKS_GasPiston,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix SKS_TriggerAssembly Welding
+	{
+		Require : SKS_TriggerAssembly,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix SKS_TriggerAssembly
+	{
+		Require : SKS_TriggerAssembly,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix SKS_MagazineAssembly Welding
+	{
+		Require : SKS_MagazineAssembly,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix SKS_MagazineAssembly
+	{
+		Require : SKS_MagazineAssembly,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix SKS_Stock
+	{
+		Require : SKS_Stock,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix SKS_BoltCarrier Welding
+	{
+		Require : SKS_BoltCarrier,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix SKS_Bolt Welding
+	{
+		Require : SKS_Bolt,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix SKS_FiringPin Welding
+	{
+		Require : SKS_FiringPin,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : ScrapMetal=2; MetalWelding=6,
+		Fixer : SmallSheetMetal; MetalWelding=4,
+	}
+}

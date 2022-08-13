@@ -1,0 +1,85 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item SKS_Receiver {
+		DisplayName = SKS Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_Receiver,
+		Weight = 2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_GasPiston {
+		DisplayName = SKS Gas Piston,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_GasPiston,
+		Weight = 0.1,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_TriggerAssembly {
+		DisplayName = SKS Trigger Group,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_TriggerAssembly,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_MagazineAssembly {
+		DisplayName = SKS Magazine Assembly,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_MagazineAssembly,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_Stock {
+		DisplayName = SKS Stock,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_Stock,
+		Weight = 1,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_BoltCarrier {
+		DisplayName = SKS Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_BoltCarrier,
+		Weight = 0.5,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_Bolt {
+		DisplayName = SKS Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_Bolt,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item SKS_FiringPin {
+		DisplayName = SKS Firing Pin,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = SKS_FiringPin,
+		Weight = 0.1,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+}
