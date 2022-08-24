@@ -63,12 +63,48 @@ function ISAssembleFirearmParts:perform()
 	if dataA.realFirearm or dataB.realFirearm then
 		-- grab the real firearm type
 		resultType = nvl(dataA.realFirearm, dataB.realFirearm)
-	-- if we're building a part
+
+		-- if we're building a part
 	elseif modelA.FormsPart or modelB.FormsPart then
 		-- grab from either, should be the same
 		resultType = 'coavinsfirearms.' .. nvl(modelA.FormsPart, modelB.FormsPart)
+
+		-- we must be building a firearm, but don't know which one
+	else
+		-- find a model that fits our parts
+		local ourModel = nil
+		local models = CoavinsFirearms.GetModels()
+		for name,model in pairs(models) do
+			local thisOne = true
+			for _,part in ipairs(model.BreaksInto) do
+				if typeA ~= part and typeB ~= part then
+					thisOne = false
+				end
+			end
+			if thisOne then
+				-- We will build the fallback type for this model
+				ourModel = name
+			end
+		end
+
+		if ourModel then
+			-- pick any gun that matches to this model
+			local matches = CoavinsFirearms.GetMatches()
+			local viable = {}
+			for fullType,modelName in pairs(matches) do
+				if modelName == ourModel then
+					table.insert(viable, fullType)
+				end
+			end
+
+			if #viable > 0 then
+				-- choose a random viable gun
+				resultType = viable[ZombRand(#viable)+1]
+			end
+		end
 	end
 
+	-- abort if we have no type to create
 	if not resultType then
 		return
 	end

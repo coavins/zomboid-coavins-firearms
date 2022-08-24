@@ -1,3 +1,5 @@
+local FIREARMS = require('coavinsfirearms/FirearmsHelper')
+
 -- global singleton, do not override
 CoavinsFirearms = {}
 
@@ -10,6 +12,10 @@ end
 
 function CoavinsFirearms.GetModelName(fullType)
 	return match[fullType]
+end
+
+function CoavinsFirearms.GetMatches()
+	return FIREARMS.tableDeepCopy(match)
 end
 
 local models = {}
@@ -25,4 +31,9 @@ end
 
 function CoavinsFirearms.GetModel(name)
 	return models[name]
+end
+
+function CoavinsFirearms.GetModels()
+	local ret = FIREARMS.tableDeepCopy(models)
+	return ret
 end
