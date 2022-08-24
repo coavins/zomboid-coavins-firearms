@@ -7,7 +7,7 @@ local function OnPlayerAttackFinished(player, handWeapon)
 		local maintenanceMod = player:getMaintenanceMod()
 		local conditionLoss = 0
 
-		print(string.format('1: %.2f, 2: %.2f', lowerChance, maintenanceMod))
+		--print(string.format('1: %.2f, 2: %.2f', lowerChance, maintenanceMod))
 
 		local chance = lowerChance + (maintenanceMod * 2)
 
