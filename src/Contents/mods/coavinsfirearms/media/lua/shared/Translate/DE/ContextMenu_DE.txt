@@ -1,0 +1,17 @@
+ContextMenu_EN = {
+	ContextMenu_Firearm_Disassemble = "Disassemble",
+	ContextMenu_Firearm_Assemble = "Assemble",
+	ContextMenu_Firearm_AssemblyInfo = "Component Info",
+	ContextMenu_Firearm_RemoveComponent = "Remove Component",
+	ContextMenu_Firearm_InstallComponent = "Install Component",
+	ContextMenu_Firearm_InstallInto = "Install into",
+	ContextMenu_Firearm_Installed = "Installed",
+	ContextMenu_Firearm_NotInstalled = "Not Installed",
+	ContextMenu_Firearm_NotFound = "No %1 found.",
+	ContextMenu_Firearm_NotFoundEmpty = "No %1 with empty slot found.",
+	ContextMenu_Firearm_Frame = "Frame",
+	ContextMenu_Firearm_ErrorHasAttachments = "Upgrades must be removed.",
+	ContextMenu_Firearm_ErrorHasMagazine = "Magazine must be ejected.",
+	ContextMenu_Firearm_ErrorHasRounds = "Rounds must be ejected.",
+	ContextMenu_Firearm_ErrorNotCleared = "Chamber must be cleared.",
+}
