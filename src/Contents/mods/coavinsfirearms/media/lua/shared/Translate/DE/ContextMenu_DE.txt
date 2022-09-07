@@ -1,0 +1,17 @@
+ContextMenu_EN = {
+	ContextMenu_Firearm_Disassemble = "Zerlegen",
+	ContextMenu_Firearm_Assemble = "Zusammensetzen",
+	ContextMenu_Firearm_AssemblyInfo = "Komponenteninformation",
+	ContextMenu_Firearm_RemoveComponent = "Komponente entfernen",
+	ContextMenu_Firearm_InstallComponent = "Komponente einbauen",
+	ContextMenu_Firearm_InstallInto = "Baue ein in",
+	ContextMenu_Firearm_Installed = "Eingebaut",
+	ContextMenu_Firearm_NotInstalled = "Nicht eingebaut",
+	ContextMenu_Firearm_NotFound = "Keine %1 gefunden.",
+	ContextMenu_Firearm_NotFoundEmpty = "Keine %1 mit leerem Slot gefunden.",
+	ContextMenu_Firearm_Frame = "Rahmen",
+	ContextMenu_Firearm_ErrorHasAttachments = "Erweiterungen müssen entfernt werden.",
+	ContextMenu_Firearm_ErrorHasMagazine = "Magazin muss entfernt werden.",
+	ContextMenu_Firearm_ErrorHasRounds = "Patronen müssen entfernt werden.",
+	ContextMenu_Firearm_ErrorNotCleared = "Patronenlager muss leer sein.",
+}
