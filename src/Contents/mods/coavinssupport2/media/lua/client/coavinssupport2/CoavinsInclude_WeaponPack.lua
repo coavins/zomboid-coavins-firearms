@@ -193,8 +193,8 @@ CoavinsFirearms.Include('Base.M635S',          'M16Rifle')
 CoavinsFirearms.Include('Base.M635SD',         'M16Rifle')
 
 -- CZ.txt
--- CZ75
--- CZ97B
+CoavinsFirearms.Include('Base.CZ75',        'GenericPistol')
+CoavinsFirearms.Include('Base.CZ97B',        'GenericPistol')
 
 -- DAEWOO.txt
 -- K5
