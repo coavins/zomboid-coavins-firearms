@@ -176,6 +176,16 @@ this.parts.AK47_Bolt = {}
 this.parts.AK47_Bolt.InsertsInto = 'AK47_BoltCarrier'
 this.parts.AK47_Bolt.ConditionLowerChance = 3
 this.parts.AK47_Bolt.ConditionMax = 10
+-- G36 Family
+this.parts.G36_Receiver = {}
+this.parts.G36_Receiver.Holds = {'G36_MagazineWell', 'G36_BoltCarrierGroup', 'G36_Grip', 'G36_Forend'}
+this.parts.G36_MagazineWell = {}
+this.parts.G36_MagazineWell.InsertsInto = 'G36_Receiver'
+this.parts.G36_BoltCarrier = {}
+this.parts.G36_BoltCarrier.InsertsInto = 'G36_BoltCarrierGroup'
+this.parts.G36_BoltCarrier.Holds = {'G36_FiringPin', 'G36_Bolt'}
+this.parts.G36_Bolt.InsertsInto = 'G36_BoltCarrier'
+this.parts.G36_Forend.InsertsInto = 'G36_Receiver'
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
