@@ -168,9 +168,9 @@ CoavinsFirearms.Include('Base.Carbon15_97', 'M16Rifle')
 -- BAR_Monitor
 
 -- BERETTA.txt
--- B93R
--- M9
--- M9A3
+CoavinsFirearms.Include('Base.B93R',        'GenericPistol')
+CoavinsFirearms.Include('Base.M9',        'GenericPistol')
+CoavinsFirearms.Include('Base.M9A3',        'GenericPistol')
 
 -- BOLT_ACTION.txt
 -- Sako85
@@ -284,9 +284,9 @@ CoavinsFirearms.Include('Base.G42',             'GenericPistol')
 -- MSG90
 
 -- H&K_Pistol.txt
--- HK_MK23
--- HK_USP
--- HK_USP_Match
+CoavinsFirearms.Include('Base.HK_MK23',             'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP',             'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP_Match',             'GenericPistol')
 
 -- HOWA_TYPE.txt
 -- Type20
