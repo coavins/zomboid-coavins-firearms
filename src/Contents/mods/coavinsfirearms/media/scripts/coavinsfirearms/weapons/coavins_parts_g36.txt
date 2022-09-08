@@ -72,15 +72,6 @@ module coavinsfirearms {
 		ConditionMax = 10,
 		WorldStaticModel = Paperbag_Ground,
     }
-    item G36_GasSystem {
-		DisplayName = G36 Gas System,
-		DisplayCategory = FirearmPart,
-		Type = Normal,
-		Icon = G36_GasSystem,
-		Weight = 0.2,
-		ConditionMax = 10,
-		WorldStaticModel = Paperbag_Ground,
-    }
     item G36_GasSpring {
 		DisplayName = G36 Gas Spring,
 		DisplayCategory = FirearmPart,

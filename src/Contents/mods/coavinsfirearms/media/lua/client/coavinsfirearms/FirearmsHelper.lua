@@ -177,7 +177,7 @@ this.parts.AK47_Bolt.InsertsInto = 'AK47_BoltCarrier'
 this.parts.AK47_Bolt.ConditionLowerChance = 3
 this.parts.AK47_Bolt.ConditionMax = 10
 this.parts.G36_Receiver = {}
-this.parts.G36_Receiver.Holds = {'G36_BoltCarrier', 'G36_Forend'}
+this.parts.G36_Receiver.Holds = {'G36_BoltCarrier', 'G36_Forend', 'G36_RecoilSpring'}
 this.parts.G36_Receiver.CombinesWith = 'G36_Grip'
 this.parts.G36_Receiver.ConditionLowerChance = 3
 this.parts.G36_Receiver.ConditionMax = 10
@@ -202,6 +202,11 @@ this.parts.G36_Forend = {}
 this.parts.G36_Forend.InsertsInto = 'G36_Receiver'
 this.parts.G36_Forend.ConditionLowerChance = 2
 this.parts.G36_Forend.ConditionMax = 10
+this.parts.G36_RecoilSpring = {}
+this.parts.G36_RecoilSpring.InsertsInto = 'G36_Receiver'
+this.parts.G36_RecoilSpring.ConditionLowerChance = 2
+this.parts.G36_RecoilSpring.ConditionMax = 10
+
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
