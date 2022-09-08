@@ -185,6 +185,7 @@ this.parts.G36_Grip = {}
 this.parts.G36_Grip.CombinesWith = 'G36_Receiver'
 this.parts.G36_Grip.ConditionLowerChance = 3
 this.parts.G36_Grip.ConditionMax = 10
+this.parts.G36_BoltCarrier = {}
 this.parts.G36_BoltCarrier.InsertsInto = 'G36_Receiver'
 this.parts.G36_BoltCarrier.Holds = { 'G36_FiringPin', 'G36_Bolt' }
 this.parts.G36_BoltCarrier.ConditionLowerChance = 3
