@@ -66,20 +66,19 @@
 -- FN_PS90
 
 -- 357 COMBO CALIBER.txt
--- GP100_2
--- GP100_2_357
--- GP100_4
--- GP100_4_357
--- GP100_6
--- GP100_6_357
--- K6S
--- K6S_357
+CoavinsFirearms.Include('Base.GP100_2', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_2_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_4', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_4_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_6', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_6_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.K6S', 'GenericRevolver')
 -- Marlin_1894
 -- Marlin_1894_357
--- Rhino_60DS
--- Rhino_60DS_357
--- SW_327
--- SW_327_357
+CoavinsFirearms.Include('Base.Rhino_60DS', 'GenericRevolver')
+CoavinsFirearms.Include('Base.Rhino_60DS_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327', 'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327_357', 'GenericRevolver')
 
 -- 1911.txt
 CoavinsFirearms.Include('Base.AMT1911',        'GenericPistol')
