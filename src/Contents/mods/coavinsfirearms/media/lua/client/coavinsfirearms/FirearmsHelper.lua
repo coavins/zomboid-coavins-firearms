@@ -200,8 +200,8 @@ this.parts.G36_Bolt.ConditionLowerChance = 2
 this.parts.G36_Bolt.ConditionMax = 10
 this.parts.G36_Forend = {}
 this.parts.G36_Forend.InsertsInto = 'G36_Receiver'
-this.parts.G36_Bolt.ConditionLowerChance = 2
-this.parts.G36_Bolt.ConditionMax = 10
+this.parts.G36_Forend.ConditionLowerChance = 2
+this.parts.G36_Forend.ConditionMax = 10
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
