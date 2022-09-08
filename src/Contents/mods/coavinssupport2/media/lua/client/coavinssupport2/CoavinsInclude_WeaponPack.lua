@@ -554,6 +554,10 @@ CoavinsFirearms.Include('Base.M870_BreachingPistol',                    'Generic
 -- R11_87
 -- A400
 -- M1014
+CoavinsFirearms.Include('Base.M1014',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Fold',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Stock',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Wick',                    'GenericShotgun')
 -- M1014_Fold
 -- M1014_Stock
 -- M1014_Wick
