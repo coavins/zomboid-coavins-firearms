@@ -499,6 +499,17 @@ CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 -- KS23_S_Pistol
 
 -- SHOTGUN_870.txt
+CoavinsFirearms.Include('Base.M870_Wingmaster',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Police',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Melee',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Express',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_MCS',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB_Fold',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_BreachingPistol',                    'GenericShotgun')
+
+
 -- M870_Wingmaster
 -- M870_Police
 -- M870
