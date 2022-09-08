@@ -108,4 +108,13 @@ module coavinsfirearms {
         ConditionMax = 10,
         WorldStaticModel = Paperbag_Ground,
     }
+	item G36_FiringPin {
+		DisplayName = G36 Firing Pin,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_FiringPin,
+		Weight = 0.3,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
 }
