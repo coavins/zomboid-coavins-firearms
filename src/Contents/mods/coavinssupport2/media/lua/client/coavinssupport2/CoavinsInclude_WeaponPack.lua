@@ -273,6 +273,7 @@ CoavinsFirearms.Include('Base.G42',             'GenericPistol')
 -- MK18_Melee
 -- MK18_HE
 -- MK18_INC
+
 -- G11K3
 -- PSG1
 -- MSG90
@@ -603,10 +604,10 @@ CoavinsFirearms.Include('Base.SKS30_PARA_Melee',      'SKS')
 CoavinsFirearms.Include('Base.SKS30_PARA_Bayo_Melee', 'SKS')
 
 -- SMITH.txt
--- BodyGuard380
--- M5238
--- M5906
--- M4506
+CoavinsFirearms.Include('Base.BodyGuard380',             'GenericPistol')
+CoavinsFirearms.Include('Base.M5238',             'GenericPistol')
+CoavinsFirearms.Include('Base.M5906',             'GenericPistol')
+CoavinsFirearms.Include('Base.M4506',             'GenericPistol')
 
 -- SPAS-12.txt
 -- SPAS12_Fixed
