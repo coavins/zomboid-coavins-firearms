@@ -73,6 +73,7 @@ CoavinsFirearms.Include('Base.GP100_4_357', 'GenericRevolver')
 CoavinsFirearms.Include('Base.GP100_6',     'GenericRevolver')
 CoavinsFirearms.Include('Base.GP100_6_357', 'GenericRevolver')
 CoavinsFirearms.Include('Base.K6S',         'GenericRevolver')
+CoavinsFirearms.Include('Base.K6S_357',     'GenericRevolver')
 -- Marlin_1894
 -- Marlin_1894_357
 CoavinsFirearms.Include('Base.Rhino_60DS',     'GenericRevolver')
