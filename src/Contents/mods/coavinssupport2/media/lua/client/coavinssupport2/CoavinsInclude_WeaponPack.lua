@@ -66,19 +66,19 @@
 -- FN_PS90
 
 -- 357 COMBO CALIBER.txt
-CoavinsFirearms.Include('Base.GP100_2', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_2',     'GenericRevolver')
 CoavinsFirearms.Include('Base.GP100_2_357', 'GenericRevolver')
-CoavinsFirearms.Include('Base.GP100_4', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_4',     'GenericRevolver')
 CoavinsFirearms.Include('Base.GP100_4_357', 'GenericRevolver')
-CoavinsFirearms.Include('Base.GP100_6', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_6',     'GenericRevolver')
 CoavinsFirearms.Include('Base.GP100_6_357', 'GenericRevolver')
-CoavinsFirearms.Include('Base.K6S', 'GenericRevolver')
+CoavinsFirearms.Include('Base.K6S',         'GenericRevolver')
 -- Marlin_1894
 -- Marlin_1894_357
-CoavinsFirearms.Include('Base.Rhino_60DS', 'GenericRevolver')
+CoavinsFirearms.Include('Base.Rhino_60DS',     'GenericRevolver')
 CoavinsFirearms.Include('Base.Rhino_60DS_357', 'GenericRevolver')
-CoavinsFirearms.Include('Base.SW_327', 'GenericRevolver')
-CoavinsFirearms.Include('Base.SW_327_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327',         'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327_357',     'GenericRevolver')
 
 -- 1911.txt
 CoavinsFirearms.Include('Base.AMT1911',        'GenericPistol')
@@ -144,12 +144,12 @@ CoavinsFirearms.Include('Base.AR18',        'M16Rifle')
 CoavinsFirearms.Include('Base.AR18_Fold',   'M16Rifle')
 CoavinsFirearms.Include('Base.M4A1',        'M16Rifle')
 CoavinsFirearms.Include('Base.M4A1_Melee',  'M16Rifle')
-CoavinsFirearms.Include('Base.M4A1_HE',        'M16Rifle')
-CoavinsFirearms.Include('Base.M4A1_INC',        'M16Rifle')
-CoavinsFirearms.Include('Base.M4',        'M16Rifle')
-CoavinsFirearms.Include('Base.M4_Melee',        'M16Rifle')
-CoavinsFirearms.Include('Base.M4_HE',        'M16Rifle')
-CoavinsFirearms.Include('Base.M4_INC',        'M16Rifle')
+CoavinsFirearms.Include('Base.M4A1_HE',     'M16Rifle')
+CoavinsFirearms.Include('Base.M4A1_INC',    'M16Rifle')
+CoavinsFirearms.Include('Base.M4',          'M16Rifle')
+CoavinsFirearms.Include('Base.M4_Melee',    'M16Rifle')
+CoavinsFirearms.Include('Base.M4_HE',       'M16Rifle')
+CoavinsFirearms.Include('Base.M4_INC',      'M16Rifle')
 
 -- AR_PISTOL.txt
 CoavinsFirearms.Include('Base.Carbon15_97', 'M16Rifle')
@@ -175,9 +175,9 @@ CoavinsFirearms.Include('Base.Carbon15_97', 'M16Rifle')
 -- BAR_Monitor
 
 -- BERETTA.txt
-CoavinsFirearms.Include('Base.B93R',        'GenericPistol')
-CoavinsFirearms.Include('Base.M9',        'GenericPistol')
-CoavinsFirearms.Include('Base.M9A3',        'GenericPistol')
+CoavinsFirearms.Include('Base.B93R', 'GenericPistol')
+CoavinsFirearms.Include('Base.M9',   'GenericPistol')
+CoavinsFirearms.Include('Base.M9A3', 'GenericPistol')
 
 -- BOLT_ACTION.txt
 -- Sako85
@@ -200,8 +200,8 @@ CoavinsFirearms.Include('Base.M635S',          'M16Rifle')
 CoavinsFirearms.Include('Base.M635SD',         'M16Rifle')
 
 -- CZ.txt
-CoavinsFirearms.Include('Base.CZ75',        'GenericPistol')
-CoavinsFirearms.Include('Base.CZ97B',        'GenericPistol')
+CoavinsFirearms.Include('Base.CZ75',  'GenericPistol')
+CoavinsFirearms.Include('Base.CZ97B', 'GenericPistol')
 
 -- DAEWOO.txt
 -- K5
@@ -262,11 +262,11 @@ CoavinsFirearms.Include('Base.CZ97B',        'GenericPistol')
 -- Galil_Sniper_Fold
 
 -- GLOCK.txt
-CoavinsFirearms.Include('Base.G17',             'GenericPistol')
-CoavinsFirearms.Include('Base.G18',             'GenericPistol')
-CoavinsFirearms.Include('Base.G21',             'GenericPistol')
-CoavinsFirearms.Include('Base.G34',             'GenericPistol')
-CoavinsFirearms.Include('Base.G42',             'GenericPistol')
+CoavinsFirearms.Include('Base.G17', 'GenericPistol')
+CoavinsFirearms.Include('Base.G18', 'GenericPistol')
+CoavinsFirearms.Include('Base.G21', 'GenericPistol')
+CoavinsFirearms.Include('Base.G34', 'GenericPistol')
+CoavinsFirearms.Include('Base.G42', 'GenericPistol')
 
 -- H&K_G.txt
 -- G33
@@ -286,9 +286,9 @@ CoavinsFirearms.Include('Base.G42',             'GenericPistol')
 -- MSG90
 
 -- H&K_Pistol.txt
-CoavinsFirearms.Include('Base.HK_MK23',             'GenericPistol')
-CoavinsFirearms.Include('Base.HK_USP',             'GenericPistol')
-CoavinsFirearms.Include('Base.HK_USP_Match',             'GenericPistol')
+CoavinsFirearms.Include('Base.HK_MK23',      'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP',       'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP_Match', 'GenericPistol')
 
 -- HOWA_TYPE.txt
 -- Type20
@@ -506,26 +506,15 @@ CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 -- KS23_S_Pistol
 
 -- SHOTGUN_870.txt
-CoavinsFirearms.Include('Base.M870_Wingmaster',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_Police',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_Melee',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_Express',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_MCS',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_CQB',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_CQB_Fold',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M870_BreachingPistol',                    'GenericShotgun')
-
-
--- M870_Wingmaster
--- M870_Police
--- M870
--- M870_Melee
--- M870_Express
--- M870_MCS
--- M870_CQB
--- M870_CQB_Fold
--- M870_Breaching_Pistol
+CoavinsFirearms.Include('Base.M870_Wingmaster',      'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Police',          'GenericShotgun')
+CoavinsFirearms.Include('Base.M870',                 'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Melee',           'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Express',         'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_MCS',             'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB',             'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB_Fold',        'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_BreachingPistol', 'GenericShotgun')
 
 -- SHOTGUN_BREAK_BARREL.txt
 -- DT11
@@ -561,14 +550,10 @@ CoavinsFirearms.Include('Base.M870_BreachingPistol',                    'Generic
 -- SHOTGUN_OTHER.txt
 -- R11_87
 -- A400
--- M1014
-CoavinsFirearms.Include('Base.M1014',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M1014_Fold',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M1014_Stock',                    'GenericShotgun')
-CoavinsFirearms.Include('Base.M1014_Wick',                    'GenericShotgun')
--- M1014_Fold
--- M1014_Stock
--- M1014_Wick
+CoavinsFirearms.Include('Base.M1014',       'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Fold',  'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Stock', 'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Wick',  'GenericShotgun')
 -- DAO12
 -- DAO12_Fold
 -- M1887
@@ -626,10 +611,10 @@ CoavinsFirearms.Include('Base.SKS30_PARA_Melee',      'SKS')
 CoavinsFirearms.Include('Base.SKS30_PARA_Bayo_Melee', 'SKS')
 
 -- SMITH.txt
-CoavinsFirearms.Include('Base.BodyGuard380',             'GenericPistol')
-CoavinsFirearms.Include('Base.M5238',             'GenericPistol')
-CoavinsFirearms.Include('Base.M5906',             'GenericPistol')
-CoavinsFirearms.Include('Base.M4506',             'GenericPistol')
+CoavinsFirearms.Include('Base.BodyGuard380', 'GenericPistol')
+CoavinsFirearms.Include('Base.M5238',        'GenericPistol')
+CoavinsFirearms.Include('Base.M5906',        'GenericPistol')
+CoavinsFirearms.Include('Base.M4506',        'GenericPistol')
 
 -- SPAS-12.txt
 -- SPAS12_Fixed
