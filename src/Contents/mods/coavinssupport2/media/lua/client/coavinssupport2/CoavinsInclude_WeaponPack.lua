@@ -66,20 +66,19 @@
 -- FN_PS90
 
 -- 357 COMBO CALIBER.txt
--- GP100_2
--- GP100_2_357
--- GP100_4
--- GP100_4_357
--- GP100_6
--- GP100_6_357
--- K6S
--- K6S_357
+CoavinsFirearms.Include('Base.GP100_2', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_2_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_4', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_4_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_6', 'GenericRevolver')
+CoavinsFirearms.Include('Base.GP100_6_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.K6S', 'GenericRevolver')
 -- Marlin_1894
 -- Marlin_1894_357
--- Rhino_60DS
--- Rhino_60DS_357
--- SW_327
--- SW_327_357
+CoavinsFirearms.Include('Base.Rhino_60DS', 'GenericRevolver')
+CoavinsFirearms.Include('Base.Rhino_60DS_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327', 'GenericRevolver')
+CoavinsFirearms.Include('Base.SW_327_357', 'GenericRevolver')
 
 -- 1911.txt
 CoavinsFirearms.Include('Base.AMT1911',        'GenericPistol')
@@ -176,9 +175,9 @@ CoavinsFirearms.Include('Base.Carbon15_97', 'M16Rifle')
 -- BAR_Monitor
 
 -- BERETTA.txt
--- B93R
--- M9
--- M9A3
+CoavinsFirearms.Include('Base.B93R',        'GenericPistol')
+CoavinsFirearms.Include('Base.M9',        'GenericPistol')
+CoavinsFirearms.Include('Base.M9A3',        'GenericPistol')
 
 -- BOLT_ACTION.txt
 -- Sako85
@@ -201,8 +200,8 @@ CoavinsFirearms.Include('Base.M635S',          'M16Rifle')
 CoavinsFirearms.Include('Base.M635SD',         'M16Rifle')
 
 -- CZ.txt
--- CZ75
--- CZ97B
+CoavinsFirearms.Include('Base.CZ75',        'GenericPistol')
+CoavinsFirearms.Include('Base.CZ97B',        'GenericPistol')
 
 -- DAEWOO.txt
 -- K5
@@ -281,20 +280,15 @@ CoavinsFirearms.Include('Base.G42',             'GenericPistol')
 -- MK18_Melee
 -- MK18_HE
 -- MK18_INC
--- G36
--- G36_Fold
--- G36C
--- G36C_Fold
--- G36KV
--- G36KV_Fold
+
 -- G11K3
 -- PSG1
 -- MSG90
 
 -- H&K_Pistol.txt
--- HK_MK23
--- HK_USP
--- HK_USP_Match
+CoavinsFirearms.Include('Base.HK_MK23',             'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP',             'GenericPistol')
+CoavinsFirearms.Include('Base.HK_USP_Match',             'GenericPistol')
 
 -- HOWA_TYPE.txt
 -- Type20
@@ -512,6 +506,17 @@ CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 -- KS23_S_Pistol
 
 -- SHOTGUN_870.txt
+CoavinsFirearms.Include('Base.M870_Wingmaster',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Police',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Melee',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_Express',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_MCS',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_CQB_Fold',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M870_BreachingPistol',                    'GenericShotgun')
+
+
 -- M870_Wingmaster
 -- M870_Police
 -- M870
@@ -557,6 +562,10 @@ CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 -- R11_87
 -- A400
 -- M1014
+CoavinsFirearms.Include('Base.M1014',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Fold',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Stock',                    'GenericShotgun')
+CoavinsFirearms.Include('Base.M1014_Wick',                    'GenericShotgun')
 -- M1014_Fold
 -- M1014_Stock
 -- M1014_Wick
@@ -617,10 +626,10 @@ CoavinsFirearms.Include('Base.SKS30_PARA_Melee',      'SKS')
 CoavinsFirearms.Include('Base.SKS30_PARA_Bayo_Melee', 'SKS')
 
 -- SMITH.txt
--- BodyGuard380
--- M5238
--- M5906
--- M4506
+CoavinsFirearms.Include('Base.BodyGuard380',             'GenericPistol')
+CoavinsFirearms.Include('Base.M5238',             'GenericPistol')
+CoavinsFirearms.Include('Base.M5906',             'GenericPistol')
+CoavinsFirearms.Include('Base.M4506',             'GenericPistol')
 
 -- SPAS-12.txt
 -- SPAS12_Fixed
