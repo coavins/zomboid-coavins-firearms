@@ -31,7 +31,5 @@ CoavinsFirearms.AddOrReplaceModel(
 , { 'SKS_Receiver', 'SKS_BoltCarrier' }
 , 'SKS_Receiver')
 
-CoavinsFirearms.AddOrReplaceModel(
-	'AK47'
-, { 'AK47_Receiver', 'AK47_BoltCarrier' }
-, 'AK47_Receiver')
+CoavinsFirearms.AddOrReplaceModel('AK47', { 'AK47_Receiver', 'AK47_BoltCarrier' }, 'AK47_Receiver')
+CoavinsFirearms.AddOrReplaceModel('G36Rifle',{'G36_Receiver','G36_Grip'},'G36_Receiver')

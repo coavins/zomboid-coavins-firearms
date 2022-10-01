@@ -33,6 +33,14 @@ CoavinsFirearms.Include('Base.Bush_XM15_Custom_HE',    'M16Rifle')
 CoavinsFirearms.Include('Base.Bush_XM15_Custom_INC',   'M16Rifle')
 CoavinsFirearms.Include('Base.TR1_UltraLight',         'M16Rifle')
 
+-- G36 Family
+CoavinsFirearms.Include('Base.G36', 'G36Rifle')
+CoavinsFirearms.Include('Base.G36_Fold', 'G36Rifle')
+CoavinsFirearms.Include('Base.G36C', 'G36Rifle')
+CoavinsFirearms.Include('Base.G36C_Fold', 'G36Rifle')
+CoavinsFirearms.Include('Base.G36KV', 'G36Rifle')
+CoavinsFirearms.Include('Base.G36KV_Fold', 'G36Rifle')
+
 -- SIG_MCX.txt
 -- MCX_Spear
 -- MCX_Spear_Melee

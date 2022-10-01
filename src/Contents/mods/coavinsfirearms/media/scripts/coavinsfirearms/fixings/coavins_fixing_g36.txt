@@ -1,0 +1,53 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix G36_Receiver Welding
+	{
+		Require : G36_Receiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix G36_Receiver
+	{
+		Require : G36_Receiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix G36_GasTube
+	{
+		Require : G36_GasTube,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix G36_BoltCarrier Welding
+	{
+		Require : G36_BoltCarrier,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix G36_Bolt Welding
+	{
+		Require : SKS_Bolt,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+}

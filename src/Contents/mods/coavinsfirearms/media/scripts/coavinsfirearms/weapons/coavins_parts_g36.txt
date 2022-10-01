@@ -1,0 +1,111 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item G36_Receiver {
+		DisplayName = G36 Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_Receiver,
+		Weight = 1.5,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item G36_MagazineWell {
+		DisplayName = G36 Magazine Well,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_MagazineWell,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+    item G36_BoltCarrierGroup {
+		DisplayName = G36 Bolt Carrier Group,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_BoltCarrierGroup,
+		Weight = 0.3,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item G36_BoltCarrier {
+		DisplayName = G36 Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_BoltCarrier,
+		Weight = 0.3,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item G36_Bolt {
+		DisplayName = G36 Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_Bolt,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+    item G36_RecoilSpring {
+		DisplayName = G36 Recoil Spring,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_Bolt,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+    }
+
+    item G36_Forend {
+		DisplayName = G36 Forend,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_Forend,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+    }
+    item G36_GasSpring {
+		DisplayName = G36 Gas Spring,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_GasSpring,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+    }
+    item G36_GasPiston {
+		DisplayName = G36 Gas Piston,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_GasSpring,
+		Weight = 0.2,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+    }
+    item G36_Grip {
+        DisplayName = G36 Grip,
+        DisplayCategory = FirearmPart,
+        Type = Normal,
+        Icon = G36_Grip,
+        Weight = 0.4,
+        ConditionMax = 10,
+        WorldStaticModel = Paperbag_Ground,
+    }
+	item G36_FiringPin {
+		DisplayName = G36 Firing Pin,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = G36_FiringPin,
+		Weight = 0.3,
+		ConditionMax = 10,
+		WorldStaticModel = Paperbag_Ground,
+	}
+}
