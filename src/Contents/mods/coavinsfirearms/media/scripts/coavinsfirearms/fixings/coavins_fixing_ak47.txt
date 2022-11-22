@@ -43,7 +43,7 @@ module coavinsfirearms {
 
 	fixing Fix AK47_Bolt Welding
 	{
-		Require : SKS_Bolt,
+		Require : AK47_Bolt,
 		GlobalItem : BlowTorch=2,
 	  ConditionModifier : 1.2,
 
