@@ -23,15 +23,15 @@ end
 -- Gun parts
 MakeSet(
 	{ -- Where they should spawn
-		MakeDistribution('PawnShopGunsSpecial' , 5.0),
-		MakeDistribution('GunStoreShelf'       , 5.0),
-		MakeDistribution('ArmyStorageGuns'     , 0.5),
-		MakeDistribution('ArmySurplusBackpacks', 1.0),
-		MakeDistribution('LockerArmyBedroom'   , 5.0),
-		MakeDistribution('PoliceStorageGuns'   , 2.0),
+		MakeDistribution('PawnShopGunsSpecial' , 1.0),
+		MakeDistribution('GunStoreShelf'       , 1.0),
+		MakeDistribution('ArmyStorageGuns'     , 0.1),
+		MakeDistribution('ArmySurplusBackpacks', 0.5),
+		MakeDistribution('LockerArmyBedroom'   , 1.0),
+		MakeDistribution('PoliceStorageGuns'   , 1.0),
 		MakeDistribution('GunStoreDisplayCase' , 0.1),
-		MakeDistribution('FirearmWeapons'      , 1.0),
-		MakeDistribution('HuntingLockers'      , 2.0),
+		MakeDistribution('FirearmWeapons'      , 0.5),
+		MakeDistribution('HuntingLockers'      , 0.5),
 	},
 	{ -- What should spawn here
 		MakeItem('coavinsfirearms.PistolReceiver'    , 0.3),
