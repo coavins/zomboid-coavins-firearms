@@ -9,7 +9,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = RevolverReceiver,
 		Weight = 0.5,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -19,7 +19,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = RevolverCylinder,
 		Weight = 0.3,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperclip,
 	}
 }

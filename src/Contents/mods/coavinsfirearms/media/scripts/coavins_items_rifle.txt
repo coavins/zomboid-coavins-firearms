@@ -9,7 +9,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = BoltActionReceiver,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -19,7 +19,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = BoltActionBolt,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -29,7 +29,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = M16LowerReceiver,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -39,7 +39,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = M16UpperReceiver,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -49,7 +49,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = M16BoltCarrier,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -59,7 +59,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = M16FiringPin,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -69,7 +69,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = M16Bolt,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 }

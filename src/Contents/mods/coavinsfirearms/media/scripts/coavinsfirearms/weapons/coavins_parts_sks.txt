@@ -9,7 +9,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_Receiver,
 		Weight = 2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -19,7 +19,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_GasPiston,
 		Weight = 0.1,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -29,7 +29,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_TriggerAssembly,
 		Weight = 0.2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -39,7 +39,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_MagazineAssembly,
 		Weight = 0.2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -49,7 +49,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_Stock,
 		Weight = 1,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -59,7 +59,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_BoltCarrier,
 		Weight = 0.5,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -69,7 +69,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_Bolt,
 		Weight = 0.2,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 
@@ -79,7 +79,7 @@ module coavinsfirearms {
 		Type = Normal,
 		Icon = SKS_FiringPin,
 		Weight = 0.1,
-		ConditionMax = 10,
+		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
 }
