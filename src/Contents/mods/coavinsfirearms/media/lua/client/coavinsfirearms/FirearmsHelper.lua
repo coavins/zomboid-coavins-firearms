@@ -228,6 +228,9 @@ this.initializeDataForPart = function(type, data, guaranteedParts)
 	print("Initializing part: " .. type)
 	local model = this.getPartModel(type)
 
+	-- condition is initialized to this percentage for new parts that haven't been handled by a player yet
+	local initialCondition = 1.0 - (ZombRand(11) / 100) -- result is 0.90 thru 1.00
+
 	-- this function either creates a new table (and returns it)
 	-- or uses the table that you provided
 	if not data then
@@ -243,7 +246,7 @@ this.initializeDataForPart = function(type, data, guaranteedParts)
 	end
 
 	if not data.condition then
-		data.condition = ZombRand(data.conditionMax * 0.7, data.conditionMax)
+		data.condition = ZombRand(data.conditionMax * initialCondition, data.conditionMax)
 	end
 
 	if not data.parts then
