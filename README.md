@@ -7,7 +7,6 @@
 		<br />✔ Compatible with most other firearm mods
 	</p>
 	<a href="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml"><img src="https://github.com/coavins/zomboid-coavins-firearms/actions/workflows/luacheck.yml/badge.svg"></a>
-	<img src="https://wakatime.com/badge/user/20060ef6-e09e-4c5c-b389-e5f3cff5bc41/project/135beebf-ced7-461a-a60d-9e58499e9103.svg" />
 </div>
 
 <br />
@@ -54,13 +53,12 @@ This mod should be compatible with most other mods that introduce new firearms o
 
 Support has to be added manually for every mod. This is a work in progress.
 
-### Most guns supported
+### Patches provided:
 - ✅ Firearms B41
 - ✅ VANILLA FIREARMS EXPANSION (B41.65)
-
-### Some guns supported
 - ✅ Arsenal(26) GunFighter
 - ✅ Brita's Weapon Pack
+- ✅ Totally's Historical Firearms Pack
 
 ### Extending this mod
 This mod is designed to be extensible so that other mod authors can use it without much effort.
