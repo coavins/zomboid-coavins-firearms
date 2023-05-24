@@ -33,17 +33,17 @@ MakeSet(
 		MakeDistribution('HuntingLockers'      , 0.5),
 	},
 	{ -- What should spawn here
-		MakeItem('coavinsfirearms.SKS_Receiver'        , 0.7),
-		MakeItem('coavinsfirearms.SKS_GasPiston'       , 0.5),
-		MakeItem('coavinsfirearms.SKS_TriggerAssembly' , 0.7),
-		MakeItem('coavinsfirearms.SKS_MagazineAssembly', 0.7),
-		MakeItem('coavinsfirearms.SKS_BoltCarrier'     , 0.7),
-		MakeItem('coavinsfirearms.SKS_Bolt'            , 0.5),
-		MakeItem('coavinsfirearms.SKS_FiringPin'       , 0.3),
-		MakeItem('coavinsfirearms.AK47_Receiver'    , 1.0),
-		MakeItem('coavinsfirearms.AK47_GasTube'     , 0.5),
-		MakeItem('coavinsfirearms.AK47_BoltCarrier' , 0.7),
-		MakeItem('coavinsfirearms.AK47_Bolt'        , 0.7),
+		MakeItem('coavinsfirearms.SKS_Receiver'        , 0.5),
+		MakeItem('coavinsfirearms.SKS_GasPiston'       , 0.3),
+		MakeItem('coavinsfirearms.SKS_TriggerAssembly' , 0.5),
+		MakeItem('coavinsfirearms.SKS_MagazineAssembly', 0.5),
+		MakeItem('coavinsfirearms.SKS_BoltCarrier'     , 0.5),
+		MakeItem('coavinsfirearms.SKS_Bolt'            , 0.3),
+		MakeItem('coavinsfirearms.SKS_FiringPin'       , 0.2),
+		MakeItem('coavinsfirearms.AK47_Receiver'    , 0.7),
+		MakeItem('coavinsfirearms.AK47_GasTube'     , 0.3),
+		MakeItem('coavinsfirearms.AK47_BoltCarrier' , 0.5),
+		MakeItem('coavinsfirearms.AK47_Bolt'        , 0.5),
 	}
 )
 

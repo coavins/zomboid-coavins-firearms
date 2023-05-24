@@ -2,7 +2,7 @@ VERSION = 1,
 
 option coavinsfirearms.LootGunParts
 {
-	type = enum, numValues = 5, default = 2,
+	type = enum, numValues = 5, default = 3,
 	page = LootRarity,
 	translation = coavinsfirearms_LootGunParts,
 	valueTranslation = Rarity,
