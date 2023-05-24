@@ -71,11 +71,11 @@ If you are a developer and you want to add support for this feature in your mod,
 
 These are the mods provided by this Steam workshop item.
 
-### coavinsfirearms
+### **coavinsfirearms**
 
 This is the main mod, and must be enabled. Supports all of the firearms present in the base game.
 
-### coavinssupport1
+### **coavinssupport1**
 
 Compatibility patch for "Firearms B41" (mod id: firearmmod)
 
@@ -83,13 +83,13 @@ Supports most of the custom guns in this mod, except for a small handful (the M6
 
 The "Gun Toolkit" items are used to repair components instead of the guns themselves.
 
-### coavinssupport2
+### **coavinssupport2**
 
 Compatibility patch for "Arsenal(26) GunFighter" (mod id: Arsenal(26)GunFighter)
 
 Adds support for some of the custom guns in this mod. Should also work for "Brita's Weapons".
 
-### coavinssupport3
+### **coavinssupport3**
 
 Compatibility patch for "VANILLA FIREARMS EXPANSION" (mod id: VFExpansion1)
 
@@ -98,6 +98,12 @@ Adds support for most of the custom guns in this mod, only missing a few (SKS, T
 The "Gun Cleaning Kit" and "FireKlean" items are used to repair components instead of the guns themselves.
 
 The "FireKlean" item is overridden to increase the number of uses to 4.
+
+### **coavinssupport4**
+
+Compatibility patch for "Totally's Historical Firearms Pack" (mod id: TIHFP)
+
+Adds support for some custom guns in this mod: Makarov, LeeEnfieldMagLoad, Springfield, Thompson, BAR, M1Carbine, G3A3
 
 # Roadmap
 
