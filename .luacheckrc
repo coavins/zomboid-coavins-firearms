@@ -26,6 +26,7 @@ files['src/'] = {
 		'ISRemoveFirearmPart',
 		'ISInstallFirearmPart',
 		'ISInventoryPane',
-		'ISReloadWeaponAction'
+		'ISReloadWeaponAction',
+		'SandboxVars'
 	}
 }

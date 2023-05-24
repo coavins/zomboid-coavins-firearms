@@ -237,7 +237,8 @@ this.initializeDataForPart = function(type, data, guaranteedParts)
 	local difference = initialMax - initialMin
 
 	-- condition is initialized to this percentage for new parts that haven't been handled by a player yet
-	local initialCondition = initialMax - (ZombRand((difference * 100) + 1) / 100) -- result is between InitialConditionMax and InitialConditionMin
+	-- result is between InitialConditionMax and InitialConditionMin
+	local initialCondition = initialMax - (ZombRand((difference * 100) + 1) / 100)
 
 	print("chose condition: " .. initialCondition)
 
