@@ -245,7 +245,7 @@ this.initializeDataForPart = function(type, data, guaranteedParts, overrideCondi
 
 	if not data.condition then
 		-- we have not yet determined a condition for this part
-		local initialConditionPct = 1.0
+		local initialConditionPct
 
 		if overrideConditionPct and not SandboxVars.coavinsfirearms.RollConditionForParts then
 			-- this part is probably inside a gun that already had a condition rolled for it
@@ -377,8 +377,8 @@ this.getTooltipTextForItem = function(item)
 	local type = item:getType()
 	local data = this.getModData(item)
 	local model = this.getFirearmModelForItem(item)
-	local cond = 1
-	local condMax = 1
+	local cond
+	local condMax
 	if model then
 		-- it's a firearm
 		this.initializeFirearmModData(item)
