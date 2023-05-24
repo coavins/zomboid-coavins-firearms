@@ -8,3 +8,10 @@ option coavinsfirearms.LootGunParts
 	translation = coavinsfirearms_LootGunParts,
 	valueTranslation = Rarity,
 }
+
+option coavinsfirearms.ConditionLossChance
+{
+type = enum, numValues = 4, default = 2,
+page = coavinsfirearms, translation = coavinsfirearms_ConditionLossChance,
+valueTranslation = coavinsfirearms_ConditionLossChance,
+}
