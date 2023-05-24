@@ -105,6 +105,11 @@ Compatibility patch for "Totally's Historical Firearms Pack" (mod id: TIHFP)
 
 Adds support for some custom guns in this mod: Makarov, LeeEnfieldMagLoad, Springfield, Thompson, BAR, M1Carbine, G3A3
 
+# Sandbox options
+
+* Gun part spawn rate
+* Condition loss rate
+
 # Roadmap
 
 Ideas for future development:
@@ -115,6 +120,12 @@ Ideas for future development:
 * Add cleaning products like solvents and brushes
 * Add alternative parts that can be swapped in to affect firearm stats
 
+# Translations
+
+* English
+* German
+* Russian
+
 # Contribute
 
 ✔ Pull requests are encouraged! Please submit your translations, bug fixes, and new features.
@@ -123,4 +134,4 @@ Ideas for future development:
 
 ℹ You are free to make changes to my code for your own use.
 
-⛔ Please don't reupload this mod to the Steam workshop or any other site, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Yuki.
+⛔ Please don't reupload this mod to the Steam workshop or any other site, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Akemi.
