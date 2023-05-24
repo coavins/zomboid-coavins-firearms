@@ -1,0 +1,17 @@
+ContextMenu_RU = {
+	ContextMenu_Firearm_Assemble = "Собрать",
+	ContextMenu_Firearm_AssemblyInfo = "Информация о детали",
+	ContextMenu_Firearm_Disassemble = "Разобрать",
+	ContextMenu_Firearm_ErrorHasAttachments = "Улучшения должны быть убраны",
+	ContextMenu_Firearm_ErrorHasMagazine = "Магазин должен быть вынут",
+	ContextMenu_Firearm_ErrorHasRounds = "Пули должны быть вытащены",
+	ContextMenu_Firearm_ErrorNotCleared = "Ствол должен быть пуст.",
+	ContextMenu_Firearm_Frame = "Ствольная коробка",
+	ContextMenu_Firearm_InstallComponent = "Установить деталь",
+	ContextMenu_Firearm_InstallInto = "Информация об установке",
+	ContextMenu_Firearm_Installed = "Установлено",
+	ContextMenu_Firearm_NotFound = "Не %1 найдено.",
+	ContextMenu_Firearm_NotFoundEmpty = "Не %1 найдено с пустым слотом.",
+	ContextMenu_Firearm_NotInstalled = "Не установлено",
+	ContextMenu_Firearm_RemoveComponent = "Убрать деталь",
+}
