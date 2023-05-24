@@ -211,36 +211,23 @@ this.initializeFirearmModData = function(firearm)
 	end
 	local type = firearm:getFullType()
 	local data = this.getModData(firearm)
+	local cond = firearm:getCondition() / firearm:getConditionMax()
 
 	if not data.parts then
 		print("Initializing firearm: " .. type)
 		data.parts = {}
 
 		for _,k in ipairs(model.BreaksInto) do
-			data.parts[k] = this.initializeDataForPart(k, nil, true) -- looted guns always have all their parts
+			data.parts[k] = this.initializeDataForPart(k, nil, true, cond) -- looted guns always have all their parts
 		end
 
 		this.updateFirearm(firearm)
 	end
 end
 
-this.initializeDataForPart = function(type, data, guaranteedParts)
+this.initializeDataForPart = function(type, data, guaranteedParts, overrideConditionPct)
 	print("Initializing part: " .. type)
 	local model = this.getPartModel(type)
-
-	local initialMax = SandboxVars.coavinsfirearms.InitialConditionMax
-	local initialMin = SandboxVars.coavinsfirearms.InitialConditionMin
-	if initialMax < initialMin then
-		initialMax = 1.0
-	end
-
-	-- condition is initialized to this percentage for new parts that haven't been handled by a player yet
-	-- result is between InitialConditionMax and InitialConditionMin
-	--local difference = initialMax - initialMin
-	--local initialCondition = initialMax - (ZombRand((difference * 100) + 1) / 100)
-	local initialCondition = ZombRand(initialMin, initialMax)
-
-	print("chose condition: " .. initialCondition)
 
 	-- this function either creates a new table (and returns it)
 	-- or uses the table that you provided
@@ -257,21 +244,44 @@ this.initializeDataForPart = function(type, data, guaranteedParts)
 	end
 
 	if not data.condition then
-		data.condition = ZombRand(data.conditionMax * initialCondition, data.conditionMax)
+		-- we have not yet determined a condition for this part
+		local initialConditionPct = 1.0
+
+		if overrideConditionPct and not SandboxVars.coavinsfirearms.RollConditionForParts then
+			-- this part is probably inside a gun that already had a condition rolled for it
+			initialConditionPct = overrideConditionPct
+			print(string.format('inherit condition %.2f', initialConditionPct))
+		else
+			-- generate a starting condition for gun which the user just picked up
+			local initialMax = SandboxVars.coavinsfirearms.InitialConditionMax
+			local initialMin = SandboxVars.coavinsfirearms.InitialConditionMin
+			if initialMax < initialMin then
+				initialMax = 1.0
+			end
+			local difference = initialMax - initialMin
+			initialConditionPct = initialMax - (ZombRand((difference * 100) + 1) / 100.0)
+			print(string.format('rolled condition %.2f between %.2f and %.2f', initialConditionPct, initialMin, initialMax))
+		end
+
+		data.condition = data.conditionMax * initialConditionPct
+		print(string.format('set new condition: %.2f', data.condition))
+	else
+		-- we already determined a condition for this part
+		print(string.format('found existing condition: %.2f', data.condition))
 	end
 
 	if not data.parts then
 		data.parts = {}
 		if model.BreaksInto then
 			for _,k in ipairs(model.BreaksInto) do
-				data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts)
+				data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts, overrideConditionPct)
 			end
 		end
 		if model.Holds then
 			for _,k in ipairs(model.Holds) do
 				-- 50% chance for this part to be missing
 				if guaranteedParts or ZombRand(2) == 0 then
-					data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts)
+					data.parts[k] = this.initializeDataForPart(k, nil, guaranteedParts, overrideConditionPct)
 				end
 			end
 		end
