@@ -1,7 +1,6 @@
 require 'Items/ProceduralDistributions'
 
 local spawns = {}
-local debugMultiplier = 1.0 -- change to 100 to guarantee spawns
 
 -- Make a new set of items and where they spawn
 local MakeSet = function(distribution, items)
@@ -23,18 +22,18 @@ end
 -- Gun parts
 MakeSet(
 	{ -- Where they should spawn
-		MakeDistribution('PawnShopGunsSpecial' , 5.0),
-		MakeDistribution('GunStoreShelf'       , 5.0),
-		MakeDistribution('ArmyStorageGuns'     , 0.5),
-		MakeDistribution('ArmySurplusBackpacks', 1.0),
-		MakeDistribution('LockerArmyBedroom'   , 5.0),
-		MakeDistribution('PoliceStorageGuns'   , 2.0),
+		MakeDistribution('PawnShopGunsSpecial' , 0.5),
+		MakeDistribution('GunStoreShelf'       , 0.5),
+		MakeDistribution('ArmyStorageGuns'     , 0.1),
+		MakeDistribution('ArmySurplusBackpacks', 0.5),
+		MakeDistribution('LockerArmyBedroom'   , 0.5),
+		MakeDistribution('PoliceStorageGuns'   , 0.5),
 		MakeDistribution('GunStoreDisplayCase' , 0.1),
-		MakeDistribution('FirearmWeapons'      , 1.0),
-		MakeDistribution('HuntingLockers'      , 2.0),
+		MakeDistribution('FirearmWeapons'      , 0.5),
+		MakeDistribution('HuntingLockers'      , 0.5),
 	},
 	{ -- What should spawn here
-		MakeItem('coavinsfirearms.SKS_Receiver'        , 1.2),
+		MakeItem('coavinsfirearms.SKS_Receiver'        , 0.7),
 		MakeItem('coavinsfirearms.SKS_GasPiston'       , 0.5),
 		MakeItem('coavinsfirearms.SKS_TriggerAssembly' , 0.7),
 		MakeItem('coavinsfirearms.SKS_MagazineAssembly', 0.7),
@@ -69,7 +68,7 @@ for _,spawn in ipairs(spawns) do
 		for _,item in ipairs(items) do
 			local type             = item[1]
 			local rarityMultiplier = item[2]
-			local actualRarity = rarity * rarityMultiplier * debugMultiplier
+			local actualRarity = rarity * rarityMultiplier * SandboxVars.coavinsfirearms.LootGunParts
 			-- spawn this item at this distribution
 			AddSpawn(place, type, actualRarity)
 		end
