@@ -377,16 +377,22 @@ this.getTooltipTextForItem = function(item)
 	local type = item:getType()
 	local data = this.getModData(item)
 	local model = this.getFirearmModelForItem(item)
+	local cond = 1
+	local condMax = 1
 	if model then
 		-- it's a firearm
 		this.initializeFirearmModData(item)
+		cond = item:getCondition()
+		condMax = item:getConditionMax()
 	else
 		-- it's a component
 		model = this.getPartModel(type)
 		this.initializeDataForPart(type, data)
+		cond = data.condition
+		condMax = model.ConditionMax
 	end
 
-	return this.getTooltipText(model, data, item:getCondition(), item:getConditionMax())
+	return this.getTooltipText(model, data, cond, condMax)
 end
 
 this.getTooltipTextForPartData = function(type, data)
