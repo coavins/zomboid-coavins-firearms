@@ -2,13 +2,19 @@ Sandbox_EN = {
 	Sandbox_coavinsfirearms = "Coavins Firearm Repair",
 
 	Sandbox_coavinsfirearms_LootGunParts = "Gun Parts",
-	Sandbox_coavinsfirearms_LootGunParts_tooltip = "Firearm components used by Coavins Firearm Repair"
+	Sandbox_coavinsfirearms_LootGunParts_tooltip = "Firearm components used by Coavins Firearm Repair",
 
-	Sandbox_coavinsfirearms_ConditionLossChance = "Condition loss rate"
-	Sandbox_coavinsfirearms_ConditionLossChance_tooltip = "General rate of condition loss for firearm components"
+	Sandbox_coavinsfirearms_ConditionLossChance = "Condition loss rate",
+	Sandbox_coavinsfirearms_ConditionLossChance_tooltip = "General rate of condition loss for firearm components",
 
-	Sandbox_coavinsfirearms_ConditionLossChance_option1 = "High"
+	Sandbox_coavinsfirearms_ConditionLossChance_option1 = "High",
 	Sandbox_coavinsfirearms_ConditionLossChance_option2 = "Normal",
 	Sandbox_coavinsfirearms_ConditionLossChance_option3 = "Low",
 	Sandbox_coavinsfirearms_ConditionLossChance_option4 = "Very low",
+
+	Sandbox_coavinsfirearms_InitialConditionMax = "Maximum initial condition of parts",
+	Sandbox_coavinsfirearms_InitialConditionMax_tooltip = "The highest starting condition that a gun part can have",
+
+	Sandbox_coavinsfirearms_InitialConditionMin = "Minimum initial condition of parts",
+	Sandbox_coavinsfirearms_InitialConditionMin_tooltip = "The lowest starting condition that a gun part can have",
 }

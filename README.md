@@ -108,7 +108,8 @@ Adds support for some custom guns in this mod: Makarov, LeeEnfieldMagLoad, Sprin
 # Sandbox options
 
 * Gun part spawn rate
-* Condition loss rate
+* Condition loss rate for gun parts
+* Min and max starting condition for gun parts
 
 # Roadmap
 

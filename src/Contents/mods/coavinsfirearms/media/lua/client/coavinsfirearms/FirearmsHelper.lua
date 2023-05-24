@@ -228,8 +228,18 @@ this.initializeDataForPart = function(type, data, guaranteedParts)
 	print("Initializing part: " .. type)
 	local model = this.getPartModel(type)
 
+	local initialMax = SandboxVars.coavinsfirearms.InitialConditionMax
+	local initialMin = SandboxVars.coavinsfirearms.InitialConditionMin
+	if initialMax < initialMin then
+		initialMax = 1.0
+	end
+
+	local difference = initialMax - initialMin
+
 	-- condition is initialized to this percentage for new parts that haven't been handled by a player yet
-	local initialCondition = 1.0 - (ZombRand(11) / 100) -- result is 0.90 thru 1.00
+	local initialCondition = initialMax - (ZombRand((difference * 100) + 1) / 100) -- result is between InitialConditionMax and InitialConditionMin
+
+	print("chose condition: " .. initialCondition)
 
 	-- this function either creates a new table (and returns it)
 	-- or uses the table that you provided
