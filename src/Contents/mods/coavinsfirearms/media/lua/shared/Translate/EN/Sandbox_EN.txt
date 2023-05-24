@@ -1,0 +1,6 @@
+Sandbox_EN = {
+	Sandbox_coavinsfirearms = "Coavins Firearm Repair",
+
+	Sandbox_coavinsfirearms_LootGunParts = "Gun Parts",
+	Sandbox_coavinsfirearms_LootGunParts_tooltip = "Firearm components used by Coavins Firearm Repair"
+}

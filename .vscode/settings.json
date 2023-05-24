@@ -18,6 +18,7 @@
 		"getTexture",
 		"CharacterActionAnims",
 		"ISInventoryPaneContextMenu",
-		"ProceduralDistributions"
+		"ProceduralDistributions",
+		"SandboxVars"
 	]
 }
