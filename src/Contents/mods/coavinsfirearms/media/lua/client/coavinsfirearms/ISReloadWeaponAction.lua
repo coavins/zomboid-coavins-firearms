@@ -69,3 +69,7 @@ ISReloadWeaponAction.onShoot = function(player, weapon)
 	-- override the original functionality for handling jam chance
 	handleJamChance(weapon)
 end
+
+Events.OnWeaponSwingHitPoint.Remove(realFn);
+Events.OnWeaponSwingHitPoint.Add(ISReloadWeaponAction.onShoot);
+
