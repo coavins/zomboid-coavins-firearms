@@ -1,17 +1,25 @@
-name: "Upload to Workshop"
-
+# .github/workflows/workshop.yml
 on:
-  - push
+  push
 
 jobs:
-  upload:
+  build_addon:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: AnarkisGaming/workshop@v1
-        with:
-          appID: 108600
-          publishedFileID: 3093101879
-        env:
-          STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
-          STEAM_PASSWORD: ${{ secrets.password }}
+    - uses: actions/checkout@v1
+    - name: Set VERSION env
+      run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
+    - name: Build addon with HEMTT
+      uses: 16AAModTeam/hemtt@stable
+      with:
+        command: 'build --release'
+    # Upload to Steam Workshop
+    - uses: arma-actions/workshop-upload@v1
+      with:
+        appId: '108600'    # default
+        itemId: '3093101879' # Id of item to update
+        contentPath: 'src/'
+        changelog: 'Content of change notes'
+      env:
+        STEAM_USERNAME: ${{ secrets.accountname }}
+        STEAM_PASSWORD: ${{ secrets.password }}
