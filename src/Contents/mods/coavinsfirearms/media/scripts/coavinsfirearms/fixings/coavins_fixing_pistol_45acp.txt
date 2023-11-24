@@ -1,0 +1,43 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix PistolReceiver Welding
+	{
+		Require : PistolReceiver,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix PistolReceiver
+	{
+		Require : PistolReceiver,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix PistolSlide Welding
+	{
+		Require : PistolSlide,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix PistolBarrel Welding
+	{
+		Require : PistolBarrel,
+		GlobalItem : BlowTorch=5,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal=2; MetalWelding=8,
+	}
+}
