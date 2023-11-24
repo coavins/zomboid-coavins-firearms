@@ -176,6 +176,19 @@ this.parts.AK47_Bolt = {}
 this.parts.AK47_Bolt.InsertsInto = 'AK47_BoltCarrier'
 this.parts.AK47_Bolt.ConditionLowerChance = 3
 this.parts.AK47_Bolt.ConditionMax = 20
+this.parts.PistolReceiver_45 = {}
+this.parts.PistolReceiver_45.CombinesWith = 'PistolSlide_45'
+this.parts.PistolReceiver_45.ConditionLowerChance = 1 -- 100%
+this.parts.PistolReceiver_45.ConditionMax = 20
+this.parts.PistolSlide_45 = {}
+this.parts.PistolSlide_45.CombinesWith = 'PistolReceiver_45'
+this.parts.PistolSlide_45.Holds = { 'PistolBarrel_45' }
+this.parts.PistolSlide_45.ConditionLowerChance = 2 -- 1/2
+this.parts.PistolSlide_45.ConditionMax = 20
+this.parts.PistolBarrel_45 = {}
+this.parts.PistolBarrel_45.InsertsInto = 'PistolSlide_45'
+this.parts.PistolBarrel_45.ConditionLowerChance = 3 -- 1/3
+this.parts.PistolBarrel_45.ConditionMax = 20
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
