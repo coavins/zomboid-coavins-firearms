@@ -1,4 +1,4 @@
-id=2847408431
+id=3093101879
 version=1
 title=Coavins Firearm Repair
 description=Disassemble firearms into parts that can be individually repaired (or replaced) and reassembled. Parts can also be looted from places where you normally find guns, and they can be removed from other guns and re-used. Replaces the default "Repair" action on supported guns.
@@ -132,7 +132,7 @@ description=[url=https://ko-fi.com/E1E3CLKZX][img]https://i.imgur.com/4qKjzrG.pn
 description=
 description=[url=https://liberapay.com/coavins/donate][img]https://liberapay.com/assets/widgets/donate.svg[/img][/url]
 description=
-description=Workshop ID: 2847408431
+description=Workshop ID: 3093101879
 description=Mod ID: coavinsfirearms
 description=Mod ID: coavinssupport1
 description=Mod ID: coavinssupport2
