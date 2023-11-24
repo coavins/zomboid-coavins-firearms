@@ -202,6 +202,7 @@ this.parts.PistolBarrel_9 = {}
 this.parts.PistolBarrel_9.InsertsInto = 'PistolSlide_9'
 this.parts.PistolBarrel_9.ConditionLowerChance = 3 -- 1/3
 this.parts.PistolBarrel_9.ConditionMax = 20
+
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
 end
