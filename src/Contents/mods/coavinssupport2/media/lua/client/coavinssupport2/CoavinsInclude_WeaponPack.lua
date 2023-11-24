@@ -82,7 +82,7 @@ CoavinsFirearms.Include('Base.SW_327',         'GenericRevolver')
 CoavinsFirearms.Include('Base.SW_327_357',     'GenericRevolver')
 
 -- 1911.txt
-CoavinsFirearms.Include('Base.AMT1911',        'GenericPistol')
+CoavinsFirearms.Include('Base.AMT1911',        'Pistol_45')
 CoavinsFirearms.Include('Base.AMT1911_Long',   'GenericPistol')
 CoavinsFirearms.Include('Base.M1911_Carbine',  'GenericPistol')
 CoavinsFirearms.Include('Base.Colt1911',       'GenericPistol')
