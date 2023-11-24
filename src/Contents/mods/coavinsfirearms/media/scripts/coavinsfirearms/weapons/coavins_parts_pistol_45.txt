@@ -3,8 +3,8 @@ module coavinsfirearms {
 		Base
 	}
 
-	item PistolReceiver_9 {
-		DisplayName = Pistol Frame (9mm),
+	item PistolReceiver_45 {
+		DisplayName = Pistol Frame (.45),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = PistolReceiver,
@@ -13,8 +13,8 @@ module coavinsfirearms {
 		WorldStaticModel = Paperbag_Ground,
 	}
 
-	item PistolSlide_9 {
-		DisplayName = Pistol Slide (9mm),
+	item PistolSlide_45 {
+		DisplayName = Pistol Slide (.45),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = PistolSlide,
@@ -23,8 +23,8 @@ module coavinsfirearms {
 		WorldStaticModel = Paperclip,
 	}
 
-	item PistolBarrel_9 {
-		DisplayName = Pistol Barrel (9mm),
+	item PistolBarrel_45 {
+		DisplayName = Pistol Barrel (.45),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = PistolBarrel,
