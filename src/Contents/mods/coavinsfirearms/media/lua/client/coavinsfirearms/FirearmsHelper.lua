@@ -189,7 +189,19 @@ this.parts.PistolBarrel_45 = {}
 this.parts.PistolBarrel_45.InsertsInto = 'PistolSlide_45'
 this.parts.PistolBarrel_45.ConditionLowerChance = 3 -- 1/3
 this.parts.PistolBarrel_45.ConditionMax = 20
-
+this.parts.PistolReceiver_9 = {}
+this.parts.PistolReceiver_9.CombinesWith = 'PistolSlide_9'
+this.parts.PistolReceiver_9.ConditionLowerChance = 1 -- 100%
+this.parts.PistolReceiver_9.ConditionMax = 20
+this.parts.PistolSlide_9 = {}
+this.parts.PistolSlide_9.CombinesWith = 'PistolReceiver_9'
+this.parts.PistolSlide_9.Holds = { 'PistolBarrel_9' }
+this.parts.PistolSlide_9.ConditionLowerChance = 2 -- 1/2
+this.parts.PistolSlide_9.ConditionMax = 20
+this.parts.PistolBarrel_9 = {}
+this.parts.PistolBarrel_9.InsertsInto = 'PistolSlide_9'
+this.parts.PistolBarrel_9.ConditionLowerChance = 3 -- 1/3
+this.parts.PistolBarrel_9.ConditionMax = 20
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
 end
