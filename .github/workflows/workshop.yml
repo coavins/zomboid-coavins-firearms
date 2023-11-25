@@ -25,6 +25,7 @@ jobs:
     steps:
     - run: |
         echo "The PR was successfully merged"
+        env
   upload:
     runs-on: ubuntu-latest
     steps:
