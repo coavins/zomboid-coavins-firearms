@@ -2,23 +2,30 @@ name: "Push testing build to Workshop"
 
 #
 # This Workflow runs when:
-# - Pull Request into the `develop` branch has been successfully merged
+#   - Event is a pull request
+#   - Type of PR is "closed"
+#   - PR is merged
 #
 
 
 on:
-  pull_request_target:
-    types:
-      - closed
+  pull_request:
+    # Only for branch "develop"
     branches:
       - develop
-    paths:
-     - 'src/'
+    # Only on closed PRs
+    types:
+      - closed
 
 
 jobs:
-  upload:
+  if_merged:
     if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "The PR was successfully merged"
+  upload:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout content of '/src/' directory to Steam Workshop"
