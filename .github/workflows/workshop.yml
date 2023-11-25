@@ -1,22 +1,34 @@
 name: "Push testing build to Workshop"
 
+#
+# This Workflow runs when:
+# - Pull Request into the `develop` branch has been successfully merged
+#
+
+
 on:
-  push:
+  pull_request_target:
+    types:
+      - closed
     branches:
       - develop
+    paths:
+     - 'src/'
 
 
 jobs:
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: AnarkisGaming/workshop@v1
-        with:
-          appID: 108600
-          publishedFileID: 3093101879
-          path: "/src/"
-          changelog: ${{ github.event.head_commit.message }}
-        env:
-          STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
-          STEAM_PASSWORD: ${{ secrets.password }}
+  if_merged:
+    if: github.event.pull_request.merged == true
+    upload:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: AnarkisGaming/workshop@v1
+          with:
+            appID: 108600
+            publishedFileID: 3093101879
+            path: "/src/"
+            changelog: ${{ github.event.head_commit.message }}
+          env:
+            STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
+            STEAM_PASSWORD: ${{ secrets.password }}
