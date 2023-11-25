@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout content of '/src/' directory to Steam Workshop"
-        uses: actions/checkout@v2
-        uses: AnarkisGaming/workshop@v1
+      - uses: actions/checkout@v2
+      - uses: AnarkisGaming/workshop@v1
         with:
           appID: 108600
           publishedFileID: 3093101879
