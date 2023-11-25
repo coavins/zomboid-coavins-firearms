@@ -2,32 +2,41 @@ name: "Push testing build to Workshop"
 
 #
 # This Workflow runs when:
-# - Pull Request into the `develop` branch has been successfully merged
+#   - Event is a pull request
+#   - Type of PR is "closed"
+#   - PR is merged
 #
 
 
 on:
-  pull_request_target:
-    types:
-      - closed
+  pull_request:
+    # Only for branch "develop"
     branches:
       - develop
-    paths:
-     - 'src/'
+    # Only on closed PRs
+    types:
+      - closed
 
 
 jobs:
-  upload:
+  if_merged:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout content of '/src/' directory to Steam Workshop"
-        uses: actions/checkout@v2
+    - run: |
+        echo "The PR was successfully merged"
+        env
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout content of 'src' directory to Steam Workshop"
+        uses: actions/Checkout@v1
+      - name: "Push to Steam Workshop"
         uses: AnarkisGaming/workshop@v1
         with:
           appID: 108600
           publishedFileID: 3093101879
-          path: "/src/"
+          path: src
           changelog: ${{ github.event.head_commit.message }}
         env:
           STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
