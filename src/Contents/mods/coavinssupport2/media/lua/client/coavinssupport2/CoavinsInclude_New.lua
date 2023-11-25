@@ -34,6 +34,7 @@ CoavinsFirearms.Include('Base.Bush_XM15_Custom_INC',   'M16Rifle')
 CoavinsFirearms.Include('Base.TR1_UltraLight',         'M16Rifle')
 
 -- SIG_MCX.txt
+CoavinsFirearms.Include('Base.SIG_MCX', 'M16Rifle')
 -- MCX_Spear
 -- MCX_Spear_Melee
 -- MCX_Spear_HE
