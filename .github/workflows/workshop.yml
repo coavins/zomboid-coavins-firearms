@@ -13,8 +13,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: AnarkisGaming/workshop@v1
         with:
-          appID: 727570
-          publishedFileID: 2095592756
+          appID: 108600
+          publishedFileID: 3093101879
+          path: "/src/"
+          changelog: ${{ github.event.head_commit.message }}
         env:
           STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
           STEAM_PASSWORD: ${{ secrets.password }}
