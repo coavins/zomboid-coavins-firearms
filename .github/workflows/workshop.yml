@@ -29,8 +29,8 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name "Print Steam Error Log"
-        run echo "$HOME/.local/share/Steam/logs/workshop_log.txt"
+      - name: "Print Steam Error Log"
+        run: echo "$HOME/.local/share/Steam/logs/workshop_log.txt"
       - name: "Checkout content of '/src/' directory to Steam Workshop"
         uses: AnarkisGaming/workshop@v1
         with:
