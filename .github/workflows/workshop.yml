@@ -29,12 +29,14 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+      - name "Print Steam Error Log"
+        run echo "$HOME/.local/share/Steam/logs/workshop_log.txt"
       - name: "Checkout content of '/src/' directory to Steam Workshop"
         uses: AnarkisGaming/workshop@v1
         with:
           appID: 108600
           publishedFileID: 3093101879
-          path: src/
+          path: src/Content
           #changelog: ${{ github.event.head_commit.message }}
         env:
           STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
