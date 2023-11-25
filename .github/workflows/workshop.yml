@@ -36,7 +36,7 @@ jobs:
         with:
           appID: 108600
           publishedFileID: 3093101879
-          path: src/Content
+          path: src
           changelog: ${{ github.event.head_commit.message }}
         env:
           STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
