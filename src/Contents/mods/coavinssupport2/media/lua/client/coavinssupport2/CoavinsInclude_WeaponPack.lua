@@ -265,7 +265,7 @@ CoavinsFirearms.Include('Base.CZ97B', 'GenericPistol')
 -- GLOCK.txt
 CoavinsFirearms.Include('Base.G17', 'GenericPistol')
 CoavinsFirearms.Include('Base.G18', 'GenericPistol')
-CoavinsFirearms.Include('Base.G21', 'GenericPistol')
+CoavinsFirearms.Include('Base.G21', 'Pistol_45acp')
 CoavinsFirearms.Include('Base.G34', 'GenericPistol')
 CoavinsFirearms.Include('Base.G42', 'GenericPistol')
 
