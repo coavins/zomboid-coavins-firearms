@@ -57,4 +57,7 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.AK47_BoltCarrier_Short = "Bolt Carrier",
 	ItemName_coavinsfirearms.AK47_Bolt = "AK47 Bolt",
 	ItemName_coavinsfirearms.AK47_Bolt_Short = "Bolt",
+	ItemName_coavinsfirearms.PistolReceiver_45acp = "Pistol Frame (.45 ACP)",
+	ItemName_coavinsfirearms.PistolSlide_45acp = "Pistol Slide (.45 ACP)",
+	ItemName_coavinsfirearms.PistolBarrel_45acp = "Pistol Barrel (.45 ACP)",
 }
