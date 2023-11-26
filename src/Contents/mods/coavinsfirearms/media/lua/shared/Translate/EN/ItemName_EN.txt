@@ -126,4 +126,8 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.PistolSlide_44cal_Short = "Slide (.44cal)",
 	ItemName_coavinsfirearms.PistolBarrel_44cal = "Pistol Barrel (.44cal)",
 	ItemName_coavinsfirearms.PistolBarrel_44cal_Short = "Barrel (.44cal)",
+	ItemName_coavinsfirearms.RevolverReceiver_38spc = "Revolver Frame (.38 SPC)",
+	ItemName_coavinsfirearms.RevolverReceiver_38spc_Short = "Frame (.38 SPC)",
+	ItemName_coavinsfirearms.RevolverCylinder_38spc = "Revolver Cylinder (.38 SPC)",
+	ItemName_coavinsfirearms.RevolverCylinder_38spc_Short = "Cylinder (.38 SPC)"
 }
