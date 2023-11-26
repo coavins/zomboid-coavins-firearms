@@ -46,3 +46,7 @@ CoavinsFirearms.AddOrReplaceModel(
 	'Revolver_45lc'
 , { 'RevolverReceiver_45lc', 'RevolverCylinder_45lc' }
 , 'RevolverReceiver_45lc')
+CoavinsFirearms.AddOrReplaceModel(
+	'Revolver_45lc'
+, { 'RevolverReceiver_45lc', 'RevolverCylinder_45lc' }
+, 'RevolverReceiver_45lc')
