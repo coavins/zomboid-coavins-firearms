@@ -1,0 +1,38 @@
+## Pull Request
+
+### Description
+<!-- Provide a brief description of the changes introduced by this pull request. -->
+
+### Related Issues
+<!-- Mention any related issues that this pull request addresses or resolves. Use the syntax: "Resolves #123" or "Fixes #456". -->
+
+### Checklist
+<!-- Ensure all the following items are completed before submitting the pull request. -->
+- [ ] Code follows the project's coding standards.
+- [ ] Documentation is updated (if applicable).
+- [ ] All checks and tests pass locally.
+- [ ] The commit messages follow the project's [commit message conventions](.
+
+### Additional Notes
+
+## Creating a Pull Request
+
+Please create a pull request targeting the `develop` branch with a clear explanation of what you've done (read more about pull requests [here](http://help.github.com/pull-requests/).)
+
+You should create a new branch for each pull request, and rebase/squash it into as few logical commits as possible.
+
+This repository generally follows the [Chris Beams standards](https://cbea.ms/git-commit/) for commit messages:
+
+    Separate subject from body with a blank line
+    Limit the subject line to 50 characters
+    Capitalize the subject line
+    Use the imperative mood in the subject line
+    Do not end the subject line with a period
+    Use the body to explain what and why vs. how
+    Wrap the body at 72 characters
+
+Your commits will be expected to meet these standards before your PR will be merged.
+
+---
+
+By submitting this pull request, I confirm that my contributions are made under the terms of the project's license.
