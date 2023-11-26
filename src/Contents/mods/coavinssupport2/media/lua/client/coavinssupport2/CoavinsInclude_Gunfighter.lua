@@ -77,11 +77,11 @@ CoavinsFirearms.Include('Base.Pistol3',            'GenericPistol')
 
 -- VANILLA_REVOLVER.txt
 CoavinsFirearms.Include('Base.Revolver_Short',     'GenericRevolver')
-CoavinsFirearms.Include('Base.Revolver_Short_357', 'GenericRevolver')
+CoavinsFirearms.Include('Base.Revolver_Short_357', 'Revolver_357')
 CoavinsFirearms.Include('Base.Revolver',           'GenericRevolver')
-CoavinsFirearms.Include('Base.Revolver_357',       'GenericRevolver')
+CoavinsFirearms.Include('Base.Revolver_357',       'Revolver_357')
 CoavinsFirearms.Include('Base.Revolver_Long',      'GenericRevolver')
-CoavinsFirearms.Include('Base.Revolver_Long_357',  'GenericRevolver')
+CoavinsFirearms.Include('Base.Revolver_Long_357',  'Revolver_357')
 
 -- VANILLA_RIFLE.txt
 CoavinsFirearms.Include('Base.VarmintRifle',        'BoltActionRifle')

@@ -478,7 +478,7 @@ CoavinsFirearms.Include('Base.XD4',  'GenericPistol')
 CoavinsFirearms.Include('Base.Taurus856',      'GenericRevolver')
 CoavinsFirearms.Include('Base.Colt_Service38', 'GenericRevolver')
 CoavinsFirearms.Include('Base.Colt_Service45', 'GenericRevolver')
-CoavinsFirearms.Include('Base.Colt_Navy_1851', 'GenericRevolver')
+CoavinsFirearms.Include('Base.Colt_Navy_1851', 'Revolver_357')
 CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 
 -- RUGER.txt
