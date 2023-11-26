@@ -41,10 +41,10 @@
 -- ZIP22
 
 -- 44_CAL.txt
--- M29_44
--- M29_44Carbine
--- Automag
--- DEagle
+CoavinsFirearms.Include('M29_44','Pistol_44cal')
+CoavinsFirearms.Include('M29_44Carbine','Pistol_44cal')
+CoavinsFirearms.Include('Automag','Pistol_44cal')
+CoavinsFirearms.Include('DEagle','Pistol_44cal')
 
 -- 50_BMG.txt
 -- BOAR
