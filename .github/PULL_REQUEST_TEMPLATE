@@ -11,7 +11,7 @@
 - [ ] Code follows the project's coding standards.
 - [ ] Documentation is updated (if applicable).
 - [ ] All checks and tests pass locally.
-- [ ] The commit messages follow the project's [commit message conventions](.
+- [ ] The commit messages follow the project's [commit message conventions](./CONTRIBUTING.md))
 
 ### Additional Notes
 
