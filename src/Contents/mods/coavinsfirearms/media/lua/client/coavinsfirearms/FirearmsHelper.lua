@@ -308,6 +308,27 @@ this.parts.RifleBolt_556 = {}
 this.parts.RifleBolt_556.InsertsInto = 'RifleBoltCarrier_556'
 this.parts.RifleBolt_556.ConditionLowerChance = 2
 this.parts.RifleBolt_556.ConditionMax = 20
+this.parts.RevolverReceiver_357 = {}
+this.parts.RevolverReceiver_357.CombinesWith = 'RevolverCylinder_357'
+this.parts.RevolverReceiver_357.ConditionLowerChance = 1
+this.parts.RevolverReceiver_357.ConditionMax = 20
+this.parts.RevolverCylinder_357 = {}
+this.parts.RevolverCylinder_357.CombinesWith = 'RevolverReceiver_357'
+this.parts.RevolverCylinder_357.ConditionLowerChance = 3
+this.parts.RevolverCylinder_357.ConditionMax = 20
+this.parts.PistolReceiver_44cal = {}
+this.parts.PistolReceiver_44cal.CombinesWith = 'PistolSlide_44cal'
+this.parts.PistolReceiver_44cal.ConditionLowerChance = 1 -- 100%
+this.parts.PistolReceiver_44cal.ConditionMax = 20
+this.parts.PistolSlide_44cal = {}
+this.parts.PistolSlide_44cal.CombinesWith = 'PistolReceiver_44cal'
+this.parts.PistolSlide_44cal.Holds = { 'PistolBarrel_44cal' }
+this.parts.PistolSlide_44cal.ConditionLowerChance = 2 -- 1/2
+this.parts.PistolSlide_44cal.ConditionMax = 20
+this.parts.PistolBarrel_44cal = {}
+this.parts.PistolBarrel_44cal.InsertsInto = 'PistolSlide_44cal'
+this.parts.PistolBarrel_44cal.ConditionLowerChance = 3 -- 1/3
+this.parts.PistolBarrel_44cal.ConditionMax = 20
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]

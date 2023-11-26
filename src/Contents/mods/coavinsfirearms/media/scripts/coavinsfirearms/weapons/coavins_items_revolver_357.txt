@@ -1,0 +1,25 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item RevolverReceiver_357 {
+		DisplayName = Revolver Frame (.357),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RevolverReceiver,
+		Weight = 0.5,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item RevolverCylinder_357 {
+		DisplayName = Revolver Cylinder (.357),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RevolverCylinder,
+		Weight = 0.3,
+		ConditionMax = 20,
+		WorldStaticModel = Paperclip,
+	}
+}

@@ -75,3 +75,11 @@ CoavinsFirearms.AddOrReplaceModel(
 	'Rifle_556'
 , { 'RifleUpperReceiver_556', 'RifleLowerReceiver_556' }
 , 'RifleLowerReceiver_556')
+CoavinsFirearms.AddOrReplaceModel(
+	'Revolver_357'
+, { 'RevolverReceiver_357', 'RevolverCylinder_357' }
+, 'RevolverReceiver_357')
+CoavinsFirearms.AddOrReplaceModel(
+  'Pistol_44cal'
+, { 'PistolReceiver_44cal', 'PistolSlide_44cal'}
+, 'PistolReceiver_44cal')

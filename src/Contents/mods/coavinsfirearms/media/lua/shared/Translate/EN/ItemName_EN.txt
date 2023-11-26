@@ -116,4 +116,14 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.RifleFiringPin_556_Short = "Firing Pin (5.56)",
 	ItemName_coavinsfirearms.RifleBolt_556 = "Rifle Bolt (5.56)",
 	ItemName_coavinsfirearms.RifleBolt_556_Short = "Bolt (5.56)",
+	ItemName_coavinsfirearms.RevolverReceiver_357 = "Revolver Frame (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverReceiver_357_Short = "Frame (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverCylinder_357 = "Revolver Cylinder (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverCylinder_357_Short = "Cylinder (.357 MAG)"
+	ItemName_coavinsfirearms.PistolReceiver_44cal = "Pistol Frame (.44cal)",
+	ItemName_coavinsfirearms.PistolReceiver_44cal_Short = "Frame (.44cal)",
+	ItemName_coavinsfirearms.PistolSlide_44cal = "Pistol Slide (.44cal)",
+	ItemName_coavinsfirearms.PistolSlide_44cal_Short = "Slide (.44cal)",
+	ItemName_coavinsfirearms.PistolBarrel_44cal = "Pistol Barrel (.44cal)",
+	ItemName_coavinsfirearms.PistolBarrel_44cal_Short = "Barrel (.44cal)",
 }
