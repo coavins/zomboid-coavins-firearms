@@ -40,3 +40,7 @@ CoavinsFirearms.AddOrReplaceModel(
   'Pistol_45acp'
 , { 'PistolReceiver_45acp', 'PistolSlide_45acp'}
 , 'PistolReceiver_45acp')
+CoavinsFirearms.AddOrReplaceModel(
+	'Shotgun_12g'
+, { 'ShotgunReceiver_12g', 'ShotgunBarrel_12g' }
+, 'ShotgunReceiver_12g')
