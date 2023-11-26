@@ -60,4 +60,8 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.PistolReceiver_45acp = "Pistol Frame (.45 ACP)",
 	ItemName_coavinsfirearms.PistolSlide_45acp = "Pistol Slide (.45 ACP)",
 	ItemName_coavinsfirearms.PistolBarrel_45acp = "Pistol Barrel (.45 ACP)",
+	ItemName_coavinsfirearms.RevolverReceiver_45lc = "Revolver Frame (.45 LC)",
+	ItemName_coavinsfirearms.RevolverReceiver_45lc_Short = "Frame (.45 LC)",
+	ItemName_coavinsfirearms.RevolverCylinder_45lc = "Revolver Cylinder (.45 LC)",
+	ItemName_coavinsfirearms.RevolverCylinder_45lc_Short = "Cylinder (.45 LC)"
 }
