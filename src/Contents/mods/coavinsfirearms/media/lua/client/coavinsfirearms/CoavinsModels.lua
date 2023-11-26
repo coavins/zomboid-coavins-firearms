@@ -41,12 +41,13 @@ CoavinsFirearms.AddOrReplaceModel(
 , { 'PistolReceiver_45acp', 'PistolSlide_45acp'}
 , 'PistolReceiver_45acp')
 
+CoavinsFirearms.AddOrReplaceModel(
+	'Revolver_45lc'
+, { 'RevolverReceiver_45lc', 'RevolverCylinder_45lc' }
+, 'RevolverReceiver_45lc')
 
 CoavinsFirearms.AddOrReplaceModel(
-	'Revolver_45lc'
-, { 'RevolverReceiver_45lc', 'RevolverCylinder_45lc' }
-, 'RevolverReceiver_45lc')
-CoavinsFirearms.AddOrReplaceModel(
-	'Revolver_45lc'
-, { 'RevolverReceiver_45lc', 'RevolverCylinder_45lc' }
-, 'RevolverReceiver_45lc')
+  'Pistol_380acp'
+, { 'PistolReceiver_380acp', 'PistolSlide_380acp'}
+, 'PistolReceiver_380acp')
+
