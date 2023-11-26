@@ -1,0 +1,55 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item RifleLowerReceiver_556 {
+		DisplayName = Rifle Lower Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RifleLowerReceiver,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item RifleUpperReceiver_556 {
+		DisplayName = Rifle Upper Receiver,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RifleUpperReceiver,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item RifleBoltCarrier_556 {
+		DisplayName = Rifle Bolt Carrier,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RifleBoltCarrier,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item RifleFiringPin_556 {
+		DisplayName = Rifle Firing Pin,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RifleFiringPin,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item RifleBolt_556 {
+		DisplayName = Rifle Bolt,
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = RifleBolt,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+}
