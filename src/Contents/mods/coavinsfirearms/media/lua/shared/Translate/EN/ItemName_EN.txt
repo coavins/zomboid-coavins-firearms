@@ -116,4 +116,8 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.RifleFiringPin_556_Short = "Firing Pin (5.56)",
 	ItemName_coavinsfirearms.RifleBolt_556 = "Rifle Bolt (5.56)",
 	ItemName_coavinsfirearms.RifleBolt_556_Short = "Bolt (5.56)",
+	ItemName_coavinsfirearms.RevolverReceiver_357 = "Revolver Frame (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverReceiver_357_Short = "Frame (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverCylinder_357 = "Revolver Cylinder (.357 MAG)",
+	ItemName_coavinsfirearms.RevolverCylinder_357_Short = "Cylinder (.357 MAG)"
 }

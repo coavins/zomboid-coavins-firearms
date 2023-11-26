@@ -308,6 +308,14 @@ this.parts.RifleBolt_556 = {}
 this.parts.RifleBolt_556.InsertsInto = 'RifleBoltCarrier_556'
 this.parts.RifleBolt_556.ConditionLowerChance = 2
 this.parts.RifleBolt_556.ConditionMax = 20
+this.parts.RevolverReceiver_357 = {}
+this.parts.RevolverReceiver_357.CombinesWith = 'RevolverCylinder_357'
+this.parts.RevolverReceiver_357.ConditionLowerChance = 1
+this.parts.RevolverReceiver_357.ConditionMax = 20
+this.parts.RevolverCylinder_357 = {}
+this.parts.RevolverCylinder_357.CombinesWith = 'RevolverReceiver_357'
+this.parts.RevolverCylinder_357.ConditionLowerChance = 3
+this.parts.RevolverCylinder_357.ConditionMax = 20
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
