@@ -38,7 +38,7 @@ module coavinsfirearms {
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = RifleFiringPin,
-		Weight = 2,
+		Weight = 0.1,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
 	}
