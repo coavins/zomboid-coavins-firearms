@@ -1,0 +1,63 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix RifleLowerReceiver_308BA Welding
+	{
+		Require : RifleLowerReceiver_308BA,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix RifleLowerReceiver_308BA
+	{
+		Require : RifleLowerReceiver_308BA,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix RifleUpperReceiver_308BA
+	{
+		Require : RifleUpperReceiver_308BA,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix RifleBoltCarrier_308BA Welding
+	{
+		Require : RifleBoltCarrier_308BA,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix RifleFiringPin_308BA Welding
+	{
+		Require : RifleFiringPin_308BA,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : ScrapMetal=2; MetalWelding=6,
+		Fixer : SmallSheetMetal; MetalWelding=4,
+	}
+
+	fixing Fix RifleBolt_308BA Welding
+	{
+		Require : RifleBolt_308BA,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+}
