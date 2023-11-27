@@ -263,11 +263,11 @@ CoavinsFirearms.Include('Base.CZ97B', 'GenericPistol')
 -- Galil_Sniper_Fold
 
 -- GLOCK.txt
-CoavinsFirearms.Include('Base.G17', 'GenericPistol')
-CoavinsFirearms.Include('Base.G18', 'GenericPistol')
+CoavinsFirearms.Include('Base.G17', 'Pistol_9mm')
+CoavinsFirearms.Include('Base.G18', 'Pistol_9mm')
 CoavinsFirearms.Include('Base.G21', 'Pistol_45acp')
-CoavinsFirearms.Include('Base.G34', 'GenericPistol')
-CoavinsFirearms.Include('Base.G42', 'GenericPistol')
+CoavinsFirearms.Include('Base.G34', 'Pistol_9mm')
+CoavinsFirearms.Include('Base.G42', 'Pistol_380acp')
 
 -- H&K_G.txt
 -- G33
