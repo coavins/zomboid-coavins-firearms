@@ -18,6 +18,10 @@ branches:
     skip: true
   - label: question
     skip: true
+  - label: invalid
+    skip: true
+  - label: wontfix
+    skip: true
   # Open PR to merge `develop` into `release` when issue has label "release"
   - label: release
     name: develop
