@@ -9,3 +9,91 @@
   parts:
   - RevolverCylinder
   fallback: Base.Revolver
+
+- model: GenericShotgun
+  receiver: ShotgunReceiver
+  parts:
+  - ShotgunBarrel
+  fallback: Base.Shotgun
+
+- model: M16Rifle
+  receiver: M16LowerReceiver
+  parts:
+  - M16UpperReceiver
+  fallback: Base.AssaultRifle
+
+- model: BoltActionRifle
+  receiver: BoltActionReceiver
+  parts:
+  - BoltActionBolt
+  fallback: Base.VarmintRifle
+
+- model: SKS
+  receiver: SKS_Receiver
+  parts:
+  - SKS_BoltCarrier
+
+- model: AK47
+  receiver: AK47_Receiver
+  parts:
+  - AK47_BoltCarrier
+
+- model: Pistol_45acp
+  receiver: PistolReceiver_45acp
+  parts:
+  - PistolSlide_45acp
+
+- model: Pistol_9mm
+  receiver: PistolReceiver_9mm
+  parts:
+  - PistolSlide_9mm
+
+- model: Shotgun_10g
+  receiver: ShotgunReceiver_10g
+  parts:
+  - ShotgunBarrel_10g
+
+- model: Shotgun_12g
+  receiver: ShotgunReceiver_12g
+  parts:
+  - ShotgunBarrel_12g
+
+- model: Pistol_22lr
+  receiver: PistolReceiver_22lr
+  parts:
+  - PistolSlide_22lr
+
+- model: Revolver_45lc
+  receiver: RevolverReceiver_45lc
+  parts:
+  - RevolverCylinder_45lc
+
+- model: Pistol_380acp
+  receiver: PistolReceiver_380acp
+  parts:
+  - PistolSlide_380acp
+
+- model: Rifle_556
+  receiver: RifleLowerReceiver_556
+  parts:
+  - RifleUpperReceiver_556
+
+- model: Revolver_357
+  receiver: RevolverReceiver_357
+  parts:
+  - RevolverCylinder_357
+
+- model: Pistol_44cal
+  receiver: PistolReceiver_44cal
+  parts:
+  - PistolSlide_44cal
+
+- model: Revolver_38spc
+  receiver: RevolverReceiver_38spc
+  parts:
+  - RevolverCylinder_38spc
+
+- model: Shotgun_20g
+  receiver: ShotgunReceiver_20g
+  parts:
+  - ShotgunBarrel_20g
