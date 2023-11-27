@@ -1,0 +1,11 @@
+- model: GenericPistol
+  receiver: PistolReceiver
+  parts:
+  - PistolSlide
+  fallback: Base.Pistol
+
+- model: GenericRevolver
+  receiver: RevolverReceiver
+  parts:
+  - RevolverCylinder
+  fallback: Base.Revolver
