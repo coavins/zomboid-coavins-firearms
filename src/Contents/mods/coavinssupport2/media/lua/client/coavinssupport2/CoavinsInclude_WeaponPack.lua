@@ -503,8 +503,8 @@ CoavinsFirearms.Include('Base.M1936',          'GenericRevolver')
 -- SCARSC_Fold
 
 -- SHOTGUN_4G.txt
--- KS23
--- KS23_S_Pistol
+CoavinsFirearms.Include('KS23','Shotgun_4g')
+CoavinsFirearms.Include('KS23_S_Pistol','Shotgun_4g')
 
 -- SHOTGUN_870.txt
 CoavinsFirearms.Include('Base.M870_Wingmaster',      'GenericShotgun')
