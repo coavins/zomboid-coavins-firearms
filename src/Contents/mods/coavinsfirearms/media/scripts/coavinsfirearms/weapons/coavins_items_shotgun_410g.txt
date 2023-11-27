@@ -23,8 +23,8 @@ module coavinsfirearms {
 		WorldStaticModel = CarvingFork_Ground,
 	}
 
-	item ShotgunBoltCarrier_4410g {
-		DisplayName = Shotgun Bolt Carrier (4410g),
+	item ShotgunBoltCarrier_410g {
+		DisplayName = Shotgun Bolt Carrier (410g),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = ShotgunBoltCarrier,
@@ -33,8 +33,8 @@ module coavinsfirearms {
 		WorldStaticModel = Staples_Ground,
 	}
 
-	item ShotgunBolt_4410g {
-		DisplayName = Shotgun Bolt (4410g),
+	item ShotgunBolt_410g {
+		DisplayName = Shotgun Bolt (410g),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = ShotgunBolt,
@@ -43,8 +43,8 @@ module coavinsfirearms {
 		WorldStaticModel = Staples_Ground,
 	}
 
-	item ShotgunBarrel_4410g {
-		DisplayName = Shotgun Barrel (4410g),
+	item ShotgunBarrel_410g {
+		DisplayName = Shotgun Barrel (410g),
 		DisplayCategory = FirearmPart,
 		Type = Normal,
 		Icon = ShotgunBarrel,
