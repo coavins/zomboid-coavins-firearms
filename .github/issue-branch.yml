@@ -30,6 +30,7 @@ branches:
 # Open a Draft PR on issue creation
 openDraftPR: true
 # Skip CI workflows on empty commits on  PR creation (This "Feature" is a GH requirement)
+prSkipCI: true
 # Copy attributes from issue into PR
 copyIssueDescriptionToPR: true
 copyIssueLabelsToPR: true
