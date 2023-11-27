@@ -87,3 +87,7 @@ CoavinsFirearms.AddOrReplaceModel(
 	'Revolver_38spc'
 , { 'RevolverReceiver_38spc', 'RevolverCylinder_38spc' }
 , 'RevolverReceiver_38spc')
+CoavinsFirearms.AddOrReplaceModel(
+	'Shotgun_410g'
+, { 'ShotgunReceiver_410g', 'ShotgunBarrel_410g' }
+, 'ShotgunReceiver_410g')
