@@ -65,7 +65,7 @@ CoavinsFirearms.Include('Base.Moss500_20',         'GenericShotgun')
 CoavinsFirearms.Include('Base.Colt1855',           'GenericRevolver')
 
 -- SHOTGUN_20g.txt
-CoavinsFirearms.Include('Base.10855_Silver',       'GenericShotgun')
+CoavinsFirearms.Include('Base.10855_Silver',       'Shotgun_20g')
 
 -- SW_M500.txt
 CoavinsFirearms.Include('Base.SW_M500',            'GenericRevolver')
