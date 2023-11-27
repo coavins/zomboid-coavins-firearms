@@ -405,10 +405,10 @@ CoavinsFirearms.Include('Base.ColtM16Tape_HE',    'M16Rifle')
 CoavinsFirearms.Include('Base.ColtM16Tape_INC',   'M16Rifle')
 
 -- M40A1.txt
--- M40
--- M40A1
--- M40A2
--- M40A3
+CoavinsFirearms.Include('M40','Rifle_308BA')
+CoavinsFirearms.Include('M40A1','Rifle_308BA')
+CoavinsFirearms.Include('M40A2','Rifle_308BA')
+CoavinsFirearms.Include('M40A3','Rifle_308BA')
 
 -- MAC10.txt
 -- MAC10_Fold
