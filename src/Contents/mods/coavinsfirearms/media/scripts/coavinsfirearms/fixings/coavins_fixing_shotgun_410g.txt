@@ -3,9 +3,9 @@ module coavinsfirearms {
 		Base
 	}
 
-	fixing Fix ShotgunReceiver_10g Welding
+	fixing Fix ShotgunReceiver_410g Welding
 	{
-		Require : ShotgunReceiver_10g,
+		Require : ShotgunReceiver_410g,
 		GlobalItem : BlowTorch=2,
 	  ConditionModifier : 1.2,
 
@@ -13,9 +13,9 @@ module coavinsfirearms {
 		Fixer : ScrapMetal; MetalWelding=1,
 	}
 
-	fixing Fix ShotgunReceiver_10g
+	fixing Fix ShotgunReceiver_410g
 	{
-		Require : ShotgunReceiver_10g,
+		Require : ShotgunReceiver_410g,
 		ConditionModifier : 1,
 
 		Fixer : DuctTape=2; Aiming=4,
