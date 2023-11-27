@@ -82,14 +82,14 @@ CoavinsFirearms.Include('Base.SW_327',         'GenericRevolver')
 CoavinsFirearms.Include('Base.SW_327_357',     'Revolver_357')
 
 -- 1911.txt
-CoavinsFirearms.Include('Base.AMT1911',        'GenericPistol')
-CoavinsFirearms.Include('Base.AMT1911_Long',   'GenericPistol')
-CoavinsFirearms.Include('Base.M1911_Carbine',  'GenericPistol')
-CoavinsFirearms.Include('Base.Colt1911',       'GenericPistol')
-CoavinsFirearms.Include('Base.Colt_Kimber',    'GenericPistol')
-CoavinsFirearms.Include('Base.Colt_Commander', 'GenericPistol')
-CoavinsFirearms.Include('Base.PARA1911',       'GenericPistol')
-CoavinsFirearms.Include('Base.PULP_1911',      'GenericPistol')
+CoavinsFirearms.Include('Base.AMT1911',        'Pistol_45acp')
+CoavinsFirearms.Include('Base.AMT1911_Long',   'Pistol_45acp')
+CoavinsFirearms.Include('Base.M1911_Carbine',  'Pistol_45acp')
+CoavinsFirearms.Include('Base.Colt1911',       'Pistol_45acp')
+CoavinsFirearms.Include('Base.Colt_Kimber',    'Pistol_45acp')
+CoavinsFirearms.Include('Base.Colt_Commander', 'Pistol_45acp')
+CoavinsFirearms.Include('Base.PARA1911',       'Pistol_45acp')
+CoavinsFirearms.Include('Base.PULP_1911',      'Pistol_45acp')
 
 -- AK_PATTERN.txt
 CoavinsFirearms.Include('Base.AK47',             'AK47')
