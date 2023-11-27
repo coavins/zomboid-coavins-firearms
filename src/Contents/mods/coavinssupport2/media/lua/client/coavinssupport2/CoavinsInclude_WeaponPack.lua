@@ -613,7 +613,7 @@ CoavinsFirearms.Include('Base.SKS30_PARA_Bayo_Melee', 'SKS')
 
 -- SMITH.txt
 CoavinsFirearms.Include('Base.BodyGuard380', 'Pistol_380acp')
-CoavinsFirearms.Include('Base.M5238',        'GenericPistol')
+CoavinsFirearms.Include('Base.M5238',        'Pistol_380acp')
 CoavinsFirearms.Include('Base.M5906',        'GenericPistol')
 CoavinsFirearms.Include('Base.M4506',        'GenericPistol')
 
