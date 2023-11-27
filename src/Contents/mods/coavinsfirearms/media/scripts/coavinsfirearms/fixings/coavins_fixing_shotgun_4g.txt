@@ -1,0 +1,63 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	fixing Fix ShotgunReceiver_4g Welding
+	{
+		Require : ShotgunReceiver_4g,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=3,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix ShotgunReceiver_4g
+	{
+		Require : ShotgunReceiver_4g,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=2; Aiming=4,
+		Fixer : Scotchtape=3; Aiming=2,
+	}
+
+	fixing Fix ShotgunForend_4g
+	{
+		Require : ShotgunForend_4g,
+		ConditionModifier : 1,
+
+		Fixer : DuctTape=1; Aiming=2,
+		Fixer : Scotchtape=2; Aiming=1,
+	}
+
+	fixing Fix ShotgunBoltCarrier_4g Welding
+	{
+		Require : ShotgunBoltCarrier_4g,
+		GlobalItem : BlowTorch=1,
+	  ConditionModifier : 1.2,
+
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix ShotgunBolt_4g Welding
+	{
+		Require : ShotgunBolt_4g,
+		GlobalItem : BlowTorch=2,
+	  ConditionModifier : 1.2,
+
+		Fixer : SmallSheetMetal; MetalWelding=4,
+		Fixer : ScrapMetal; MetalWelding=1,
+	}
+
+	fixing Fix ShotgunBarrel_4g Welding
+	{
+		Require : ShotgunBarrel_4g,
+		GlobalItem : BlowTorch=4,
+	  ConditionModifier : 1.2,
+
+		Fixer : SheetMetal; MetalWelding=7,
+		Fixer : SmallSheetMetal; MetalWelding=5,
+		Fixer : ScrapMetal; MetalWelding=3,
+	}
+}
