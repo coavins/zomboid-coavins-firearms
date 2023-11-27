@@ -27,6 +27,10 @@ branches:
     name: develop
     prTarget: release
     skipBranch: true
+  # Let PRs labelled "codebase" have branch "yaml" as prTarget and `develop` as source
+  - label: codebase
+    name: develop
+    prTarget: yaml
 # Open a Draft PR on issue creation
 openDraftPR: true
 # Skip CI workflows on empty commits on  PR creation (This "Feature" is a GH requirement)
