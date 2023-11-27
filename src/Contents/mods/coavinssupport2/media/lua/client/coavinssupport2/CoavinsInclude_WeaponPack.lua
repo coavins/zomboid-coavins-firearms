@@ -287,9 +287,9 @@ CoavinsFirearms.Include('Base.G42', 'Pistol_380acp')
 -- MSG90
 
 -- H&K_Pistol.txt
-CoavinsFirearms.Include('Base.HK_MK23',      'GenericPistol')
-CoavinsFirearms.Include('Base.HK_USP',       'GenericPistol')
-CoavinsFirearms.Include('Base.HK_USP_Match', 'GenericPistol')
+CoavinsFirearms.Include('Base.HK_MK23',      'Pistol_45acp')
+CoavinsFirearms.Include('Base.HK_USP',       'Pistol_45acp')
+CoavinsFirearms.Include('Base.HK_USP_Match', 'Pistol_45acp')
 
 -- HOWA_TYPE.txt
 -- Type20
