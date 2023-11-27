@@ -467,12 +467,12 @@ CoavinsFirearms.Include('Base.ColtM16Tape_INC',   'M16Rifle')
 -- OTS_03_SVU
 
 -- POLICE_PISTOLS.txt
-CoavinsFirearms.Include('Base.MP9',  'GenericPistol')
-CoavinsFirearms.Include('Base.MP45', 'GenericPistol')
-CoavinsFirearms.Include('Base.P226', 'GenericPistol')
-CoavinsFirearms.Include('Base.P220', 'GenericPistol')
-CoavinsFirearms.Include('Base.XD9',  'GenericPistol')
-CoavinsFirearms.Include('Base.XD4',  'GenericPistol')
+CoavinsFirearms.Include('Base.MP9','Pistol_9mm')
+CoavinsFirearms.Include('Base.MP45', 'Pistol_45acp')
+CoavinsFirearms.Include('Base.P226', 'Pistol_45acp')
+CoavinsFirearms.Include('Base.P220', 'Pistol_9mm')
+CoavinsFirearms.Include('Base.XD9',  'Pistol_9mm')
+CoavinsFirearms.Include('Base.XD4',  'Pistol_45acp')
 
 -- REVOLVER.txt
 CoavinsFirearms.Include('Base.Taurus856',      'GenericRevolver')
