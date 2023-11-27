@@ -1,0 +1,55 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item ShotgunReceiver_20g {
+		DisplayName = Shotgun Receiver (20g),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunReceiver,
+		Weight = 2,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item ShotgunForend_20g {
+		DisplayName = Shotgun Forend (20g),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunForend,
+		Weight = 0.5,
+		ConditionMax = 20,
+		WorldStaticModel = CarvingFork_Ground,
+	}
+
+	item ShotgunBoltCarrier_20g {
+		DisplayName = Shotgun Bolt Carrier (20g),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBoltCarrier,
+		Weight = 0.3,
+		ConditionMax = 20,
+		WorldStaticModel = Staples_Ground,
+	}
+
+	item ShotgunBolt_20g {
+		DisplayName = Shotgun Bolt (20g),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBolt,
+		Weight = 0.2,
+		ConditionMax = 20,
+		WorldStaticModel = Staples_Ground,
+	}
+
+	item ShotgunBarrel_20g {
+		DisplayName = Shotgun Barrel (20g),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = ShotgunBarrel,
+		Weight = 1,
+		ConditionMax = 20,
+		WorldStaticModel = PlasticPipe,
+	}
+}
