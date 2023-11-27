@@ -91,3 +91,5 @@ CoavinsFirearms.AddOrReplaceModel(
 	'Shotgun_20g'
 , { 'ShotgunReceiver_20g', 'ShotgunBarrel_20g' }
 , 'ShotgunReceiver_20g')
+CoavinsFirearms.AddOrReplaceModel(
+  'Rifle_308AR',{'RifleUpperReceiver_308AR', 'RifleLowerReceiver_308AR' }, 'RifleUpperReceiver_308AR')
