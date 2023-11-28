@@ -36,3 +36,4 @@ jobs:
           excludeTypes: build.other,style
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
           file_pattern: CHANGELOG.md
+          reverseOrder: true
