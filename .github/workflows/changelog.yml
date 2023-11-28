@@ -33,11 +33,13 @@ jobs:
           toTag: ${{ env.previousTag }}
           writeToFile: true 
           excludeTypes: build,other,style
-
-      - name: Commit CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit changelog
+        uses: EndBug/add-and-commit@v9
         with:
-          branch: ci
-          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
-          file_pattern: CHANGELOG.md
+          add: CHANGELOG.md
+          default_author: github_actions
+          fetch: true
+          pathspec_error_handling: exitAtEnd
+          push: true
+          message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
 
