@@ -180,4 +180,10 @@ ItemName_EN = {
 	ItemName_coavinsfirearms.ShotgunBolt_4g_Short = "Bolt (4g)",
 	ItemName_coavinsfirearms.ShotgunBarrel_4g = "Shotgun Barrel (4g)",
 	ItemName_coavinsfirearms.ShotgunBarrel_4g_Short = "Barrel (4g)",
+	ItemName_coavinsfirearms.PistolReceiver_50ae = "Pistol Frame (.50ae)",
+	ItemName_coavinsfirearms.PistolReceiver_50ae_Short = "Frame (.50ae)",
+	ItemName_coavinsfirearms.PistolSlide_50ae = "Pistol Slide (.50ae)",
+	ItemName_coavinsfirearms.PistolSlide_50ae_Short = "Slide (.50ae)",
+	ItemName_coavinsfirearms.PistolBarrel_50ae = "Pistol Barrel (.50ae)",
+	ItemName_coavinsfirearms.PistolBarrel_50ae_Short = "Barrel (.50ae)",
 }
