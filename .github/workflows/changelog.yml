@@ -28,4 +28,4 @@ jobs:
           token: ${{ github.token }}
           fromTag: ${{ github.ref_name }}
           toTag: ${{ env.previousTag }}
-          writeToFile: false
+          writeToFile: true 
