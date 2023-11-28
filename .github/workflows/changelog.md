@@ -1,8 +1,6 @@
 name: Generate changelog
 on:
-    push:
-        branches
-            - develop
+    push
 
 jobs:
   generate-changelog:
@@ -13,7 +11,7 @@ jobs:
         fetch-depth: 0
     - uses: BobAnkh/auto-generate-changelog@v1.2.5
       with:
-        REPO_NAME: '<YourUserName>/<YourRepoName>'
+        REPO_NAME: 'coavins/zomboid-coavins-firearms'
         ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
         PATH: 'CHANGELOG.md'
         COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
