@@ -29,8 +29,8 @@ jobs:
         uses: requarks/changelog-action@v1.9.0
         with:
           token: ${{ github.token }}
-          fromTag: 
-          tag: ${{ github.ref_name }}
+          fromTag: ${{ env.previousTag }} 
+          toTag: v9
           writeToFile: true
           excludeTypes: build,other,style
           reverseOrder: true
