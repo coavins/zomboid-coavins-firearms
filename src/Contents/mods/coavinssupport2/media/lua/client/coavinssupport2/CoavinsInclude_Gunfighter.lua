@@ -39,7 +39,7 @@ CoavinsFirearms.Include('Base.SKS30_A26',       'SKS')
 CoavinsFirearms.Include('Base.SKS30_A26_Melee', 'SKS')
 
 -- DEagle_Long.txt
-CoavinsFirearms.Include('Base.DEagle_Long',        'GenericPistol')
+CoavinsFirearms.Include('Base.DEagle_Long',        'Pistol_44cal')
 
 -- FLAME.txt
 -- WD_Flame
