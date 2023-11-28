@@ -1,6 +1,8 @@
 name: Generate changelog
 on:
-    push
+    push:
+        branches:
+          - ci
 
 jobs:
   generate-changelog:
