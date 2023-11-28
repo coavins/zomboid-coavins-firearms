@@ -33,11 +33,9 @@ jobs:
           toTag: ${{ env.previousTag }}
           writeToFile: true 
           excludeTypes: build,other,style
-          reverseOrder: true
 
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v5
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         with:
           branch: ci
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
