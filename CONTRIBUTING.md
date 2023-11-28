@@ -13,14 +13,15 @@ Please create a pull request targeting the `develop` branch with a clear explana
 
 You should create a new branch for each pull request, and rebase/squash it into as few logical commits as possible.
 
-This repository generally follows the [Chris Beams standards](https://cbea.ms/git-commit/) for commit messages:
+## Commit guidelines
 
-    Separate subject from body with a blank line
-    Limit the subject line to 50 characters
-    Capitalize the subject line
-    Use the imperative mood in the subject line
-    Do not end the subject line with a period
-    Use the body to explain what and why vs. how
-    Wrap the body at 72 characters
+This repository generally adheres to the "[Conventional Commit](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13)" standards for commit messages to automate various steps i the build process:
+
+- Format: `<type>(<scope>): <description>`
+- Examples:
+  - **New Model:** `feat(model): implement password recovery`
+  - **Bug Fix:** `fix(validation): address input validation edge case`
+  - **Chore:** `chore(docs): update contribution guidelines`
+
 
 Your commits will be expected to meet these standards before your PR will be merged.
