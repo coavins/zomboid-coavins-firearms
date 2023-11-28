@@ -1,0 +1,47 @@
+### Configuration file for ./workflows/create-branch-issue.yml
+# Have branches be created when issue is assniged
+mode: auto
+# Use naming scheme of "issue-[id]"
+branchName: short
+# Auto-close an issue after the corresponding PR has been merged into `develop`
+autoCloseIssue: true
+branches:
+  # Prefix based on issue
+  - label: model
+    prefix: model/
+  - label: bug
+    prefix: bugfix/
+  # Skip based on label
+  - label: duplicate
+    skip: true
+  - label: help wanted
+    skip: true
+  - label: question
+    skip: true
+  - label: invalid
+    skip: true
+  - label: wontfix
+    skip: true
+  # Open PR to merge `develop` into `release` when issue has label "release"
+  - label: release
+    name: develop
+    prTarget: release
+    skipBranch: true
+  # Let PRs labelled "codebase" have branch "yaml" as prTarget and `develop` as source
+  - label: codebase
+    name: develop
+    prTarget: yaml
+# Open a Draft PR on issue creation
+openDraftPR: true
+# Skip CI workflows on empty commits on  PR creation (This "Feature" is a GH requirement)
+prSkipCI: true
+# Copy attributes from issue into PR
+copyIssueDescriptionToPR: true
+copyIssueLabelsToPR: true
+copyIssueAssigneeToPR: true
+copyIssueProjectsToPR: true
+copyIssueMilestoneToPR: true
+# Create "[Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)" message (See [here](https://github.com/marketplace/actions/create-issue-branch#conventional-pull-request-titles))
+conventionalPrTitles: true
+# Use semantic versioning with gitmoji
+conventionalStyle: semver
