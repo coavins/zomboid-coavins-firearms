@@ -29,11 +29,11 @@ jobs:
           fromTag: ${{ github.ref_name }}
           toTag: ${{ env.previousTag }}
           writeToFile: true
+          excludeTypes: build.other,style
+          reverseOrder: true
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: ci
-          excludeTypes: build.other,style
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
           file_pattern: CHANGELOG.md
-          reverseOrder: true
