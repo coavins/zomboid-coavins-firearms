@@ -29,7 +29,7 @@ jobs:
           fromTag: ${{ github.ref_name }}
           toTag: ${{ env.previousTag }}
           writeToFile: true
-          excludeTypes: build.other,style
+          excludeTypes: build,other,style
           reverseOrder: true
 
       - name: Commit CHANGELOG.md
