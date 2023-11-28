@@ -30,7 +30,7 @@ jobs:
         with:
           token: ${{ github.token }}
           fromTag: ${{ env.previousTag }} 
-          toTag: v9
+          toTag: ${{ github.head_ref }}
           writeToFile: true
           excludeTypes: build,other,style
           reverseOrder: true
