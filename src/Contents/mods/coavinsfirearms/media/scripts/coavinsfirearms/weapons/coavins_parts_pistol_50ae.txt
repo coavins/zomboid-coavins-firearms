@@ -1,0 +1,35 @@
+module coavinsfirearms {
+	imports {
+		Base
+	}
+
+	item PistolReceiver_50ae {
+		DisplayName = Pistol Frame (.50 AE),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = PistolReceiver,
+		Weight = 0.4,
+		ConditionMax = 20,
+		WorldStaticModel = Paperbag_Ground,
+	}
+
+	item PistolSlide_50ae {
+		DisplayName = Pistol Slide (.50 AE),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = PistolSlide,
+		Weight = 0.3,
+		ConditionMax = 20,
+		WorldStaticModel = Paperclip,
+	}
+
+	item PistolBarrel_50ae {
+		DisplayName = Pistol Barrel (.50 AE),
+		DisplayCategory = FirearmPart,
+		Type = Normal,
+		Icon = PistolBarrel,
+		Weight = 0.3,
+		ConditionMax = 20,
+		WorldStaticModel = Razor_Ground,
+	}
+}
