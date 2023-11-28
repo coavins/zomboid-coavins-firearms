@@ -28,4 +28,10 @@ jobs:
           token: ${{ github.token }}
           fromTag: ${{ github.ref_name }}
           toTag: ${{ env.previousTag }}
-          writeToFile: true 
+          writeToFile: true
+      - name: Commit CHANGELOG.md
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: ci
+          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+          file_pattern: CHANGELOG.md
