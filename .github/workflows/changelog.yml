@@ -1,20 +1,27 @@
-name: Generate changelog
+name: Deploy
+
 on:
   push:
     branches:
       - ci
-
 jobs:
-  generate-changelog:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Update CHANGELOG
+        id: changelog
+        uses: requarks/changelog-action@v1.9.0
         with:
-          fetch-depth: 0
-      - uses: BobAnkh/auto-generate-changelog@v1.2.5
+          token: ${{ github.token }}
+          tag: ${{ github.ref_name }}
+
+      - name: Commit CHANGELOG.md
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          REPO_NAME: 'coavins/zomboid-coavins-firearms'
-          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          PATH: 'CHANGELOG.md'
-          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
+          branch: ci
+          commit_message: 'docs(changelog): update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+          file_pattern: CHANGELOG.md
