@@ -450,6 +450,19 @@ this.parts.ShotgunBarrel_4g = {}
 this.parts.ShotgunBarrel_4g.CombinesWith = 'ShotgunReceiver_4g'
 this.parts.ShotgunBarrel_4g.ConditionLowerChance = 3
 this.parts.ShotgunBarrel_4g.ConditionMax = 20
+this.parts.PistolReceiver_50ae = {}
+this.parts.PistolReceiver_50ae.CombinesWith = 'PistolSlide_50ae'
+this.parts.PistolReceiver_50ae.ConditionLowerChance = 1 -- 100%
+this.parts.PistolReceiver_50ae.ConditionMax = 20
+this.parts.PistolSlide_50ae = {}
+this.parts.PistolSlide_50ae.CombinesWith = 'PistolReceiver_50ae'
+this.parts.PistolSlide_50ae.Holds = { 'PistolBarrel_50ae' }
+this.parts.PistolSlide_50ae.ConditionLowerChance = 2 -- 1/2
+this.parts.PistolSlide_50ae.ConditionMax = 20
+this.parts.PistolBarrel_50ae = {}
+this.parts.PistolBarrel_50ae.InsertsInto = 'PistolSlide_50ae'
+this.parts.PistolBarrel_50ae.ConditionLowerChance = 3 -- 1/3
+this.parts.PistolBarrel_50ae.ConditionMax = 20
 
 this.getPartModel = function(modelName)
 	return this.parts[modelName]
