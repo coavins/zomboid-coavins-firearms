@@ -33,5 +33,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: ci
+          excludeTypes: build.other,style
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
           file_pattern: CHANGELOG.md
