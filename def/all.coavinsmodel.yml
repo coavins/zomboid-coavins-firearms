@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=../schema/coavinsmodel.json
+
+- model: GenericPistol
+  primaryComponent: PistolReceiver
+  requiredComponents:
+  - PistolSlide
+  defaultItem: Base.Pistol
+
+- model: GenericRevolver
+  primaryComponent: RevolverReceiver
+  requiredComponents:
+  - RevolverCylinder
+  defaultItem: Base.Revolver
+
+- model: GenericShotgun
+  primaryComponent: ShotgunReceiver
+  requiredComponents:
+  - ShotgunBarrel
+  defaultItem: Base.Shotgun
+
+- model: M16Rifle
+  primaryComponent: M16LowerReceiver
+  requiredComponents:
+  - M16UpperReceiver
+  defaultItem: Base.AssaultRifle
+
+- model: BoltActionRifle
+  primaryComponent: BoltActionReceiver
+  requiredComponents:
+  - BoltActionBolt
+  defaultItem: Base.VarmintRifle
+
+- model: SKS
+  primaryComponent: SKS_Receiver
+  requiredComponents:
+  - SKS_BoltCarrier
+
+- model: AK47
+  primaryComponent: AK47_Receiver
+  requiredComponents:
+  - AK47_BoltCarrier
+
+- model: Pistol_45acp
+  primaryComponent: PistolReceiver_45acp
+  requiredComponents:
+  - PistolSlide_45acp
+
+- model: Pistol_9mm
+  primaryComponent: PistolReceiver_9mm
+  requiredComponents:
+  - PistolSlide_9mm
+
+- model: Shotgun_10g
+  primaryComponent: ShotgunReceiver_10g
+  requiredComponents:
+  - ShotgunBarrel_10g
+
+- model: Shotgun_12g
+  primaryComponent: ShotgunReceiver_12g
+  requiredComponents:
+  - ShotgunBarrel_12g
+
+- model: Pistol_22lr
+  primaryComponent: PistolReceiver_22lr
+  requiredComponents:
+  - PistolSlide_22lr
+
+- model: Revolver_45lc
+  primaryComponent: RevolverReceiver_45lc
+  requiredComponents:
+  - RevolverCylinder_45lc
+
+- model: Pistol_380acp
+  primaryComponent: PistolReceiver_380acp
+  requiredComponents:
+  - PistolSlide_380acp
+
+- model: Rifle_556
+  primaryComponent: RifleLowerReceiver_556
+  requiredComponents:
+  - RifleUpperReceiver_556
+
+- model: Revolver_357
+  primaryComponent: RevolverReceiver_357
+  requiredComponents:
+  - RevolverCylinder_357
+
+- model: Pistol_44cal
+  primaryComponent: PistolReceiver_44cal
+  requiredComponents:
+  - PistolSlide_44cal
+
+- model: Revolver_38spc
+  primaryComponent: RevolverReceiver_38spc
+  requiredComponents:
+  - RevolverCylinder_38spc
+
+- model: Shotgun_20g
+  primaryComponent: ShotgunReceiver_20g
+  requiredComponents:
+  - ShotgunBarrel_20g
