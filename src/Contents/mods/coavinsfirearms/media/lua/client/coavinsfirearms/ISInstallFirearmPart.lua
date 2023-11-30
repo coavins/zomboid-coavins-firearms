@@ -56,6 +56,9 @@ function ISInstallFirearmPart:perform()
 	if not heldParts[tType] then
 		-- remove installed part from inventory
 		self.character:getInventory():Remove(tItem)
+		-- remove installed part from hand
+		-- we had to put it in our hand in order to install it (see FirearmContextMenu.lua)
+		self.character:setPrimaryHandItem(nil)
 
 		-- initialize data
 		heldParts[tType] = FIREARMS.initializeDataForPart(tType)
