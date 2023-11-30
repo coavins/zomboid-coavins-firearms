@@ -367,6 +367,7 @@ end
 
 this.getModData = function(item)
 	if not item:getModData().coavinsfirearms then
+		print("Creating mod data for item: " .. item:getFullType())
 		item:getModData().coavinsfirearms = {}
 	end
 	return item:getModData().coavinsfirearms
@@ -410,7 +411,7 @@ this.initializeFirearmModData = function(firearm)
 end
 
 this.initializeDataForPart = function(type, data, guaranteedParts, overrideConditionPct)
-	print("Initializing part: " .. type)
+	print("Initializing mod data for part: " .. type)
 	local model = this.getPartModel(type)
 
 	-- this function either creates a new table (and returns it)
@@ -447,7 +448,7 @@ this.initializeDataForPart = function(type, data, guaranteedParts, overrideCondi
 			print(string.format('rolled condition %.2f between %.2f and %.2f', initialConditionPct, initialMin, initialMax))
 		end
 
-		data.condition = data.conditionMax * initialConditionPct
+		data.condition = math.floor(data.conditionMax * initialConditionPct)
 		print(string.format('set new condition: %.2f', data.condition))
 	else
 		-- we already determined a condition for this part
@@ -474,11 +475,14 @@ this.initializeDataForPart = function(type, data, guaranteedParts, overrideCondi
 	return data
 end
 
-this.initializeComponentModData = function(item)
+this.initializePartItem = function(item)
+	print("Initializing part: " .. item:getFullType())
 	local type = item:getType()
 	local data = this.getModData(item)
 
 	this.initializeDataForPart(type, data)
+
+	item:setCondition(data.condition)
 end
 
 this.checkConditionForAllParts = function(model, installedParts, damage)
@@ -652,13 +656,17 @@ this.copyDataFromParent = function(parentItem, childItem)
 
 	local newData
 	if data then
-		-- copy data to child
+		-- copy data from parent
 		newData = this.tableDeepCopy(data)
 	else
 		-- no data, this item hasn't been disassembled before
 		newData = this.initializeDataForPart(childType)
 	end
 
+	-- copy data to child
+	childData.condition = newData.condition
+	childData.conditionLowerChance = newData.conditionLowerChance
+	childData.conditionMax = newData.conditionMax
 	childData.parts = newData.parts
 
 	-- apply condition
