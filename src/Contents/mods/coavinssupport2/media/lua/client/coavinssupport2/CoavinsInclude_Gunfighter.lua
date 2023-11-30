@@ -39,7 +39,7 @@ CoavinsFirearms.Include('Base.SKS30_A26',       'SKS')
 CoavinsFirearms.Include('Base.SKS30_A26_Melee', 'SKS')
 
 -- DEagle_Long.txt
-CoavinsFirearms.Include('Base.DEagle_Long',        'GenericPistol')
+CoavinsFirearms.Include('Base.DEagle_Long',        'Pistol_44cal')
 
 -- FLAME.txt
 -- WD_Flame
@@ -62,10 +62,10 @@ CoavinsFirearms.Include('Base.Moss500_20',         'GenericShotgun')
 
 -- SHOTGUN_10g.txt
 -- ROYAL_SXS
-CoavinsFirearms.Include('Base.Colt1855',           'GenericRevolver')
+CoavinsFirearms.Include('Base.Colt1855',           'Shotgun_10g')
 
 -- SHOTGUN_20g.txt
-CoavinsFirearms.Include('Base.10855_Silver',       'GenericShotgun')
+CoavinsFirearms.Include('Base.10855_Silver',       'Shotgun_20g')
 
 -- SW_M500.txt
 CoavinsFirearms.Include('Base.SW_M500',            'GenericRevolver')
