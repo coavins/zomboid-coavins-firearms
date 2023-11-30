@@ -138,7 +138,7 @@ local checkInventoryItem = function(player, context, item)
 			-- for each item of this type
 			for k=0, parts:size() - 1 do
 				local part = parts:get(k)
-				
+
 				-- initialize other part
 				FIREARMS.initializePartItem(part)
 				local partData = FIREARMS.getModData(part)
