@@ -1,6 +1,7 @@
 id=3101331450
 version=1
 title=Coavins Firearm Repair
+description=Testing Github Actions for automatic upload
 description=Disassemble firearms into parts that can be individually repaired (or replaced) and reassembled. Parts can also be looted from places where you normally find guns, and they can be removed from other guns and re-used. Replaces the default "Repair" action on supported guns.
 description=
 description=[img]https://i.imgur.com/nZG26QK.gif[/img]
