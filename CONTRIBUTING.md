@@ -9,9 +9,14 @@ If you wish, you can lint your changes yourself before pushing by running `luach
 
 ## Creating a Pull Request
 
-Please create a pull request targeting the `develop` branch with a clear explanation of what you've done (read more about pull requests [here](http://help.github.com/pull-requests/).)
+Please create a pull request targeting the `master` branch with a clear explanation of what you've done (read more about pull requests [here](http://help.github.com/pull-requests/).)
 
 You should create a new branch for each pull request, and rebase/squash it into as few logical commits as possible.
+
+If you use any of the following prefixes in your branch name, your PR will be tagged automatically:
+* feature/, feat/
+* fix/
+* chore/
 
 This repository generally follows the [Chris Beams standards](https://cbea.ms/git-commit/) for commit messages:
 
