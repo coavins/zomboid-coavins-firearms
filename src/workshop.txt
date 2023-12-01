@@ -1,4 +1,4 @@
-id=2847408431
+id=3101331450
 version=1
 title=Coavins Firearm Repair
 description=Disassemble firearms into parts that can be individually repaired (or replaced) and reassembled. Parts can also be looted from places where you normally find guns, and they can be removed from other guns and re-used. Replaces the default "Repair" action on supported guns.
@@ -126,17 +126,17 @@ description=🌎 Code is available on Github: https://github.com/coavins/zomboid
 description=
 description=ℹ You are free to make changes to my code for your own use.
 description=
-description=⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Akemi.
+description=⛔ Please don't reupload this mod to the Steam workshop, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named coavins.
 description=
 description=[url=https://ko-fi.com/E1E3CLKZX][img]https://i.imgur.com/4qKjzrG.png[/img][/url]
 description=
 description=[url=https://liberapay.com/coavins/donate][img]https://liberapay.com/assets/widgets/donate.svg[/img][/url]
 description=
-description=Workshop ID: 2847408431
+description=Workshop ID: 3101331450
 description=Mod ID: coavinsfirearms
 description=Mod ID: coavinssupport1
 description=Mod ID: coavinssupport2
 description=Mod ID: coavinssupport3
 description=Mod ID: coavinssupport4
 tags=Build 41;Framework;Interface;Items;Military;Multiplayer;Realistic;Weapons
-visibility=public
+visibility=unlisted
