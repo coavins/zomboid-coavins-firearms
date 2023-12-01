@@ -96,8 +96,9 @@ local checkInventoryItem = function(player, context, item)
 			return
 		end
 
+		-- initialize this part
+		FIREARMS.initializePartItem(item)
 		local data = FIREARMS.getModData(item)
-		FIREARMS.initializeComponentModData(item)
 
 		-- add info
 		local infoOption = context:addOption(getText("ContextMenu_Firearm_AssemblyInfo"), item, nil)
@@ -138,8 +139,11 @@ local checkInventoryItem = function(player, context, item)
 			-- for each item of this type
 			for k=0, parts:size() - 1 do
 				local part = parts:get(k)
-				FIREARMS.initializeComponentModData(part)
+
+				-- initialize other part
+				FIREARMS.initializePartItem(part)
 				local partData = FIREARMS.getModData(part)
+
 				-- if a part of this type is not already installed
 				if not partData.parts[type] then
 					local option = subMenuInstall:addOption(part:getName(), player, installFirearmPart, part, item)
