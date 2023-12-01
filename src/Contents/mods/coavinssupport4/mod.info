@@ -1,6 +1,7 @@
-name=Coavins Firearm Repair: Support for "Totally's Historical Firearms Pack"
+name=Coavins Firearm Repair: Support for "Totally's Historical Firearms Pack" (OUTDATED)
 poster=preview.png
 id=coavinssupport4
 require=coavinsfirearms,TIHFP
+description=This mod has moved, please use workshop id 3101379739 instead!
 description=This is an expansion pack for Coavins Firearm Repair.
 description= Adds support for mod: "Totally's Historical Firearms Pack"

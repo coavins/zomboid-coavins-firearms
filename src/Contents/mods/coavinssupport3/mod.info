@@ -1,6 +1,7 @@
-name=Coavins Firearm Repair: Support for "VANILLA FIREARMS EXPANSION"
+name=Coavins Firearm Repair: Support for "VANILLA FIREARMS EXPANSION" (OUTDATED)
 poster=preview.png
 id=coavinssupport3
 require=coavinsfirearms,VFExpansion1
+description=This mod has moved, please use workshop id 3101379739 instead!
 description=This is an expansion pack for Coavins Firearm Repair.
 description= Adds support for mod: "VANILLA FIREARMS EXPANSION"
