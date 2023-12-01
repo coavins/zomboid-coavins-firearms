@@ -1,0 +1,27 @@
+name: "Deploy to Workshop"
+
+on:
+  pull_request:
+    # Only for master branch
+    branches:
+    - master
+    # Only on closed PRs
+    types:
+    - closed
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout"
+      uses: actions/Checkout@v1
+    - name: "Deploy"
+      uses: AnarkisGaming/workshop@v1
+      with:
+        appid: 108600
+        publishedFileID: 3101331450
+        path: src
+        changelog: ${{ github.event.head_commit.message }}
+      env:
+        STEAM_ACCOUNT_NAME: ${{ secrets.steamaccountname }}
+        STEAM_PASSWORD: ${{ secrets.steampassword }}
