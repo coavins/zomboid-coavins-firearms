@@ -1,6 +1,6 @@
 name=Coavins Firearm Repair: Support for "Arsenal(26) GunFighter"
 poster=preview.png
-id=coavinssupport2
-require=coavinsfirearms,Arsenal(26)GunFighter[MAIN MOD 2.0]
+id=coavinsfirearmsupport2
+require=coavinsfirearmbase,Arsenal(26)GunFighter[MAIN MOD 2.0]
 description=This is an expansion pack for Coavins Firearm Repair.
 description= Adds support for mod: "Arsenal(26) GunFighter"
