@@ -1,20 +1,20 @@
-name: "Deploy to Workshop"
+name: "deploy release"
 
 on:
   release:
     types: [released]
 
 jobs:
-  upload:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout"
       uses: actions/Checkout@v1
-    - name: "Deploy"
+    - name: "Upload"
       uses: AnarkisGaming/workshop@v1
       with:
         appid: 108600
-        publishedFileID: 3101331450
+        publishedFileID: 3101379739
         path: src
         changelog: ${{ github.event.release.body }}
       env:
