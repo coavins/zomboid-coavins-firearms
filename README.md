@@ -136,4 +136,4 @@ Ideas for future development:
 
 ℹ You are free to make changes to my code for your own use.
 
-⛔ Please don't reupload this mod to the Steam workshop or any other site, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named Akemi.
+⛔ Please don't reupload this mod to the Steam workshop or any other site, either on its own or as part of a public mod pack. This item is not authorized for posting on Steam, except under the Steam account named coavins.

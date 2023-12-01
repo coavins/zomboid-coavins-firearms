@@ -1,4 +1,10 @@
 ## Pull Request
+<!--
+Use a branch prefix to tag your PR:
+  feature/, feat/
+  fix/
+  chore/
+-->
 
 ### Description
 <!-- Provide a brief description of the changes introduced by this pull request. -->
