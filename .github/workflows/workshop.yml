@@ -1,8 +1,9 @@
 name: "deploy release"
 
 on:
-  release:
-    types: [released]
+  push:
+    tags:
+      - 'v**'
 
 jobs:
   deploy:
@@ -10,13 +11,16 @@ jobs:
     steps:
     - name: "Checkout"
       uses: actions/Checkout@v1
+    - name: "Get tag message"
+      id: vars
+      run: echo "tag_body=$(git tag -l --format='%(contents)' ${{ github.event.push.ref }}" >> $GITHUB_OUTPUT
     - name: "Upload"
       uses: AnarkisGaming/workshop@v1
       with:
         appid: 108600
         publishedFileID: 3101379739
         path: src/Contents
-        changelog: ${{ github.event.release.body }}
+        changelog: ${{ steps.vars.outputs.tag_body }}
       env:
         STEAM_ACCOUNT_NAME: ${{ secrets.steamaccountname }}
         STEAM_PASSWORD: ${{ secrets.steampassword }}
