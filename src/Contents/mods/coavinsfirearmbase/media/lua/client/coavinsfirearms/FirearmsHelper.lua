@@ -574,9 +574,17 @@ this.initializePartItem = function(item)
 	local type = item:getType()
 	local data = this.getModData(item)
 
+	local shouldUpdateItemCondition = false
+
+	if not data.condition then
+		shouldUpdateItemCondition = true
+	end
+
 	this.initializeDataForPart(type, data)
 
-	item:setCondition(data.condition)
+	if shouldUpdateItemCondition then
+		item:setCondition(data.condition)
+	end
 end
 
 this.checkConditionForAllParts = function(model, installedParts, damage)
@@ -670,7 +678,7 @@ this.getTooltipTextForItem = function(item)
 		-- it's a component
 		model = this.getPartModel(type)
 		this.initializeDataForPart(type, data)
-		cond = data.condition
+		cond = item:getCondition()
 		condMax = model.ConditionMax
 	end
 
