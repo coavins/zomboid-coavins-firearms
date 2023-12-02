@@ -13,7 +13,7 @@ jobs:
       uses: actions/Checkout@v1
     - name: "Get tag message"
       id: vars
-      run: echo "tag_body=$(git tag -l --format='%(contents)' ${{ github.event.ref }}") >> $GITHUB_OUTPUT
+      run: echo "tag_body=$(git tag -l --format='%(contents)' ${{ github.event.ref }})" >> $GITHUB_OUTPUT
     - name: "Upload"
       uses: AnarkisGaming/workshop@v1
       with:
