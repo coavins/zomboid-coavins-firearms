@@ -31,3 +31,4 @@ jobs:
         path: src/Contents
         appId: 108600
         publishedFileId: 3103482033
+        changeNote: "Update to ${{ github.event.ref }}"

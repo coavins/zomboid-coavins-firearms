@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/Checkout@v1
+    - name: "Get tag message"
+      id: vars
+      run: echo "tag_body=$(git tag -l --format='%(contents)' ${{ github.event.ref }})" >> $GITHUB_OUTPUT
     - uses: coavins/steam-workshop-deploy@v1
       with:
         username: ${{ secrets.STEAM_USERNAME }}          
@@ -17,3 +20,4 @@ jobs:
         path: src/Contents
         appId: 108600
         publishedFileId: 3101379739
+        changeNote: ${{ steps.vars.outputs.tag_body }}
