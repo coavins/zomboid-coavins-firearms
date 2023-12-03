@@ -6,7 +6,7 @@ on:
       - 'v**'
 
 jobs:
-  stable:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/Checkout@v1

@@ -18,7 +18,7 @@ jobs:
     outputs:
       last_sha: ${{ fromJson(steps.check_last_run.outputs.data).workflow_runs[0].head_sha }}
 
-  nightly:
+  deploy:
     runs-on: ubuntu-latest
     needs: [check]
     if: needs.check.outputs.last_sha != github.sha
