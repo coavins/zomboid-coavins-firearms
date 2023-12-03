@@ -1,4 +1,4 @@
-name: "deploy release"
+name: "deploy stable"
 
 on:
   push:
@@ -6,21 +6,14 @@ on:
       - 'v**'
 
 jobs:
-  deploy:
+  stable:
     runs-on: ubuntu-latest
     steps:
-    - name: "Checkout"
-      uses: actions/Checkout@v1
-    - name: "Get tag message"
-      id: vars
-      run: echo "tag_body=$(git tag -l --format='%(contents)' ${{ github.event.ref }})" >> $GITHUB_OUTPUT
-    - name: "Upload"
-      uses: AnarkisGaming/workshop@v1
+    - uses: actions/Checkout@v1
+    - uses: coavins/steam-workshop-deploy@v1
       with:
-        appid: 108600
-        publishedFileID: 3101379739
+        username: ${{ secrets.STEAM_USERNAME }}          
+        configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
         path: src/Contents
-        changelog: ${{ steps.vars.outputs.tag_body }}
-      env:
-        STEAM_ACCOUNT_NAME: ${{ secrets.steamaccountname }}
-        STEAM_PASSWORD: ${{ secrets.steampassword }}
+        appId: 108600
+        publishedFileId: 3101379739

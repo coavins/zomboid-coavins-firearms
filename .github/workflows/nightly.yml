@@ -2,7 +2,7 @@ name: "deploy nightly"
 
 on:
   schedule:
-    - cron:  "40 * * * *"
+    - cron:  "19 6 * * *"
 
 jobs:
   check:
