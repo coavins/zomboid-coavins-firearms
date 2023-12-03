@@ -13,7 +13,7 @@ Sandbox_EN = {
 	Sandbox_coavinsfirearms_ConditionLossChance_option4 = "Very low",
 
 	Sandbox_coavinsfirearms_RollConditionForParts = "Always re-roll condition for parts",
-	Sandbox_coavinsfirearms_RollConditionForParts_tooltip = "When enabled, the parts inside a gun will reroll their condition the first time you interact with a new gun. This will cause the condition of the gun to change. When disabled, the condition of the gun and its parts will not be re-rolled.",
+	Sandbox_coavinsfirearms_RollConditionForParts_tooltip = "If enabled, when looting a gun for the first time, its parts will receive a random condition between the specified min and max percent. The gun will inherit the condition of its most damaged part. When disabled, all parts will match the original condition of the gun they were found in.",
 
 	Sandbox_coavinsfirearms_InitialConditionMax = "Maximum initial condition of parts",
 	Sandbox_coavinsfirearms_InitialConditionMax_tooltip = "When rolling for condition, this is the highest starting condition that a gun part can have",
