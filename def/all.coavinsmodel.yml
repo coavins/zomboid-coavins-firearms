@@ -70,6 +70,16 @@
   requiredComponents:
   - RevolverCylinder_45lc
 
+- model: Rifle_308AR
+  primaryComponent: RifleLowerReceiver_308AR
+  requiredComponents:
+    - RifleUpperReceiver_308AR
+
+- model: Rifle_308BA
+  primaryComponent: RifleLowerReceiver_308BA
+  requiredComponents:
+    - RifleUpperReceiver_308BA
+
 - model: Pistol_380acp
   primaryComponent: PistolReceiver_380acp
   requiredComponents:
@@ -95,7 +105,17 @@
   requiredComponents:
   - RevolverCylinder_38spc
 
+- model: Shotgun_4g
+  primaryComponent: ShotgunReceiver_4g
+  requiredComponents:
+    - ShotgunBarrel_4g
+
 - model: Shotgun_20g
   primaryComponent: ShotgunReceiver_20g
   requiredComponents:
   - ShotgunBarrel_20g
+
+- model: Shotgun_410g
+  primaryComponent: ShotgunReceiver_410g
+  requiredComponents:
+    - ShotgunBarrel_410g

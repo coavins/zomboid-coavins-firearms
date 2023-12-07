@@ -1,0 +1,6 @@
+name=Coavins Firearm Repair: Support for "Firearms B41"
+poster=preview.png
+id=coavinsfirearmsupport1
+require=coavinsfirearmbase,firearmmod
+description=This is an expansion pack for Coavins Firearm Repair.
+description= Adds support for mod: "Firearms B41"
