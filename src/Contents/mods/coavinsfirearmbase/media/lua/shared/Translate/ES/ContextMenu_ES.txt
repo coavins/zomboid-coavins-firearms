@@ -1,0 +1,17 @@
+ContextMenu_ES = {
+	ContextMenu_Firearm_Disassemble = "Desmontar",
+	ContextMenu_Firearm_Assemble = "Ensamblar",
+	ContextMenu_Firearm_AssemblyInfo = "Informacion del Componente",
+	ContextMenu_Firearm_RemoveComponent = "Quitar Componente",
+	ContextMenu_Firearm_InstallComponent = "Instalar Componente",
+	ContextMenu_Firearm_InstallInto = "Instalar en",
+	ContextMenu_Firearm_Installed = "Instalado",
+	ContextMenu_Firearm_NotInstalled = "No Instalado",
+	ContextMenu_Firearm_NotFound = "No se encontro %1.",
+	ContextMenu_Firearm_NotFoundEmpty = "No se encontro %1 con ranura vacia.",
+	ContextMenu_Firearm_Frame = "Marco",
+	ContextMenu_Firearm_ErrorHasAttachments = "Las mejoras deben ser retiradas.",
+	ContextMenu_Firearm_ErrorHasMagazine = "El cargador debe ser expulsado.",
+	ContextMenu_Firearm_ErrorHasRounds = "Las rondas deben ser expulsadas.",
+	ContextMenu_Firearm_ErrorNotCleared = "El camara debe estar despejada.",
+}

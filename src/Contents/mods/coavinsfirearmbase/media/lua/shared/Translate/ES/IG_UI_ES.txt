@@ -1,0 +1,3 @@
+IGUI_ES = {
+	IGUI_ItemCat_FirearmPart = "Componentes de Arma de Fuego",
+}

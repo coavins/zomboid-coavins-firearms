@@ -1,0 +1,23 @@
+Sandbox_ES = {
+	Sandbox_coavinsfirearms = "Reparacion de Armas de Fuego Coavins",
+
+	Sandbox_coavinsfirearms_LootGunParts = "Piezas de Armas",
+	Sandbox_coavinsfirearms_LootGunParts_tooltip = "Componentes de armas de fuego utilizados por la Reparacion de Armas de Fuego Coavins",
+
+	Sandbox_coavinsfirearms_ConditionLossChance = "Tasa de perdida de condicion",
+	Sandbox_coavinsfirearms_ConditionLossChance_tooltip = "Tasa general de perdida de condicion para los componentes de armas de fuego",
+
+	Sandbox_coavinsfirearms_ConditionLossChance_option1 = "Alta",
+	Sandbox_coavinsfirearms_ConditionLossChance_option2 = "Normal",
+	Sandbox_coavinsfirearms_ConditionLossChance_option3 = "Baja",
+	Sandbox_coavinsfirearms_ConditionLossChance_option4 = "Muy baja",
+
+	Sandbox_coavinsfirearms_RollConditionForParts = "Siempre volver a lanzar la condicion para las piezas",
+	Sandbox_coavinsfirearms_RollConditionForParts_tooltip = "Si esta habilitado, al saquear un arma por primera vez, sus piezas recibiran una condicion aleatoria entre el porcentaje minimo y maximo especificado. El arma heredara la condicion de su pieza mas dañada. Cuando esta deshabilitado, todas las piezas coincidiran con la condicion original del arma en la que fueron encontradas.",
+
+	Sandbox_coavinsfirearms_InitialConditionMax = "Condicion maxima inicial de las piezas",
+	Sandbox_coavinsfirearms_InitialConditionMax_tooltip = "Cuando se lanza la condicion, esta es la condicion de inicio mas alta que una pieza de arma puede tener",
+
+	Sandbox_coavinsfirearms_InitialConditionMin = "Condicion minima inicial de las piezas",
+	Sandbox_coavinsfirearms_InitialConditionMin_tooltip = "Cuando se lanza la condicion, esta es la condicion de inicio mas baja que una pieza de arma puede tener",
+}
