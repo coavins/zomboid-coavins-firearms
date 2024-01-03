@@ -20,7 +20,7 @@ module coavinsfirearms {
 		Icon = ShotgunForend,
 		Weight = 0.5,
 		ConditionMax = 20,
-		WorldStaticModel = CarvingFork_Ground,
+		WorldStaticModel = Paperbag_Ground,
 	}
 
 	item ShotgunBoltCarrier_20g {
