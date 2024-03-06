@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Coavins Firearms Part",
+	"description": "Part file for Coavins Firearms, a Project Zomboid mod",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			
+		}
+	}
+}

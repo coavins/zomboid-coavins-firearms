@@ -20,5 +20,8 @@
 		"ISInventoryPaneContextMenu",
 		"ProceduralDistributions",
 		"SandboxVars"
-	]
+	],
+	"yaml.schemas": {
+		"./schema/coavinsmodel.json": ".coavinsmodel.yml",
+	}
 }

@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Coavins Firearms Models",
+	"description": "Models file for Coavins Firearms, a Project Zomboid mod",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"model": {
+				"type": "string",
+				"description": "The name of the model",
+				"examples": ["Pistol_45acp", "Shotgun_10g"]
+			},
+			"primaryComponent": {
+				"type": "string",
+				"description": "The primary part for this model. When the firearm is disassembled, its specific type will be saved within this part. This is done because multiple firearms may share the same model, and we need to know how to reconstitute the original firearm if the parts are combined again later. The receiver or frame is typically used in this role.",
+				"examples": ["PistolReceiver_45acp", "ShotgunReceiver_10g"]
+			},
+			"requiredComponents": {
+				"type": "array",
+				"description": "The subsidiary parts for this model. When assembled together with the primary, the player will create a firearm. The player must provide all required components, including the primary component, or the firearm cannot be assembled.\nCurrently only one part can be included here.",
+				"minItems": 1,
+				"maxItems": 1,
+				"items": {
+					"type": "string"
+				}
+			},
+			"defaultItem": {
+				"type": ["string", "null"],
+				"description": "The default item that the player receives when carrying out assembly using a primary component that has no type saved on it. This can happen when the primary component was found through scavenging.\nIf this property is not defined, the player will instead receive a random firearm from among those which can be assembled using these parts."
+			},
+			"optionalComponents": {
+				"type": ["array", "null"],
+				"description": "Optional parts for this model. Not currently used."
+			}
+		}
+	}
+}
