@@ -1,5 +1,10 @@
 require 'Items/ProceduralDistributions'
 
+-- Do not alter loot tables if option is disabled
+if not SandboxVars.coavinsfirearms.SpawnLoot then
+	return
+end
+
 local spawns = {}
 
 -- Make a new set of items and where they spawn

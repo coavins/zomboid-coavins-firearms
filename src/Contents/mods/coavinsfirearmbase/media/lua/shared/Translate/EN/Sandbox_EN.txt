@@ -1,6 +1,9 @@
 Sandbox_EN = {
 	Sandbox_coavinsfirearms = "Coavins Firearm Repair",
 
+	Sandbox_coavinsfirearms_SpawnLoot = "Spawn gun parts in world",
+	Sandbox_coavinsfirearms_SpawnLoot_tooltip = "If disabled, loot tables will not be altered. You will only be able to acquire new parts by disassembling guns.",
+
 	Sandbox_coavinsfirearms_LootGunParts = "Gun Parts",
 	Sandbox_coavinsfirearms_LootGunParts_tooltip = "Firearm components used by Coavins Firearm Repair",
 
@@ -13,7 +16,7 @@ Sandbox_EN = {
 	Sandbox_coavinsfirearms_ConditionLossChance_option4 = "Very low",
 
 	Sandbox_coavinsfirearms_RollConditionForParts = "Always re-roll condition for parts",
-	Sandbox_coavinsfirearms_RollConditionForParts_tooltip = "If enabled, when looting a gun for the first time, its parts will receive a random condition between the specified min and max percent. The gun will inherit the condition of its most damaged part. When disabled, all parts will match the original condition of the gun they were found in.",
+	Sandbox_coavinsfirearms_RollConditionForParts_tooltip = "If enabled, when a gun is looted for the first time, its parts will be assigned a random condition between the specified min and max percent. The gun will display the condition of its most damaged part. If disabled, all parts will match the original condition of the gun they were found in.",
 
 	Sandbox_coavinsfirearms_InitialConditionMax = "Maximum initial condition of parts",
 	Sandbox_coavinsfirearms_InitialConditionMax_tooltip = "When rolling for condition, this is the highest starting condition that a gun part can have",

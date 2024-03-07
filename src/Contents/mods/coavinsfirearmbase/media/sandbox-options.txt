@@ -1,5 +1,11 @@
 VERSION = 1,
 
+option coavinsfirearms.SpawnLoot
+{
+	type = boolean, default = false,
+	page = coavinsfirearms, translation = coavinsfirearms_SpawnLoot,
+}
+
 option coavinsfirearms.LootGunParts
 {
 	type = enum, numValues = 5, default = 3,
