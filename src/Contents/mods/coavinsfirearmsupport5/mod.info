@@ -1,0 +1,6 @@
+name=Coavins Firearm Repair: Support for "Guns of 93"
+poster=preview.png
+id=coavinsfirearmsupport5
+require=coavinsfirearmbase,Guns93
+description=This is an expansion pack for Coavins Firearm Repair.
+description= Adds support for mod: "Guns of 93"
