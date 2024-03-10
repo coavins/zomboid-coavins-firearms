@@ -1,3 +1,5 @@
+local ItemReader = require 'ItemReader'
+
 local this = {}
 
 local nvl = function(a, b)
@@ -460,11 +462,9 @@ this.getPartModel = function(modelName)
 end
 
 this.getModData = function(item)
-	if not item:getModData().coavinsfirearms then
-		print("Creating mod data for item: " .. item:getFullType())
-		item:getModData().coavinsfirearms = {}
-	end
-	return item:getModData().coavinsfirearms
+	ItemReader.createModDataIfNotExist(item)
+
+	return ItemReader.getModDataFromItem(item)
 end
 
 -- https://gist.github.com/MihailJP/3931841

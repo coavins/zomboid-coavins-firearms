@@ -1,0 +1,3 @@
+local ModDataHandler = {}
+
+return ModDataHandler
