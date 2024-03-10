@@ -6,7 +6,7 @@ local modDataPrefix = "coavinsfirearms"
 ---@param item InventoryItem
 ---@return boolean isItem If the parameter is an InventoryItem
 ItemReader.isItem = function(item)
-	if item and item.getModData and item.getFullType then
+	if item and item.getModData then
 		return true
 	else
 		return false
