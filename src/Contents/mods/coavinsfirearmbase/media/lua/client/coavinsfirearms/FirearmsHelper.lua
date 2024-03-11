@@ -1,4 +1,4 @@
-local ItemReader = require 'ItemReader'
+local ItemHandler = require 'coavinsfirearms/ItemHandler'
 
 local this = {}
 
@@ -462,9 +462,9 @@ this.getPartModel = function(modelName)
 end
 
 this.getModData = function(item)
-	ItemReader.createModDataIfNotExist(item)
+	ItemHandler.createModDataIfNotExist(item)
 
-	return ItemReader.getModDataFromItem(item)
+	return ItemHandler.getModDataFromItem(item)
 end
 
 -- https://gist.github.com/MihailJP/3931841

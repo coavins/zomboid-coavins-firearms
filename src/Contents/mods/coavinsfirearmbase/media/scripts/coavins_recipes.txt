@@ -1,0 +1,40 @@
+module coavinsfirearms
+{
+    recipe Repair Gun Part (Simple)
+    {
+        [Recipe.GetItemTypes.SimpleGunParts],
+
+        Result:PistolReceiver,
+        RemoveResultItem:true,
+        Time:90.0,
+        Category:Gunsmith,
+        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+        OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+    }
+
+    recipe Repair Gun Part (Moderate)
+    {
+        [Recipe.GetItemTypes.ModerateGunParts],
+
+        Result:PistolReceiver,
+        SkillRequired:Gunsmith=1,
+        RemoveResultItem:true,
+        Time:90.0,
+        Category:Gunsmith,
+        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+        OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
+    }
+
+    recipe Repair Gun Part (Complex)
+    {
+        [Recipe.GetItemTypes.ComplexGunParts],
+
+        Result:PistolReceiver,
+        SkillRequired:Gunsmith=2,
+        RemoveResultItem:true,
+        Time:90.0,
+        Category:Gunsmith,
+        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+        OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
+    }
+}

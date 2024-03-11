@@ -20,6 +20,9 @@
 		"ISInventoryPaneContextMenu",
 		"ProceduralDistributions",
 		"SandboxVars",
-		"Perks"
+		"Perks",
+		"Recipe",
+		"getScriptManager",
+		"instanceItem"
 	]
 }

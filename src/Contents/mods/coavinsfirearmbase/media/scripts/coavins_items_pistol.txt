@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 0.4,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item PistolSlide {
@@ -20,7 +21,8 @@ module coavinsfirearms {
 		Icon = PistolSlide,
 		Weight = 0.3,
 		ConditionMax = 20,
-		WorldStaticModel = Paperclip,
+		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartModerate,
 	}
 
 	item PistolBarrel {
@@ -30,6 +32,7 @@ module coavinsfirearms {
 		Icon = PistolBarrel,
 		Weight = 0.3,
 		ConditionMax = 20,
-		WorldStaticModel = Razor_Ground,
+		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartComplex,
 	}
 }

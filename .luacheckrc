@@ -18,7 +18,9 @@ files['src/'] = {
 		'CharacterActionAnims',
 		'ISInventoryPaneContextMenu',
 		'ProceduralDistributions',
-		'Perks'
+		'Perks',
+		'getScriptManager',
+		'instanceItem'
 	}
 	,globals = {
 		'CoavinsFirearms',
@@ -28,6 +30,7 @@ files['src/'] = {
 		'ISInstallFirearmPart',
 		'ISInventoryPane',
 		'ISReloadWeaponAction',
-		'SandboxVars'
+		'SandboxVars',
+		'Recipe'
 	}
 }

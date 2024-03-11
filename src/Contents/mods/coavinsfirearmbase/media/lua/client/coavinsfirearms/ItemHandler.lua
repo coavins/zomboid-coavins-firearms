@@ -2,7 +2,7 @@ local ItemHandler = {}
 
 local modDataPrefix = "coavinsfirearms"
 
----Check if a variable is an item
+---Check if a variable looks like an item
 ---@param item InventoryItem
 ---@return boolean isItem If the parameter is an InventoryItem
 ItemHandler.isItem = function(item)
