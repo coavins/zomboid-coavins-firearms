@@ -217,8 +217,8 @@ CoavinsFirearms.Include('Base.PythonSpcRail','GenericRevolver')
 CoavinsFirearms.Include('Base.Win94357Spc','GenericRevolver')
 
 -- Buckshot/Slug
-CoavinsFirearms.Include('Base.Rem870Slug','GenericRevolver')
-CoavinsFirearms.Include('Base.Rem870PSlug','GenericRevolver')
+CoavinsFirearms.Include('Base.Rem870Slug','GenericShotgun')
+CoavinsFirearms.Include('Base.Rem870PSlug','GenericShotgun')
 CoavinsFirearms.Include('Base.SORem870Slug','GenericShotgun')
 CoavinsFirearms.Include('Base.M870Slug','GenericShotgun')
 CoavinsFirearms.Include('Base.Moss500Slug','GenericShotgun')
