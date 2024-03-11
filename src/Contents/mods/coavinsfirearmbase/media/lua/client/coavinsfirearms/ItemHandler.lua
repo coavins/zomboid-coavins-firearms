@@ -1,11 +1,11 @@
-local ItemReader = {}
+local ItemHandler = {}
 
 local modDataPrefix = "coavinsfirearms"
 
 ---Check if a variable is an item
 ---@param item InventoryItem
 ---@return boolean isItem If the parameter is an InventoryItem
-ItemReader.isItem = function(item)
+ItemHandler.isItem = function(item)
 	if item and item.getModData then
 		return true
 	else
@@ -16,8 +16,8 @@ end
 ---Create the coavinsfirearms mod data if it doesn't already exist
 ---@param item InventoryItem
 ---@return boolean didCreate If mod data was created
-ItemReader.createModDataIfNotExist = function(item)
-	if not ItemReader.isItem(item) then
+ItemHandler.createModDataIfNotExist = function(item)
+	if not ItemHandler.isItem(item) then
 		return false
 	end
 
@@ -39,8 +39,8 @@ end
 ---otherwise return nil
 ---@param item InventoryItem
 ---@return string|nil
-ItemReader.getModDataFromItem = function(item)
-	if not ItemReader.isItem(item) then
+ItemHandler.getModDataFromItem = function(item)
+	if not ItemHandler.isItem(item) then
 		return nil
 	end
 
@@ -53,4 +53,4 @@ ItemReader.getModDataFromItem = function(item)
 	return modData[modDataPrefix]
 end
 
-return ItemReader
+return ItemHandler

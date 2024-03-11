@@ -1,12 +1,12 @@
-local ItemReader = require "src.Contents.mods.coavinsfirearmbase.media.lua.client.coavinsfirearms.ItemReader"
+local ItemHandler = require "src.Contents.mods.coavinsfirearmbase.media.lua.client.coavinsfirearms.ItemHandler"
 
 ---@diagnostic disable: undefined-global
-describe("ItemReader", function()
+describe("ItemHandler", function()
 	describe("getModDataFromItem", function()
 		it("returns nil when there is no item", function()
 			local item = nil
 
-			local actual = ItemReader.getModDataFromItem(item)
+			local actual = ItemHandler.getModDataFromItem(item)
 			local expected = nil
 
 			assert.are_equal(actual, expected)
@@ -15,7 +15,7 @@ describe("ItemReader", function()
 		it("returns nil when there is no getModData function", function()
 			local item = {}
 
-			local actual = ItemReader.getModDataFromItem(item)
+			local actual = ItemHandler.getModDataFromItem(item)
 			local expected = nil
 
 			assert.are_equal(actual, expected)
@@ -27,7 +27,7 @@ describe("ItemReader", function()
 				return nil
 			end
 
-			local actual = ItemReader.getModDataFromItem(item)
+			local actual = ItemHandler.getModDataFromItem(item)
 			local expected = nil
 
 			assert.are_equal(actual, expected)
@@ -41,7 +41,7 @@ describe("ItemReader", function()
 				return modData
 			end
 
-			local actual = ItemReader.getModDataFromItem(item)
+			local actual = ItemHandler.getModDataFromItem(item)
 			local expected = nil
 
 			assert.are_equal(actual, expected)
@@ -56,7 +56,7 @@ describe("ItemReader", function()
 				return modData
 			end
 
-			local actual = ItemReader.getModDataFromItem(item)["test"]
+			local actual = ItemHandler.getModDataFromItem(item)["test"]
 			local expected = "123"
 
 			assert(actual == expected)
@@ -72,7 +72,7 @@ describe("ItemReader", function()
 				return modData
 			end
 
-			local actual = ItemReader.getModDataFromItem(item)["test"]
+			local actual = ItemHandler.getModDataFromItem(item)["test"]
 			local expected = "123"
 
 			assert(actual == expected)
