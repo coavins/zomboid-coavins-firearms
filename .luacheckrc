@@ -17,7 +17,8 @@ files['src/'] = {
 		'getTexture',
 		'CharacterActionAnims',
 		'ISInventoryPaneContextMenu',
-		'ProceduralDistributions'
+		'ProceduralDistributions',
+		'Perks'
 	}
 	,globals = {
 		'CoavinsFirearms',
