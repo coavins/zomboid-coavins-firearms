@@ -69,12 +69,16 @@ function ISDisassembleFirearm:perform()
 		FIREARMS.copyDataFromParent(fItem, pItem)
 	end
 
+	-- remove items from hands
 	if self.character:getPrimaryHandItem() == fItem then
 		self.character:setPrimaryHandItem(nil)
 	end
 	if self.character:getSecondaryHandItem() == fItem then
 		self.character:setSecondaryHandItem(nil)
 	end
+
+	-- gain skill xp
+	self.character:getXp():AddXP(Perks.Gunsmith, 12)
 
 	-- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self)

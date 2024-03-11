@@ -135,6 +135,7 @@ function ISAssembleFirearmParts:perform()
 	-- update condition
 	FIREARMS.updateFirearm(resultItem)
 
+	-- remove items from hands
 	if self.character:getPrimaryHandItem() == itemA
 	or self.character:getPrimaryHandItem() == itemB then
 		self.character:setPrimaryHandItem(nil)
@@ -143,6 +144,9 @@ function ISAssembleFirearmParts:perform()
 	or self.character:getSecondaryHandItem() == itemB then
 		self.character:setSecondaryHandItem(nil);
 	end
+
+	-- gain skill xp
+	self.character:getXp():AddXP(Perks.Gunsmith, 16)
 
 	-- needed to remove from queue / start next.
 	ISBaseTimedAction.perform(self);

@@ -1,0 +1,19 @@
+VERSION = 1,
+
+perk Gunsmith
+{
+	parent = Crafting,
+	name = Gunsmith,
+	translation = Gunsmith,
+	passive = false,
+	xp1 = 30,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3500,
+	xp8 = 5000,
+	xp9 = 6500,
+	xp10 = 8000
+}

@@ -54,6 +54,9 @@ function ISRemoveFirearmPart:perform()
 
 		-- remove this part from parent
 		heldParts[target] = nil
+
+		-- gain skill xp
+		self.character:getXp():AddXP(Perks.Gunsmith, 8)
 	end
 
 	-- needed to remove from queue / start next.

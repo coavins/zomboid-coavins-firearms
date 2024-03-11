@@ -30,23 +30,38 @@ local function DisableOption(option, text)
 	AddTooltip(option, text)
 end
 
+local function GetActionTime(player, baseFrameCount)
+	local level = player:getPerkLevel(Perks.Gunsmith)
+	local x = 1.3 - (level / 10)
+	local m = baseFrameCount + (60 * x^4)
+	return m
+end
+
 local disassembleFirearm = function(player, item)
 	ISInventoryPaneContextMenu.unequipItem(item, player:getPlayerNum())
-	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, 60*2))
+	local baseFrames = 60
+	local frameCount = GetActionTime(player, baseFrames)
+	ISTimedActionQueue.add(ISDisassembleFirearm:new(player, item, frameCount))
 end
 
 local assembleFirearmParts = function(player, partA, partB)
-	ISTimedActionQueue.add(ISAssembleFirearmParts:new(player, partA, partB, 60*3))
+	local baseFrames = 60
+	local frameCount = GetActionTime(player, baseFrames)
+	ISTimedActionQueue.add(ISAssembleFirearmParts:new(player, partA, partB, frameCount))
 end
 
 local removePartFromPart = function(player, item, partName)
-	ISTimedActionQueue.add(ISRemoveFirearmPart:new(player, item, partName, 60*2))
+	local baseFrames = 60
+	local frameCount = GetActionTime(player, baseFrames)
+	ISTimedActionQueue.add(ISRemoveFirearmPart:new(player, item, partName, frameCount))
 end
 
 local installFirearmPart = function(player, item, part)
 	ISInventoryPaneContextMenu.equipWeapon(item, true, false, player:getPlayerNum());
 	ISInventoryPaneContextMenu.equipWeapon(part, false, false, player:getPlayerNum());
-	ISTimedActionQueue.add(ISInstallFirearmPart:new(player, item, part, 60*2))
+	local baseFrames = 60
+	local frameCount = GetActionTime(player, baseFrames)
+	ISTimedActionQueue.add(ISInstallFirearmPart:new(player, item, part, frameCount))
 end
 
 local checkInventoryItem = function(player, context, item)

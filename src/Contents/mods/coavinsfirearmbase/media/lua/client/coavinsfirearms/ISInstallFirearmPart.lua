@@ -56,9 +56,12 @@ function ISInstallFirearmPart:perform()
 	if not heldParts[tType] then
 		-- remove installed part from inventory
 		self.character:getInventory():Remove(tItem)
+
 		-- remove installed part from hand
 		-- we had to put it in our hand in order to install it (see FirearmContextMenu.lua)
-		self.character:setSecondaryHandItem(nil)
+		if self.character:getSecondaryHandItem() == tItem then
+			self.character:setSecondaryHandItem(nil);
+		end
 
 		-- initialize data
 		heldParts[tType] = FIREARMS.initializeDataForPart(tType)
@@ -66,6 +69,9 @@ function ISInstallFirearmPart:perform()
 		local tData = FIREARMS.getModData(tItem)
 		heldParts[tType].condition = tItem:getCondition()
 		heldParts[tType].parts = tData.parts
+
+		-- gain skill xp
+		self.character:getXp():AddXP(Perks.Gunsmith, 12)
 	end
 
 	-- needed to remove from queue / start next.
