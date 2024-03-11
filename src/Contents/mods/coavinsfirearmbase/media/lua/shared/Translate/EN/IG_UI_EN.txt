@@ -1,4 +1,4 @@
 IGUI_EN = {
 	IGUI_ItemCat_FirearmPart = "Firearm Components",
-	IGUI_perks_Gunsmith = "Gunsmith",
+	IGUI_perks_Gunsmith = "Gunsmithing",
 }
