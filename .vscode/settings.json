@@ -23,6 +23,8 @@
 		"Perks",
 		"Recipe",
 		"getScriptManager",
-		"instanceItem"
+		"instanceItem",
+		"ProfessionFactory",
+		"BaseGameCharacterDetails"
 	]
 }

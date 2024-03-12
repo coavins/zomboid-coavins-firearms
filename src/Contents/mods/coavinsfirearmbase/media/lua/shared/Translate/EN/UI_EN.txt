@@ -1,0 +1,4 @@
+UI_EN = {
+	UI_prof_gunsmith = "Gunsmith",
+	UI_profdesc_gunsmith = "Highly proficient at maintaining and repairing firearms.",
+}

@@ -20,7 +20,9 @@ files['src/'] = {
 		'ProceduralDistributions',
 		'Perks',
 		'getScriptManager',
-		'instanceItem'
+		'instanceItem',
+		'ProfessionFactory',
+		'BaseGameCharacterDetails'
 	}
 	,globals = {
 		'CoavinsFirearms',
