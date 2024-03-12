@@ -1,40 +1,50 @@
 module coavinsfirearms
 {
-    recipe Repair Gun Part (Simple)
-    {
-        [Recipe.GetItemTypes.SimpleGunParts],
+	recipe Repair Gun Part (Simple)
+	{
+		[Recipe.GetItemTypes.SimpleGunParts],
+		Scotchtape=1,
+		Screws=1,
 
-        Result:PistolReceiver,
-        RemoveResultItem:true,
-        Time:90.0,
-        Category:Gunsmith,
-        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
-        OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
-    }
+		Result:PistolReceiver,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+	}
 
-    recipe Repair Gun Part (Moderate)
-    {
-        [Recipe.GetItemTypes.ModerateGunParts],
+	recipe Repair Gun Part (Moderate)
+	{
+		[Recipe.GetItemTypes.ModerateGunParts],
+		DuctTape=1,
+		Screws=2,
 
-        Result:PistolReceiver,
-        SkillRequired:Gunsmith=1,
-        RemoveResultItem:true,
-        Time:90.0,
-        Category:Gunsmith,
-        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
-        OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
-    }
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=1,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
+	}
 
-    recipe Repair Gun Part (Complex)
-    {
-        [Recipe.GetItemTypes.ComplexGunParts],
+	recipe Repair Gun Part (Complex)
+	{
+		[Recipe.GetItemTypes.ComplexGunParts],
+		BlowTorch=2,
+		SmallSheetMetal=1,
+		keep [Recipe.GetItemTypes.WeldingMask],
 
-        Result:PistolReceiver,
-        SkillRequired:Gunsmith=2,
-        RemoveResultItem:true,
-        Time:90.0,
-        Category:Gunsmith,
-        OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
-        OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
-    }
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=2,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
+	}
 }
