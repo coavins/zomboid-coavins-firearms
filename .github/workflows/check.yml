@@ -1,4 +1,4 @@
-name: busted
+name: check
 
 on:
   push:
@@ -12,6 +12,19 @@ on:
 
 jobs:
   run_linter:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: leafo/gh-actions-lua@v10
+    - uses: leafo/gh-actions-luarocks@v4
+
+    - name: install luacheck
+      run: luarocks install luacheck
+    - name: run luacheck
+      run: luacheck src
+
+  run_tests:
     runs-on: ubuntu-latest
 
     steps:
