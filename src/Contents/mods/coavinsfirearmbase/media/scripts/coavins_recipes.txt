@@ -4,7 +4,6 @@ module coavinsfirearms
 	{
 		[Recipe.GetItemTypes.SimpleGunParts],
 		Scotchtape=1,
-		Screws=1,
 
 		Result:PistolReceiver,
 		RemoveResultItem:true,

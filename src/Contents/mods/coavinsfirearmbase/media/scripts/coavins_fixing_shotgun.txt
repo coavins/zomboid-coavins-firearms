@@ -13,24 +13,6 @@ module coavinsfirearms {
 		Fixer : ScrapMetal; MetalWelding=1,
 	}
 
-	fixing Fix ShotgunReceiver
-	{
-		Require : ShotgunReceiver,
-		ConditionModifier : 1,
-
-		Fixer : DuctTape=2; Aiming=4,
-		Fixer : Scotchtape=3; Aiming=2,
-	}
-
-	fixing Fix ShotgunForend
-	{
-		Require : ShotgunForend,
-		ConditionModifier : 1,
-
-		Fixer : DuctTape=1; Aiming=2,
-		Fixer : Scotchtape=2; Aiming=1,
-	}
-
 	fixing Fix ShotgunBoltCarrier Welding
 	{
 		Require : ShotgunBoltCarrier,
