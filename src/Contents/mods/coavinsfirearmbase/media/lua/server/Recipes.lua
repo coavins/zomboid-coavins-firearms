@@ -1,5 +1,6 @@
 local Recipe = Recipe
 
+--[[
 local function addExistingItemType(scriptItems, type)
 	local all = getScriptManager():getItemsByType(type)
 	for i=1,all:size() do
@@ -9,6 +10,7 @@ local function addExistingItemType(scriptItems, type)
 		end
 	end
 end
+]]
 
 function Recipe.GetItemTypes.SimpleGunParts(scriptItems)
 	scriptItems:addAll(getScriptManager():getItemsTag("GunPartSimple"))
