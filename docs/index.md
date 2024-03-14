@@ -1,3 +1,1 @@
-# coavins firearm repair
-
-See [Repair recipes](repair.md)
+* [Repair recipes](repair.md)
