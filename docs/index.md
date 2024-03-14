@@ -1,3 +1,3 @@
 # coavins firearm repair
 
-Documentation goes here
+See [Repair recipes](repair.md)

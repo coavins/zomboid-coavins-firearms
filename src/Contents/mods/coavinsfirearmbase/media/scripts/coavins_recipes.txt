@@ -1,24 +1,61 @@
 module coavinsfirearms
 {
-	recipe Repair Gun Part (Simple)
+	recipe Repair (Lv1 Simple)
 	{
 		[Recipe.GetItemTypes.SimpleGunParts],
-		Scotchtape=1,
+		[Recipe.GetItemTypes.Tape]/[Recipe.GetItemTypes.Glue],
 
 		Result:PistolReceiver,
 		RemoveResultItem:true,
 		Time:90.0,
 		AllowOnlyOne:true,
 		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
 		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
 		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
 	}
 
-	recipe Repair Gun Part (Moderate)
+	recipe Repair (Lv2 Simple)
+	{
+		[Recipe.GetItemTypes.SimpleGunParts],
+		Plank,
+		Nails=3,
+		keep [Recipe.GetItemTypes.Hammer],
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=2,
+		RemoveResultItem:true,
+		Time:120.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
+	}
+
+	recipe Repair (Lv3 Simple)
+	{
+		[Recipe.GetItemTypes.SimpleGunParts],
+		BlowTorch=2,
+		keep [Recipe.GetItemTypes.WeldingMask],
+		SmallSheetMetal/ScrapMetal,
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=4,
+		RemoveResultItem:true,
+		Time:120.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartALot,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
+	}
+
+	recipe Repair (Lv1 Moderate)
 	{
 		[Recipe.GetItemTypes.ModerateGunParts],
-		DuctTape=1,
-		Screws=2,
+		[Recipe.GetItemTypes.Tape]/[Recipe.GetItemTypes.Glue],
+		Screws/Nails,
 
 		Result:PistolReceiver,
 		SkillRequired:Gunsmith=1,
@@ -26,11 +63,49 @@ module coavinsfirearms
 		Time:90.0,
 		AllowOnlyOne:true,
 		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
 		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+	}
+
+	recipe Repair (Lv2 Moderate)
+	{
+		[Recipe.GetItemTypes.ModerateGunParts],
+		Plank,
+		Nails=3,
+		keep [Recipe.GetItemTypes.Hammer],
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=3,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
 		OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
 	}
 
-	recipe Repair Gun Part (Complex)
+	recipe Repair (Lv3 Moderate)
+	{
+		[Recipe.GetItemTypes.ModerateGunParts],
+		BlowTorch=2,
+		keep [Recipe.GetItemTypes.WeldingMask],
+		SmallSheetMetal=2,
+		ScrapMetal=1,
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=5,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartATon,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
+	}
+
+	recipe Repair (Lv1 Complex)
 	{
 		[Recipe.GetItemTypes.ComplexGunParts],
 		BlowTorch=2,
@@ -38,12 +113,52 @@ module coavinsfirearms
 		keep [Recipe.GetItemTypes.WeldingMask],
 
 		Result:PistolReceiver,
-		SkillRequired:Gunsmith=2,
+		SkillRequired:Gunsmith=3,
 		RemoveResultItem:true,
 		Time:90.0,
 		AllowOnlyOne:true,
 		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
 		OnCreate:Recipe.OnCreate.RepairFirearmPartALittle,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingSome,
+	}
+
+	recipe Repair (Lv2 Complex)
+	{
+		[Recipe.GetItemTypes.ComplexGunParts],
+		BlowTorch=2,
+		SmallSheetMetal=2,
+		ScrapMetal=2,
+		keep [Recipe.GetItemTypes.WeldingMask],
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=4,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
+	}
+
+	recipe Repair (Lv3 Complex)
+	{
+		[Recipe.GetItemTypes.ComplexGunParts],
+		BlowTorch=2,
+		SmallSheetMetal=2,
+		ScrapMetal=2,
+		keep [Recipe.GetItemTypes.WeldingMask],
+		Screws/Nails,
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=6,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartATon,
 		OnGiveXP:Recipe.OnGiveXP.GunsmithingALot,
 	}
 }
