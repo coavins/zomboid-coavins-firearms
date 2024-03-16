@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item RifleUpperReceiver_308AR {

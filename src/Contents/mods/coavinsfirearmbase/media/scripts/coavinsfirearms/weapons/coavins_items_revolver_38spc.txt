@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 0.5,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item RevolverCylinder_38spc {
@@ -21,5 +22,6 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 20,
 		WorldStaticModel = Paperclip,
+		Tags = GunPartComplex,
 	}
 }

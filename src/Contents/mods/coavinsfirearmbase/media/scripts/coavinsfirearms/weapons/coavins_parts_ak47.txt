@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 1.5,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item AK47_GasTube {
@@ -21,6 +22,7 @@ module coavinsfirearms {
 		Weight = 0.2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartModerate,
 	}
 
 	item AK47_BoltCarrier {
@@ -31,6 +33,7 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartModerate,
 	}
 
 	item AK47_Bolt {
@@ -41,5 +44,6 @@ module coavinsfirearms {
 		Weight = 0.2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartComplex,
 	}
 }

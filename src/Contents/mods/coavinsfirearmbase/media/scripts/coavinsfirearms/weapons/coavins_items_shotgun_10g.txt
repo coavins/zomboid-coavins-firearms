@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item ShotgunForend_10g {
@@ -21,6 +22,7 @@ module coavinsfirearms {
 		Weight = 0.5,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item ShotgunBoltCarrier_10g {
@@ -31,6 +33,7 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 20,
 		WorldStaticModel = Staples_Ground,
+		Tags = GunPartModerate,
 	}
 
 	item ShotgunBolt_10g {
@@ -41,6 +44,7 @@ module coavinsfirearms {
 		Weight = 0.2,
 		ConditionMax = 20,
 		WorldStaticModel = Staples_Ground,
+		Tags = GunPartComplex,
 	}
 
 	item ShotgunBarrel_10g {
@@ -51,5 +55,6 @@ module coavinsfirearms {
 		Weight = 1,
 		ConditionMax = 20,
 		WorldStaticModel = PlasticPipe,
+		Tags = GunPartComplex,
 	}
 }

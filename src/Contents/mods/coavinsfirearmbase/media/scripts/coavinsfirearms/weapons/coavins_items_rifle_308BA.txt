@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item RifleUpperReceiver_308BA {
@@ -21,6 +22,7 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item RifleBoltCarrier_308BA {
@@ -31,6 +33,7 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartModerate,
 	}
 
 	item RifleFiringPin_308BA {
@@ -41,6 +44,7 @@ module coavinsfirearms {
 		Weight = 0.1,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartComplex,
 	}
 
 	item RifleBolt_308BA {
@@ -51,5 +55,6 @@ module coavinsfirearms {
 		Weight = 2,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartComplex,
 	}
 }

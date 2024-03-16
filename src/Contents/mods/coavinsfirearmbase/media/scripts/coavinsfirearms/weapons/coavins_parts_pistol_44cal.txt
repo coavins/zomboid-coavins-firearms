@@ -11,6 +11,7 @@ module coavinsfirearms {
 		Weight = 0.4,
 		ConditionMax = 20,
 		WorldStaticModel = Paperbag_Ground,
+		Tags = GunPartSimple,
 	}
 
 	item PistolSlide_44cal {
@@ -21,6 +22,7 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 20,
 		WorldStaticModel = Paperclip,
+		Tags = GunPartModerate,
 	}
 
 	item PistolBarrel_44cal {
@@ -31,5 +33,6 @@ module coavinsfirearms {
 		Weight = 0.3,
 		ConditionMax = 20,
 		WorldStaticModel = Razor_Ground,
+		Tags = GunPartComplex,
 	}
 }
