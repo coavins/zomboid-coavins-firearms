@@ -1,0 +1,49 @@
+module coavinsfirearms
+{
+	recipe Repair EX (Lv2 Simple)
+	{
+		[Recipe.GetItemTypes.SimpleGunParts],
+		GunToolKit/ImprovisedGunToolKit,
+
+		Result:PistolReceiver,
+		RemoveResultItem:true,
+		Time:120.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+	}
+
+	recipe Repair EX (Lv2 Moderate)
+	{
+		[Recipe.GetItemTypes.ModerateGunParts],
+		GunToolKit/ImprovisedGunToolKit,
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=1,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+	}
+
+	recipe Repair EX (Lv2 Complex)
+	{
+		[Recipe.GetItemTypes.ComplexGunParts],
+		GunToolKit/ImprovisedGunToolKit,
+
+		Result:PistolReceiver,
+		SkillRequired:Gunsmith=2,
+		RemoveResultItem:true,
+		Time:90.0,
+		AllowOnlyOne:true,
+		Category:Gunsmith,
+		OnTest:Recipe.OnTest.GunPartIsDamaged,
+		OnCreate:Recipe.OnCreate.RepairFirearmPartSome,
+		OnGiveXP:Recipe.OnGiveXP.GunsmithingNotMuch,
+	}
+}

@@ -21,7 +21,7 @@ module coavinsfirearms {
 		Icon = RevolverCylinder,
 		Weight = 0.3,
 		ConditionMax = 20,
-		WorldStaticModel = Paperclip,
+		WorldStaticModel = Paperbag_Ground,
 		Tags = GunPartComplex,
 	}
 }
